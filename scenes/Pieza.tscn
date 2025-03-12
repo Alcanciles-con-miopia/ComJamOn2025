@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://vrgyjl7ypn7c"]
+
+[ext_resource type="Texture2D" uid="uid://bwlxghpwdh36a" path="res://icon.svg" id="1_15mg1"]
+[ext_resource type="Script" uid="uid://37bk3qun61n3" path="res://scripts/Piezas/Pieza.gd" id="1_ec2mc"]
+[ext_resource type="Script" uid="uid://t3f4yey24pho" path="res://scripts/Piezas/Draggable.gd" id="2_ahypq"]
+
+[node name="Pieza" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ec2mc")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_15mg1")
+script = ExtResource("2_ahypq")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]
