@@ -48,7 +48,7 @@ enum Edad {BEBE, NINO, JOVEN, ADULTO, VIEJO}
 var currentEdad = Edad.BEBE
 
 # - Inventario
-enum TipoPiezas { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
+enum TipoPieza { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
 var piezasDesbl: int = 3
 var inventario = [0,0,0,0,0,0]
 

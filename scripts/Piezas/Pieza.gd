@@ -1,24 +1,22 @@
 extends Control
 
-enum TipoPieza {MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA}
-
-@export var tipo:TipoPieza
+@export var tipo:Global.TipoPieza
 var modulo = preload("res://scenes/Piezas/modulo_pieza.tscn")
 
 func _ready() -> void:
 	print(global_position)
 	match tipo:
-		TipoPieza.MEDIO:
+		Global.TipoPieza.MEDIO:
 			instantiate_medio()
-		TipoPieza.LENGUA:
+		Global.TipoPieza.LENGUA:
 			instantiate_lengua()
-		TipoPieza.CREATIVO:
+		Global.TipoPieza.CREATIVO:
 			instantiate_creativo()
-		TipoPieza.LOGICA:
+		Global.TipoPieza.LOGICA:
 			instantiate_logica()
-		TipoPieza.HISTORIA:
+		Global.TipoPieza.HISTORIA:
 			instantiate_historia()
-		TipoPieza.FILOSOFIA:
+		Global.TipoPieza.FILOSOFIA:
 			instantiate_filosofia()
 
 func _input(event: InputEvent) -> void:
