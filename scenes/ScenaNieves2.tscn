@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://brq3jrjcw6mpv"]
+[gd_scene load_steps=8 format=3 uid="uid://gya1jchuvxyj"]
 
 [ext_resource type="PackedScene" uid="uid://vrgyjl7ypn7c" path="res://scenes/Piezas/Pieza.tscn" id="1_sri8t"]
 [ext_resource type="Script" uid="uid://b2ulmmobdk62" path="res://scripts/inventario/Inventario.gd" id="2_2v2om"]
-[ext_resource type="PackedScene" path="res://celda.tscn" id="3_oxxir"]
+[ext_resource type="PackedScene" uid="uid://l2ddglorsawq" path="res://celda.tscn" id="3_oxxir"]
 [ext_resource type="PackedScene" uid="uid://beqvfn2j5vjsc" path="res://scenes/Avanzar/EvolveButton.tscn" id="4_8m4t8"]
 [ext_resource type="Script" uid="uid://bs3fvn8jic5bx" path="res://scenes/Avanzar/fondo_automata.gd" id="5_2v2om"]
+[ext_resource type="Texture2D" uid="uid://d4hw2864dqgs2" path="res://assets/images/automataBEBE.png" id="5_oxxir"]
 [ext_resource type="Script" uid="uid://bqyu4s0syhkxy" path="res://scenes/creadorCeldas.gd" id="6_oxxir"]
 
 [node name="ScenaNieves2" type="Node2D"]
@@ -15,14 +16,20 @@
 script = ExtResource("2_2v2om")
 
 [node name="Celda" parent="." instance=ExtResource("3_oxxir")]
-position = Vector2(533, 393)
+z_index = -335
+position = Vector2(757, 233)
 
 [node name="EvolveButton" parent="." instance=ExtResource("4_8m4t8")]
-offset_top = 200.0
-offset_right = 8.0
-offset_bottom = 208.0
+offset_left = 382.0
+offset_top = 289.0
+offset_right = 508.0
+offset_bottom = 403.0
 
 [node name="FondoPuzle" type="Sprite2D" parent="."]
+z_index = -800
+position = Vector2(189, 334)
+scale = Vector2(0.887931, 1.09967)
+texture = ExtResource("5_oxxir")
 script = ExtResource("5_2v2om")
 
 [node name="Creador de Celdas" type="Node2D" parent="."]
