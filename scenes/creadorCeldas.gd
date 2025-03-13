@@ -51,7 +51,7 @@ func actualizeMatrix(index: int) -> void:
 	for i in range(0, newExpansion.size()):
 		matrix[newExpansion[i].x][newExpansion[i].y].setVisibilityState(2)
 		matrix[newExpansion[i].x][newExpansion[i].y].setState(Global.cellState.EMPTY_STATE)
-		await get_tree().create_timer(0.02).timeout
+		await get_tree().create_timer(0.05).timeout
 	# Tanda siguiente de celdas si no es la ultima expansion.
 	if index < 4:
 		var nextExpansion = Global.expansions[index + 1]
