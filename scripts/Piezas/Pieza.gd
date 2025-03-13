@@ -13,7 +13,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		offset = get_global_mouse_position() - get_parent().global_position
 	if isThisClicked and event is InputEventMouseMotion:
-		get_parent().global_position = (event.position - offset)
+		global_position = (event.position - offset)
 
 func instantiate_forma(tipoPieza: Global.TipoPieza) -> void:
 	tipo = tipoPieza
@@ -189,3 +189,5 @@ func suelta() -> void:
 	
 	if modulosEnPosicion >= get_child_count():
 		print("HOLAAAAAAAAAAA")
+		#for c in get_children():
+			
