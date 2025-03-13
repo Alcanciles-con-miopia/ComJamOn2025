@@ -20,6 +20,7 @@ func show_animation() -> void:
 	#print(points)
 	#tween.tween_property(self.points, "position", full_line[current_point].position, 0.5)
 	tween.tween_property(self, "points[current_point]", full_line[current_point], 0.5)
+	#tween.interpolate_value(points[])
 	#tween.interpolate_method()
 	#hide = true;
 	#for point in connectedPoints:
