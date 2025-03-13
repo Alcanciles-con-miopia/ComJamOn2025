@@ -9,6 +9,6 @@ func _pressed() -> void:
 		Global.CurrentEdad += 1
 		Global.PiezasDesbl += 1
 		Global.evolve.emit()
-		$"../Creador de Celdas".actualizeMatrix(Global.expansions[Global.CurrentEdad])
+		$"../Creador de Celdas".actualizeMatrix(Global.CurrentEdad) # Para que aparezcan las siguientes.
 	else:
 		print("FINAL")
