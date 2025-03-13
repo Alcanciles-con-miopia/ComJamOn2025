@@ -9,7 +9,6 @@ func _ready() -> void:
 	#position.x = texture.get_size().x/2
 	#position.y = texture.get_size().y/2
 
-
 func change_fondo() -> void:
 	print(Global.CurrentEdad)
 	if Global.CurrentEdad < 5:
