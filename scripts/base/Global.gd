@@ -40,3 +40,7 @@ func change_scene(next : Global.Scenes, force = true):
 	if ((current_scene != next || force)and not startCoolDown):
 		startCoolDown = true
 		Global.on_transition_begin.emit()
+
+
+# GAME THINGS
+var cellSize: float = 128

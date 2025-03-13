@@ -1,7 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://dsb1he463dv5c"]
 
-[ext_resource type="PackedScene" uid="uid://vrgyjl7ypn7c" path="res://scenes/Pieza.tscn" id="1_6ik8w"]
+[ext_resource type="PackedScene" uid="uid://vrgyjl7ypn7c" path="res://scenes/Piezas/Pieza.tscn" id="1_6ik8w"]
 
 [node name="ScenaAndres" type="Node2D"]
 
 [node name="Draggable" parent="." instance=ExtResource("1_6ik8w")]
+offset_left = 573.0
+offset_top = 295.0
+offset_right = 573.0
+offset_bottom = 295.0
