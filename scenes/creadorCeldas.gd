@@ -51,3 +51,4 @@ func actualizeMatrix(newExpansion: Array) -> void:
 	print("Actualizacion de celdas.")
 	for i in range(0, newExpansion.size()):
 		matrix[newExpansion[i].x][newExpansion[i].y].setVisible(true)
+		await get_tree().create_timer(0.05).timeout
