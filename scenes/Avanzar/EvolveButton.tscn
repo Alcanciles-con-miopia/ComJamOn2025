@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://beqvfn2j5vjsc"]
+
+[ext_resource type="Script" uid="uid://ogc2n2uvrebg" path="res://scripts/Avanzar/evolveButton.gd" id="1_bcjxt"]
+[ext_resource type="Texture2D" uid="uid://be3ugp7qw5to8" path="res://assets/images/punto.png" id="1_lm3am"]
+
+[node name="EvolveButton" type="Button"]
+modulate = Color(0.498039, 0.847059, 0.537255, 1)
+icon = ExtResource("1_lm3am")
+script = ExtResource("1_bcjxt")

@@ -12,6 +12,8 @@ extends Node
 func _ready() -> void:
 	Global.gms = self
 	Global.sfx = sfx_1
+	#Global.window = DisplayServer.window_get_size().x
+	#Global.window = get_viewport().get_visible_rect().size.x
 	# Global.to_transition.connect(_on_totransition)
 	Global.on_transition_end.connect(_on_fade_end)
 	Global.on_game_end.connect(_on_game_end)

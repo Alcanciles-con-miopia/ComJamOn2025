@@ -6,13 +6,16 @@ signal on_enable(scene)
 signal on_disable(scene)
 signal on_game_end()
 
-#árbol
+# árbol
 signal grow_branch(branch) #para cuando confirmas y la rama crece
 signal feedback_branch(branch) #solo para el feedback al poner una pieza
 
+# crecer
+signal evolve() # para cuando crezca el automata
+
 enum Scenes { SPLASH, MAIN_MENU, INTRO, GAME, CREDITS, NULL}
 
-var gms
+var gms 
 var sfx
 var current_scene = Scenes.SPLASH 
 var next_scene = Scenes.SPLASH
@@ -48,6 +51,7 @@ func change_scene(next : Global.Scenes, force = true):
 # ---- GAME ----
 # --- Funcionalidad y logica
 var clicked: bool = false
+var window
 # --- Estado juego
 # - Edad
 enum Edad {BEBE, NINO, JOVEN, ADULTO, VIEJO}
@@ -55,7 +59,7 @@ var CurrentEdad = Edad.BEBE
 
 # - Inventario
 enum TipoPieza { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
-var PiezasDesbl: int = 5
+var PiezasDesbl: int = 6
 var Inventario = [4,4,4,4,4,4]
 
 # - Matriz de juego y celas:
@@ -64,6 +68,7 @@ var cellOfset: float = 0 # Offset entre las celdas.
 var cellInitPos: Vector2 = Vector2(100, 100) # Posicion inicial de la primera celda.
 var matrixSize: Vector2 = Vector2(10, 10) # Entiendo que esto luego sera leido del json pero de momento aqui esta.
 enum cellState { EMPTY_STATE, OCCUPIED_STATE, NOT_VALID_STATE } # Enum de los estados que puede tener una celda.
+
 # - Arbol
 var piezaVal: int = 1 		# puntuacion que aporta cada pieza a una rama
 
