@@ -3,8 +3,13 @@ extends Control
 @export var tipo:Global.TipoPieza
 var modulo = preload("res://scenes/Piezas/modulo_pieza.tscn")
 
-func _ready() -> void:
-	print(global_position)
+func _input(event: InputEvent) -> void:
+	# Click derecho rota la pieza
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT:
+		rotation += PI/2;
+
+func instantiate_forma(tipoPieza: Global.TipoPieza) -> void:
+	tipo = tipoPieza
 	match tipo:
 		Global.TipoPieza.MEDIO:
 			instantiate_medio()
@@ -18,11 +23,6 @@ func _ready() -> void:
 			instantiate_historia()
 		Global.TipoPieza.FILOSOFIA:
 			instantiate_filosofia()
-
-func _input(event: InputEvent) -> void:
-	# Click derecho rota la pieza
-	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT:
-		rotation += PI/2;
 
 func instantiate_medio() -> void:
 	var actualPos = Vector2(0,0)

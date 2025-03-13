@@ -6,26 +6,19 @@ class_name ItemInventario
 func _ready() -> void:
 	pass
 
-@onready var pieza = $"../../Pieza"
+var pieza = preload("res://scenes/Piezas/Pieza.tscn")
 
 func _pressed() -> void:
 	if Global.Inventario[tipo] > 0:
+		# Actualizamos la cantidad
 		print(Global.Inventario[tipo])
-		match tipo:
-			Global.TipoPieza.MEDIO:
-				pieza.instantiate_medio()
-			Global.TipoPieza.LENGUA:
-				pieza.instantiate_lengua()
-			Global.TipoPieza.CREATIVO:
-				pieza.instantiate_creativo()
-			Global.TipoPieza.LOGICA:
-				pieza.instantiate_logica()
-			Global.TipoPieza.HISTORIA:
-				pieza.instantiate_historia()
-			Global.TipoPieza.FILOSOFIA:
-				pieza.instantiate_filosofia()
-				
 		Global.Inventario[tipo] = Global.Inventario[tipo]-1
+
+		# Instanciamos la pieza
+		var piezaObj = pieza.instantiate()
+		get_parent().add_child(piezaObj)
+		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
 	
 	else:
 		print("no quedan piezas")
+	

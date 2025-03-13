@@ -3,21 +3,28 @@ class_name Draggable
 
 var mousePos: Vector2
 var offset: Vector2
-var clicked: bool = false
+var startPos: Vector2
+var isThisClicked: bool = false
 
-
-func _process(delta: float) -> void:	
-	pass
+func _ready() -> void:
+	startPos = get_parent().global_position
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		offset = get_global_mouse_position() - get_parent().global_position
-	if clicked and event is InputEventMouseMotion:
+	if isThisClicked and event is InputEventMouseMotion:
 		get_parent().global_position = (event.position - offset)
 
 func _on_button_down() -> void:
-	clicked = true
+	if not Global.clicked:
+		isThisClicked = true
+		Global.clicked = true
+	print(name)
 
 
 func _on_button_up() -> void:
-	clicked = false
+	isThisClicked = false
+	#get_parent().global_position = startPos
+	if Global.clicked:
+		Global.clicked = false
+	#comprobar si puede ponerse
