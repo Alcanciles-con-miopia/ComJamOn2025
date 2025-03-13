@@ -36,15 +36,15 @@ func setVisibilityState(state: int) -> void:
 	if state == 0:
 		visible = false
 		$ImagenCelda.modulate.a = 0
-		$CuerpoCelda/ColliderCelda.set_deferred("disabled", false) # Para que no haga colision.
+		$CuerpoCelda/ColliderCelda.set_deferred("disabled", true) # Para que no haga colision.
 	else: if state == 1:
 		visible = false
 		$ImagenCelda.modulate.a = 0.3
-		$CuerpoCelda/ColliderCelda.set_deferred("disabled", false) # Para que no haga colision.
+		$CuerpoCelda/ColliderCelda.set_deferred("disabled", true) # Para que no haga colision.
 	else: if state == 2:
 		visible = true
 		$ImagenCelda.modulate.a = 1
-		$CuerpoCelda/ColliderCelda.set_deferred("disabled", true) # Para que no haga colision.
+		$CuerpoCelda/ColliderCelda.set_deferred("disabled", false) # Para que haga colision.
 
 # Devuelve el ID de la celda.
 func getId() -> Vector2:
