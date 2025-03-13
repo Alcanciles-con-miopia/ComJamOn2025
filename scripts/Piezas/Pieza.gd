@@ -187,7 +187,15 @@ func suelta() -> void:
 		if c.enPosicion:
 			modulosEnPosicion += 1
 	
-	if modulosEnPosicion >= get_child_count():
+	if modulosEnPosicion >= 0:
 		print("HOLAAAAAAAAAAA")
+		var x = 0
+		var y = 0
+		var nMods = get_child_count()
+		
 		for c in get_children():
-			c.colocar();
+			var pos = c.celdaDondeColocar();
+			x += pos.x
+			y += pos.y
+		
+		global_position = Vector2(x/nMods, y/nMods)

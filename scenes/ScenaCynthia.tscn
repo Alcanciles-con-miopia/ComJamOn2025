@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dxj58d4l2bcl0"]
 
-[ext_resource type="PackedScene" path="res://scenes/arbol/Arbol.tscn" id="1_xl0sr"]
+[ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="1_xl0sr"]
 
 [node name="ScenaCynthia" type="Control"]
 layout_mode = 3

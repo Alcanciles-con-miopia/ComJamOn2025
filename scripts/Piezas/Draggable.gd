@@ -23,8 +23,8 @@ func _on_button_up() -> void:
 	if Global.clicked:
 		Global.clicked = false
 
-func colocar() -> void:
-	global_position = celdaPos
+func celdaDondeColocar() -> Vector2:
+	return celdaPos
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent().name == "Celda" and not enPosicion:
