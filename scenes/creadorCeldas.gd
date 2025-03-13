@@ -11,6 +11,8 @@ func _ready():
 	actualizeMatrix(matrix,Global.initialCells)
 	actualizeMatrix(matrix,Global.expansion1)
 	actualizeMatrix(matrix,Global.expansion2)
+	actualizeMatrix(matrix,Global.expansion3)
+	actualizeMatrix(matrix,Global.expansion4)
 	# Probando metodos de celda.gd
 	#matrix[0][1].position.y += 50
 	#matrix[5][0].position.x += 50
