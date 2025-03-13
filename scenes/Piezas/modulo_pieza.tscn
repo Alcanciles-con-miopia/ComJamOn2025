@@ -10,3 +10,4 @@ icon = ExtResource("1_vqrbx")
 script = ExtResource("2_6ry53")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

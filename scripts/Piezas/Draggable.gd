@@ -16,5 +16,8 @@ func _input(event: InputEvent) -> void:
 		get_parent().global_position = (event.position - offset)
 
 func _on_button_down() -> void:
-	clicked = not clicked
-	print(clicked)
+	clicked = true
+
+
+func _on_button_up() -> void:
+	clicked = false
