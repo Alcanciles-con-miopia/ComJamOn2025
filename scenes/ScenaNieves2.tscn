@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr33c8imfaurg"]
+[gd_scene load_steps=9 format=3 uid="uid://gya1jchuvxyj"]
 
+[ext_resource type="Texture2D" uid="uid://burbk5nmn1kdj" path="res://assets/images/guias.png" id="1_2s6wm"]
 [ext_resource type="PackedScene" uid="uid://vrgyjl7ypn7c" path="res://scenes/Piezas/Pieza.tscn" id="1_sri8t"]
 [ext_resource type="Script" uid="uid://b2ulmmobdk62" path="res://scripts/inventario/Inventario.gd" id="2_2v2om"]
 [ext_resource type="PackedScene" uid="uid://l2ddglorsawq" path="res://celda.tscn" id="3_oxxir"]
@@ -9,6 +10,12 @@
 [ext_resource type="Script" uid="uid://bqyu4s0syhkxy" path="res://scenes/creadorCeldas.gd" id="6_oxxir"]
 
 [node name="ScenaNieves2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(577.111, 322)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_2s6wm")
 
 [node name="Pieza" parent="." instance=ExtResource("1_sri8t")]
 
@@ -27,8 +34,8 @@ offset_bottom = 403.0
 
 [node name="FondoPuzle" type="Sprite2D" parent="."]
 z_index = -800
-position = Vector2(189, 334)
-scale = Vector2(0.887931, 1.09967)
+position = Vector2(191.437, 334)
+scale = Vector2(0.899138, 1.09967)
 texture = ExtResource("5_oxxir")
 script = ExtResource("5_2v2om")
 

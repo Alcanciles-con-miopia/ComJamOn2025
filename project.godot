@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 Global="*res://scripts/base/Global.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [input]
 
 1={
