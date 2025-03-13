@@ -1,22 +1,31 @@
 extends Line2D
 
-#TODO: dividir por secciones (export?), puntos
-
-
-@export var hide: = true;
-var connected_points: Array;
+#@export var hide: = true;
+var full_line: Array;
 var current_point = 0;
+@onready var tween = get_tree().create_tween()
 
 func _ready() -> void:
 	print("Size: ", points.size())
-	connected_points = points
-	if hide: clear_points()
-	show_animation()
+	full_line = points
+	#if hide: 
+	clear_points() # points = 0
+	add_point(full_line[current_point])
+	current_point += 1
 	
 func show_animation() -> void:
-	current_point = clamp(current_point, 0, connected_points.size() - 1)
-	hide = true;
+	current_point = clamp(current_point, 0, full_line.size() - 1)
+	add_point(full_line[current_point - 1])
+	var last_point = points[current_point]
+	#print(points)
+	#tween.tween_property(self.points, "position", full_line[current_point].position, 0.5)
+	tween.tween_property(self, "points[current_point]", full_line[current_point], 0.5)
+	#tween.interpolate_method()
+	#hide = true;
 	#for point in connectedPoints:
-	add_point(connected_points[current_point])
+	#add_point(full_line[current_point])
 	current_point += 1
 	#	await get_tree().create_timer(0.1).timeout
+
+func update_last_point(new_pos):
+	self.set_point_position(current_point, new_pos)

@@ -4,10 +4,6 @@ var current_branch = Ramas.MEDIO #solo para debugging
 
 @onready var ramas : Array = [$Lineas/Medio, $Lineas/Lengua, $Lineas/Creativo]
 #, $Lineas/Logica, $Lineas/Historia, $Lineas/Filo]
-@onready var puntosMedio : Array = [$Puntos/Medio/P1, $Puntos/Medio/P2, $Puntos/Medio/P3]
-@onready var puntosLengua : Array = [$Puntos/Lengua/P1, $Puntos/Lengua/P2, $Puntos/Lengua/P3]
-@onready var puntosCreativo : Array = [$Puntos/Creativo/P1, $Puntos/Creativo/P2, $Puntos/Creativo/P3]
-@onready var puntos : Array = [puntosMedio, puntosLengua, puntosCreativo]
 
 func _ready() -> void:
 	#print(puntos[Ramas.MEDIO][1])
