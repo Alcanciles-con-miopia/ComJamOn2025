@@ -189,5 +189,5 @@ func suelta() -> void:
 	
 	if modulosEnPosicion >= get_child_count():
 		print("HOLAAAAAAAAAAA")
-		#for c in get_children():
-			
+		for c in get_children():
+			c.colocar();

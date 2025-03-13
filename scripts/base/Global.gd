@@ -51,9 +51,12 @@ func change_scene(next: Global.Scenes, force = true):
 
 # ---- GAME ----
 # --- Funcionalidad y logica
-var clicked: bool = false
 var windowX
 var windowY
+
+# - Draggables
+var clicked: bool = false
+signal CheckPieza
 
 # --- Estado juego
 # - Edad
