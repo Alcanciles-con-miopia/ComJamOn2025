@@ -68,7 +68,7 @@ var edadTex = [textureBEBE, textureNINO, textureJOVEN, textureADULTO, textureVIE
 
 # - Inventario
 enum TipoPieza { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
-var PiezasDesbl: int = 6
+var PiezasDesbl: int = 3
 var Inventario = [4,4,4,4,4,4]
 
 # - Matriz de juego y celdas:

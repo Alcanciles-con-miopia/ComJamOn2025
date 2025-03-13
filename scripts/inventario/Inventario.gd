@@ -8,7 +8,8 @@ func _ready() -> void:
 	
 	print(Global.windowX)
 	for i in range(Global.PiezasDesbl):
-		instantiate_item((((Global.windowX))/(Global.PiezasDesbl))+(Global.windowX/3) + 40*i, i)
+		#instantiate_item((((Global.windowX))/(Global.PiezasDesbl))+(Global.windowX/3) + 40*i, i)
+		instantiate_item(Global.windowX*2/3 - Global.PiezasDesbl * 38 / 2 + 38 * i, i)
 
 func instantiate_item(x_pos, i) -> void:
 	var actualPos = Vector2(0,Global.windowY-50)
