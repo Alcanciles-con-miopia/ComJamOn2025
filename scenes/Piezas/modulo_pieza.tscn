@@ -7,6 +7,7 @@
 size = Vector2(119, 121)
 
 [node name="ModuloPieza" type="Button"]
+z_index = 2
 offset_right = 8.0
 offset_bottom = 8.0
 icon = ExtResource("1_vqrbx")

@@ -33,7 +33,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			#print("Puede quedarse")
 			enPosicion = true;
 			celdaPos = area.get_parent().global_position
-			colocar()
 	else:
 		#print("Ha entrado en algo que no es una celda", area.name)
 		pass
