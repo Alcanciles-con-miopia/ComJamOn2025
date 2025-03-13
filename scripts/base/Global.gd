@@ -19,6 +19,7 @@ var startCoolDown = false
 
 func _ready() -> void:
 	# change_scene(Scenes.SPLASH)
+	_createMatrix()
 	pass
 
 func  _process(delta: float) -> void:
@@ -56,8 +57,19 @@ var Inventario = [4,4,4,4,4,4]
 
 # - Matriz de juego
 var cellSize: float = 128
-# PAIGRO AQUI
-
+enum cellState { EMPTY_STATE, OCCUPIED_STATE, NOT_VALID_STATE }
+var matrix = []
+var matrix_x = 5 # En numero que sea
+var matrix_y = 5 # El numero que sea
+# Crea la matriz de juego.
+func _createMatrix() -> void:
+	for i in range(0, matrix_x):
+		matrix.append([])
+		for j in range(0, matrix_y):
+			var cell: Cell=Cell.new()
+			cell.id.x = i
+			cell.id.y = j
+			matrix[i].append(cell)
 # - Arbol
 var piezaVal: int = 1 		# puntuacion que aporta cada pieza a una rama
 

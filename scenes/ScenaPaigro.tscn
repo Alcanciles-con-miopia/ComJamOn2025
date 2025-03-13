@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c72jvipivw3ju"]
+
+[ext_resource type="PackedScene" path="res://celda.tscn" id="1_2ly7r"]
+
+[node name="ScenaPaigro" type="Node2D"]
+
+[node name="Celda" parent="." instance=ExtResource("1_2ly7r")]
+position = Vector2(197, 190)
