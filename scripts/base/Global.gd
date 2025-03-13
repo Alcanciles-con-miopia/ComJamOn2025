@@ -77,7 +77,7 @@ var Inventario = [4,4,4,4,4,4]
 # - Matriz de juego y celdas:
 var cellSize: float = 50 # Tamanyo de cada celda en x e y.
 var cellOfset: float = 0 # Offset entre las celdas.
-var cellInitPos: Vector2 = Vector2(600, 150) # Posicion inicial de la primera celda.
+var cellInitPos: Vector2 = Vector2(550, 100) # Posicion inicial de la primera celda.
 var matrixSize: Vector2 = Vector2(10, 10) # Entiendo que esto luego sera leido del json pero de momento aqui esta.
 enum cellState { EMPTY_STATE, OCCUPIED_STATE, NOT_VALID_STATE } # Enum de los estados que puede tener una celda.
 # - Expansion del tablero. Sease [col, fil]
