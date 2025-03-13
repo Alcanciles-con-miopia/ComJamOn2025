@@ -16,7 +16,7 @@ func _pressed() -> void:
 
 		# Instanciamos la pieza
 		var piezaObj = pieza.instantiate()
-		get_parent().add_child(piezaObj)
+		get_node("../../Piezas").add_child(piezaObj)
 		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
 	
 	else:
