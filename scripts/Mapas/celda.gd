@@ -8,12 +8,12 @@ var visible: bool # Si esta visible o no. // Alomejor se peina // o alomejor no 
 
 # Start de la celda.
 func _ready() -> void:
-	$CuerpoCelda/ColliderCelda.shape.size.x = Global.cellSize/4
-	$CuerpoCelda/ColliderCelda.shape.size.y = Global.cellSize/4
+	$CuerpoCelda/ColliderCelda.shape.size.x = Global.cellSize/100
+	$CuerpoCelda/ColliderCelda.shape.size.y = Global.cellSize/100
 	pass
 
 # Devuelve es estado de la celda.
-func get_state() -> bool:
+func get_is_epty() -> bool:
 	return state == Global.cellState.EMPTY_STATE
 
 # Cambia el estado de la celda.

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://t3f4yey24pho" path="res://scripts/Piezas/Draggable.gd" id="2_6ry53"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqrbx"]
-size = Vector2(119, 121)
+size = Vector2(109, 109)
 
 [node name="ModuloPieza" type="Button"]
 z_index = 2
@@ -16,9 +16,10 @@ script = ExtResource("2_6ry53")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(68.5, 69.5)
+position = Vector2(68.5, 68.5)
 shape = SubResource("RectangleShape2D_vqrbx")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

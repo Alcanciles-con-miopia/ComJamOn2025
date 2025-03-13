@@ -178,24 +178,19 @@ func instantiate_filosofia() -> void:
 	add_child(mod)
 
 func coge() -> void:
+	print(global_position)
 	isThisClicked = true
 
 func suelta() -> void:
 	isThisClicked = false
 	var modulosEnPosicion = 0
-	for c in get_children():
-		if c.enPosicion:
-			modulosEnPosicion += 1
+	var suma_pos = Vector2.ZERO
+	var nMods = get_child_count()
 	
+	for c in get_children():
+		if c.getINPOS():
+			modulosEnPosicion += 1
+			suma_pos += c.celdaDondeColocar()
 	if modulosEnPosicion >= 0:
-		print("HOLAAAAAAAAAAA")
-		var x = 0
-		var y = 0
-		var nMods = get_child_count()
-		
-		for c in get_children():
-			var pos = c.celdaDondeColocar();
-			x += pos.x
-			y += pos.y
-		
-		global_position = Vector2(x/nMods, y/nMods)
+		var nueva_pos = suma_pos / nMods  # media de posiciones de los modulos
+		global_position = nueva_pos
