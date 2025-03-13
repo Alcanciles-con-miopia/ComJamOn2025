@@ -41,6 +41,34 @@ func change_scene(next : Global.Scenes, force = true):
 		startCoolDown = true
 		Global.on_transition_begin.emit()
 
+# ---- GAME ----
+# --- Estado juego
+# - Edad
+enum Edad {BEBE, NINO, JOVEN, ADULTO, VIEJO}
+var currentEdad = Edad.BEBE
 
-# GAME THINGS
+# - Inventario
+enum TipoPiezas { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
+var piezasDesbl: int = 3
+var inventario = [0,0,0,0,0,0]
+
+# - Matriz de juego
 var cellSize: float = 128
+# PAIGRO AQUI
+
+# - Arbol
+var piezaVal: int = 1 		# puntuacion que aporta cada pieza a una rama
+
+# ramas: MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA
+# { nombre , puntuacion (inicialmente 0) }
+var ramaMedio = 	{ nombre = "Medio",	 	punt = 0 }
+var ramaLengua = 	{ nombre = "Lengua", 	punt = 0 }
+var ramaCreativo = 	{ nombre = "Creativo", 	punt = 0 }
+var ramaLogica = 	{ nombre = "Logica", 	punt = 0 }
+var ramaHistoria = 	{ nombre = "Historia", 	punt = 0 }
+var ramaFilo = 		{ nombre = "Filosofia",	punt = 0 }
+
+# puntuacion acumulada por rama
+var arbol = [ramaMedio.punt, ramaLengua.punt, ramaCreativo.punt, ramaLogica.punt, ramaHistoria.punt, ramaFilo.punt]	
+# puntuacion max de una rama
+var ramaMax: int = 10
