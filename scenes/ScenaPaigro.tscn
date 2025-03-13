@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://buwgl1jtvnuxx"]
+[gd_scene load_steps=2 format=3 uid="uid://bktyix0kv3khm"]
 
-[ext_resource type="Script" uid="uid://bqyu4s0syhkxy" path="res://scenes/creadorCeldas.gd" id="2_t0eao"]
+[ext_resource type="Script" path="res://scenes/creadorCeldas.gd" id="2_t0eao"]
 
 [node name="ScenaPaigro" type="Node2D"]
 

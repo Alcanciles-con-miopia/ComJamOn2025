@@ -169,3 +169,15 @@ func instantiate_filosofia() -> void:
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
 	add_child(mod)
+
+func coge() -> void:
+	pass
+
+func suelta() -> void:
+	var modulosEnPosicion = 0
+	for c in get_children():
+		if c.enPosicion:
+			modulosEnPosicion += 1
+	
+	if modulosEnPosicion >= get_child_count():
+		pass
