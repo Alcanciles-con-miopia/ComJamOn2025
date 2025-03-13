@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://gya1jchuvxyj"]
+
+[ext_resource type="PackedScene" uid="uid://vrgyjl7ypn7c" path="res://scenes/Piezas/Pieza.tscn" id="1_sri8t"]
+[ext_resource type="Script" uid="uid://b2ulmmobdk62" path="res://scripts/inventario/Inventario.gd" id="2_2v2om"]
+[ext_resource type="PackedScene" uid="uid://l2ddglorsawq" path="res://celda.tscn" id="3_oxxir"]
+[ext_resource type="PackedScene" uid="uid://beqvfn2j5vjsc" path="res://scenes/Avanzar/EvolveButton.tscn" id="4_8m4t8"]
+[ext_resource type="Script" uid="uid://bs3fvn8jic5bx" path="res://scenes/Avanzar/fondo_automata.gd" id="5_2v2om"]
+
+[node name="ScenaNieves2" type="Node2D"]
+
+[node name="Pieza" parent="." instance=ExtResource("1_sri8t")]
+
+[node name="Inventario" type="Node2D" parent="."]
+script = ExtResource("2_2v2om")
+
+[node name="Celda" parent="." instance=ExtResource("3_oxxir")]
+position = Vector2(533, 393)
+
+[node name="EvolveButton" parent="." instance=ExtResource("4_8m4t8")]
+offset_top = 200.0
+offset_right = 8.0
+offset_bottom = 208.0
+
+[node name="FondoPuzle" type="Sprite2D" parent="."]
+script = ExtResource("5_2v2om")
