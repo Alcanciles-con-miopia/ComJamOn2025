@@ -45,12 +45,12 @@ func change_scene(next : Global.Scenes, force = true):
 # --- Estado juego
 # - Edad
 enum Edad {BEBE, NINO, JOVEN, ADULTO, VIEJO}
-var currentEdad = Edad.BEBE
+var CurrentEdad = Edad.BEBE
 
 # - Inventario
 enum TipoPieza { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
-var piezasDesbl: int = 3
-var inventario = [0,0,0,0,0,0]
+var PiezasDesbl: int = 5
+var Inventario = [4,4,4,4,4,4]
 
 # - Matriz de juego
 var cellSize: float = 128
