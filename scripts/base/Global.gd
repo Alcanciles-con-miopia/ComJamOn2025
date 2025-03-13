@@ -71,4 +71,4 @@ var ramaFilo = 		{ nombre = "Filosofia",	punt = 0 }
 # puntuacion acumulada por rama
 var arbol = [ramaMedio.punt, ramaLengua.punt, ramaCreativo.punt, ramaLogica.punt, ramaHistoria.punt, ramaFilo.punt]	
 # puntuacion max de una rama
-var ramaMax: int = 10
+const ramaMax: int = 10

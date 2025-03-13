@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bronsjohbdjpq"]
+
+[ext_resource type="Script" uid="uid://csgwo6cqwax3g" path="res://scripts/inventario/ItemInventario.gd" id="1_jj3tv"]
+[ext_resource type="Texture2D" uid="uid://bwlxghpwdh36a" path="res://icon.svg" id="2_nssk3"]
+
+[node name="PiezaInventario" type="Button"]
+offset_right = 136.0
+offset_bottom = 136.0
+icon = ExtResource("2_nssk3")
+script = ExtResource("1_jj3tv")

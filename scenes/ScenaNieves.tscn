@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://70tqyfchhk6i"]
+[gd_scene load_steps=3 format=3 uid="uid://70tqyfchhk6i"]
+
+[ext_resource type="PackedScene" uid="uid://bronsjohbdjpq" path="res://scenes/Inventario/PiezaInventario.tscn" id="1_0sjo8"]
+[ext_resource type="PackedScene" uid="uid://vrgyjl7ypn7c" path="res://scenes/Piezas/Pieza.tscn" id="2_qwlru"]
 
 [node name="ScenaNieves" type="Node2D"]
+
+[node name="Medio" parent="." instance=ExtResource("1_0sjo8")]
+
+[node name="Lengua" parent="." instance=ExtResource("1_0sjo8")]
+offset_left = 200.0
+offset_right = 336.0
+tipo = 1
+
+[node name="Creativo" parent="." instance=ExtResource("1_0sjo8")]
+offset_left = 400.0
+offset_right = 536.0
+tipo = 2
+
+[node name="Logica" parent="." instance=ExtResource("1_0sjo8")]
+offset_left = 600.0
+offset_right = 736.0
+tipo = 3
+
+[node name="Historia" parent="." instance=ExtResource("1_0sjo8")]
+offset_left = 800.0
+offset_right = 936.0
+tipo = 4
+
+[node name="Filosofia" parent="." instance=ExtResource("1_0sjo8")]
+offset_left = 1000.0
+offset_right = 1136.0
+tipo = 5
+
+[node name="Pieza" parent="." instance=ExtResource("2_qwlru")]
