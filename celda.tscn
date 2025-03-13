@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://4xrwxbpfaost"]
+[gd_scene load_steps=4 format=3 uid="uid://l2ddglorsawq"]
 
 [ext_resource type="Texture2D" uid="uid://dsk0j7mtwsuv8" path="res://assets/images/alcancilito.png" id="1_28yl1"]
 [ext_resource type="Script" uid="uid://lmxi7y2gijuf" path="res://scripts/Mapas/celda.gd" id="1_ssuno"]
@@ -13,7 +13,7 @@ script = ExtResource("1_ssuno")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_28yl1")
 
-[node name="CuerpoCelda" type="StaticBody2D" parent="."]
+[node name="CuerpoCelda" type="Area2D" parent="."]
 
 [node name="ColliderCelda" type="CollisionShape2D" parent="CuerpoCelda"]
 shape = SubResource("RectangleShape2D_ssuno")

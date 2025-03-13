@@ -27,4 +27,12 @@ func _on_button_up() -> void:
 	#get_parent().global_position = startPos
 	if Global.clicked:
 		Global.clicked = false
-	#comprobar si puede ponerse
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent().name == "Celda":
+		print("Ha entrado en celdas vacias")
+		if area.get_parent().get_state():
+			print("Puede quedarse")
+	else:
+		print("Ha entrado en algo que no es una celda", area.name)
