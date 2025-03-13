@@ -51,11 +51,19 @@ func change_scene(next: Global.Scenes, force = true):
 # ---- GAME ----
 # --- Funcionalidad y logica
 var clicked: bool = false
-var window
+var windowX
+var windowY
+
 # --- Estado juego
 # - Edad
 enum Edad {BEBE, NINO, JOVEN, ADULTO, VIEJO}
 var CurrentEdad = Edad.BEBE
+var textureBEBE = load("res://assets/images/automataBEBE.png")
+var textureNINO = load("res://assets/images/automataNINO.png")
+var textureJOVEN = load("res://assets/images/automataJOVEN.png")
+var textureADULTO = load("res://assets/images/automataADULTO.png")
+var textureVIEJO = load("res://assets/images/automataVIEJO.png")
+var edadTex = [textureBEBE, textureNINO, textureJOVEN, textureADULTO, textureVIEJO]	
 
 # - Inventario
 enum TipoPieza { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
