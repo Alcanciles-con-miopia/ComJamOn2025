@@ -31,7 +31,7 @@ func on_branch_grow(rama) -> void:
 	#print("Branch grow: ", rama)
 	Global.arbol[rama] += 1;
 	print("Nivel de la rama ", rama, ": ", Global.arbol[rama])
-	ramas[rama].show_animation()
+	ramas[rama].create_point()
 	pass
 	
 func on_branch_feed() -> void:
