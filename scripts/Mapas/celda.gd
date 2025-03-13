@@ -21,7 +21,12 @@ func setState(newState: Global.cellState) -> void:
 # Permite cambiar la visibilidad de la celda.
 func setVisible(newVis: bool) -> void:
 	visible = newVis
-	$ImagenCelda.visible = newVis
+	var newA: float = 1
+	if visible == false:
+		newA = 0.3
+	#$ImagenCelda.visible = newVis
+	$ImagenCelda.modulate.a = newA
+	$CuerpoCelda/ColliderCelda.set_deferred("disabled", newVis) # Para que no haga colision.
 
 func getId() -> Vector2:
 	return id
