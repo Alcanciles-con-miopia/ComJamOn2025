@@ -41,7 +41,7 @@ func next_stage():
 	Global.stage += 1
 	Global.stage = clamp(Global.stage, 0, 6)
 
-func change_scene(next : Global.Scenes, force = true):
+func change_scene(next: Global.Scenes, force = true):
 	Global.next_scene = next
 	print(">> Changing from ", Global.current_scene, " to ", Global.next_scene)
 	if ((current_scene != next || force)and not startCoolDown):
@@ -62,13 +62,19 @@ enum TipoPieza { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
 var PiezasDesbl: int = 6
 var Inventario = [4,4,4,4,4,4]
 
-# - Matriz de juego y celas:
-var cellSize: float = 128 # Tamanyo de cada celda en x e y.
+# - Matriz de juego y celdas:
+var cellSize: float = 50 # Tamanyo de cada celda en x e y.
 var cellOfset: float = 0 # Offset entre las celdas.
 var cellInitPos: Vector2 = Vector2(100, 100) # Posicion inicial de la primera celda.
 var matrixSize: Vector2 = Vector2(10, 10) # Entiendo que esto luego sera leido del json pero de momento aqui esta.
 enum cellState { EMPTY_STATE, OCCUPIED_STATE, NOT_VALID_STATE } # Enum de los estados que puede tener una celda.
-
+# - Expansion del tablero. Sease [col, fil]
+var debugUnlockAllCells: bool = true
+var initialCells: Array = [Vector2(3,3),Vector2(4,3),Vector2(5,3),Vector2(3,4),Vector2(4,4),Vector2(5,4),Vector2(3,5),Vector2(4,5),Vector2(5,5)] # Celdas iniciales
+var expansion1: Array = [Vector2(2,1),Vector2(3,1),Vector2(2,2),Vector2(3,2),Vector2(4,2),Vector2(5,2),Vector2(6,2),Vector2(7,2),Vector2(2,3),Vector2(6,3),Vector2(7,3),Vector2(2,4),Vector2(6,4),Vector2(1,5),Vector2(2,5),Vector2(6,5),Vector2(1,6),Vector2(2,6),Vector2(3,6),Vector2(4,6),Vector2(5,6),Vector2(6,6),Vector2(5,7),Vector2(6,7)] # Celdas de expansion del bebe a nini.
+var expansion2: Array = [Vector2(1,1),Vector2(4,1),Vector2(5,1),Vector2(6,1),Vector2(7,1),Vector2(1,2),Vector2(1,3),Vector2(1,4),Vector2(7,4),Vector2(7,5),Vector2(1,7),Vector2(2,7),Vector2(3,7),Vector2(4,7),Vector2(7,6),Vector2(7,7)] # Celdas de expansion del nin0 al joven.
+var expansion3: Array # Celdas de expansion del joven al adulto.
+var expansion4: Array # Celdas de expansion del adulto al viejo.
 # - Arbol
 var piezaVal: int = 1 		# puntuacion que aporta cada pieza a una rama
 

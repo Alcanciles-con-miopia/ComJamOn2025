@@ -7,11 +7,15 @@ var cell = preload("res://scenes/Matrix/celda.tscn")
 
 func _ready():
 	_createMatrix()
+	print(matrix[0][0].getId())
+	actualizeMatrix(matrix,Global.initialCells)
+	actualizeMatrix(matrix,Global.expansion1)
+	actualizeMatrix(matrix,Global.expansion2)
 	# Probando metodos de celda.gd
-	matrix[0][1].position.y += 50
-	matrix[5][0].position.x += 50
-	matrix[4][2].setVisible(false)
-	print(" Prueba id celda",matrix[2][3].getId())
+	#matrix[0][1].position.y += 50
+	#matrix[5][0].position.x += 50
+	#matrix[4][2].setVisible(false)
+	#print(" Prueba id celda",matrix[2][3].getId())
 	pass
 
 # Devuelve la matriz.
@@ -33,7 +37,14 @@ func _createMatrix() -> void:
 			cellObj.position.x = Global.cellInitPos.x + i * Global.cellSize + Global.cellOfset
 			cellObj.position.y = Global.cellInitPos.y + j * Global.cellSize + Global.cellOfset
 			cellObj.setId(Vector2(i, j))
-			matrix[i].append(cellObj) 
+			if Global.debugUnlockAllCells:
+				cellObj.setVisible(false)
+			matrix[i].append(cellObj)
 			$".".add_child(cellObj)
 			print("Celda: ", " ", i, " ", j)
 	print("Num celdas: ", $".".get_child_count())
+
+func actualizeMatrix(nMatrix: Array, newExpansion: Array) -> Array:
+	for i in range(0,newExpansion.size()):
+		nMatrix[newExpansion[i].x][newExpansion[i].y].setVisible(true)
+	return nMatrix

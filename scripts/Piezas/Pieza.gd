@@ -3,10 +3,17 @@ extends Control
 @export var tipo:Global.TipoPieza
 var modulo = preload("res://scenes/Piezas/modulo_pieza.tscn")
 
+var offset: Vector2
+var isThisClicked: bool = false
+
 func _input(event: InputEvent) -> void:
 	# Click derecho rota la pieza
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT:
 		rotation += PI/2;
+	if event is InputEventMouseButton:
+		offset = get_global_mouse_position() - get_parent().global_position
+	if isThisClicked and event is InputEventMouseMotion:
+		get_parent().global_position = (event.position - offset)
 
 func instantiate_forma(tipoPieza: Global.TipoPieza) -> void:
 	tipo = tipoPieza
@@ -169,3 +176,16 @@ func instantiate_filosofia() -> void:
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
 	add_child(mod)
+
+func coge() -> void:
+	isThisClicked = true
+
+func suelta() -> void:
+	isThisClicked = false
+	var modulosEnPosicion = 0
+	for c in get_children():
+		if c.enPosicion:
+			modulosEnPosicion += 1
+	
+	if modulosEnPosicion >= get_child_count():
+		print("HOLAAAAAAAAAAA")

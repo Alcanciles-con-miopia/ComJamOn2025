@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvhpv2rditcx8"]
+
+[ext_resource type="Script" uid="uid://bs3fvn8jic5bx" path="res://scenes/Avanzar/fondo_automata.gd" id="1_xlvd5"]
+
+[node name="FondoAutomata" type="Sprite2D"]
+script = ExtResource("1_xlvd5")
