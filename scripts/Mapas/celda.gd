@@ -7,8 +7,8 @@ var id: Vector2
 var visible: bool
 
 func _ready() -> void:
-	$CuerpoCelda/ColliderCelda.shape.size.x = Global.cellSize
-	$CuerpoCelda/ColliderCelda.shape.size.y = Global.cellSize
+	$CuerpoCelda/ColliderCelda.shape.size.x = Global.cellSize/4
+	$CuerpoCelda/ColliderCelda.shape.size.y = Global.cellSize/4
 	pass
 
 func get_state() -> bool:
