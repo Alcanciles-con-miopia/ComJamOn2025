@@ -22,7 +22,6 @@ func setState(newState: Global.cellState) -> void:
 func setVisible(newVis: bool) -> void:
 	visible = newVis
 	$ImagenCelda.visible = newVis
-	print("hola")
 
 func getId() -> Vector2:
 	return id
