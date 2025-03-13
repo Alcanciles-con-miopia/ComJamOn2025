@@ -7,7 +7,12 @@ func _ready() -> void:
 func _pressed() -> void:
 	if Global.CurrentEdad < 4:
 		Global.CurrentEdad += 1
-		Global.PiezasDesbl += 1
+		
+		if Global.CurrentEdad == 1:
+			Global.PiezasDesbl += 2
+		elif Global.CurrentEdad == 2:
+			Global.PiezasDesbl += 1
+		
 		Global.evolve.emit()
 		$"../Creador de Celdas".actualizeMatrix(Global.CurrentEdad) # Para que aparezcan las siguientes.
 	else:

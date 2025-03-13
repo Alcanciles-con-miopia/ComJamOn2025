@@ -16,7 +16,7 @@ func instantiate_inventario() -> void:
 			remove_child(n)
 			n.queue_free()
 	
-	for i in range(Global.PiezasDesbl-1):
+	for i in range(Global.PiezasDesbl):
 		instantiate_item(Global.windowX*2/3 - Global.PiezasDesbl * 38 / 2 + 38 * i, i)
 
 func instantiate_item(x_pos, i) -> void:
@@ -29,4 +29,4 @@ func instantiate_item(x_pos, i) -> void:
 
 func add_piezas() -> void:
 	for i in range(Global.PiezasDesbl-1):
-		Global.Inventario
+		Global.Inventario[i] += 1
