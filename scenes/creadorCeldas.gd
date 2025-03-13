@@ -8,12 +8,12 @@ var cell = preload("res://scenes/Matrix/celda.tscn")
 func _ready():
 	_createMatrix()
 	print(matrix[0][0].getId())
-	actualizeMatrix(matrix,Global.initialCells)
-	actualizeMatrix(matrix,Global.expansion1)
-	actualizeMatrix(matrix,Global.expansion2)
-	actualizeMatrix(matrix,Global.expansion3)
-	actualizeMatrix(matrix,Global.expansion4)
-	actualizeMatrix(matrix,Global.expansion5)
+	actualizeMatrix(Global.initialCells)
+	#actualizeMatrix(Global.expansion1)
+	#actualizeMatrix(Global.expansion2)
+	#actualizeMatrix(Global.expansion3)
+	#actualizeMatrix(Global.expansion4)
+	#actualizeMatrix(Global.expansion5)
 	# Probando metodos de celda.gd
 	#matrix[0][1].position.y += 50
 	#matrix[5][0].position.x += 50
@@ -47,7 +47,7 @@ func _createMatrix() -> void:
 			print("Celda: ", " ", i, " ", j)
 	print("Num celdas: ", $".".get_child_count())
 
-func actualizeMatrix(nMatrix: Array, newExpansion: Array) -> Array:
-	for i in range(0,newExpansion.size()):
-		nMatrix[newExpansion[i].x][newExpansion[i].y].setVisible(true)
-	return nMatrix
+func actualizeMatrix(newExpansion: Array) -> void:
+	print("Actualizacion de celdas.")
+	for i in range(0, newExpansion.size()):
+		matrix[newExpansion[i].x][newExpansion[i].y].setVisible(true)

@@ -8,5 +8,6 @@ func _pressed() -> void:
 	if Global.CurrentEdad < 4:
 		Global.CurrentEdad += 1
 		Global.evolve.emit()
+		$"../Creador de Celdas".actualizeMatrix(Global.expansions[Global.CurrentEdad])
 	else:
 		print("FINAL")
