@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c72jvipivw3ju"]
+[gd_scene load_steps=2 format=3 uid="uid://bktyix0kv3khm"]
 
-[ext_resource type="PackedScene" path="res://celda.tscn" id="1_2ly7r"]
+[ext_resource type="PackedScene" uid="uid://l2ddglorsawq" path="res://celda.tscn" id="1_2ly7r"]
 
 [node name="ScenaPaigro" type="Node2D"]
 

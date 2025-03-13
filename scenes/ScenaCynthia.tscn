@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs3xxdnlfut34"]
+[gd_scene load_steps=4 format=3 uid="uid://dxj58d4l2bcl0"]
 
 [ext_resource type="Script" uid="uid://cwvcjnhdcqf2n" path="res://scripts/arbol/arbol.gd" id="1_xl0sr"]
 [ext_resource type="Texture2D" uid="uid://be3ugp7qw5to8" path="res://assets/images/punto.png" id="2_fq7ma"]

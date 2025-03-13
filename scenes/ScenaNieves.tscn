@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://vrgyjl7ypn7c" path="res://scenes/Piezas/Pieza.tscn" id="2_qwlru"]
 [ext_resource type="PackedScene" uid="uid://l2ddglorsawq" path="res://celda.tscn" id="3_78lqt"]
-[ext_resource type="Script" path="res://scripts/inventario/Inventario.gd" id="3_x0rob"]
+[ext_resource type="Script" uid="uid://b2ulmmobdk62" path="res://scripts/inventario/Inventario.gd" id="3_x0rob"]
 
 [node name="ScenaNieves" type="Node2D"]
 

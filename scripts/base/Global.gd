@@ -6,6 +6,10 @@ signal on_enable(scene)
 signal on_disable(scene)
 signal on_game_end()
 
+#árbol
+signal grow_branch(branch) #para cuando confirmas y la rama crece
+signal feedback_branch(branch) #solo para el feedback al poner una pieza
+
 enum Scenes { SPLASH, MAIN_MENU, INTRO, GAME, CREDITS, NULL}
 
 var gms
