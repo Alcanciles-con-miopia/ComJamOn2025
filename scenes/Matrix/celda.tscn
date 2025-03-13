@@ -1,20 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdb0khef2y231"]
 
 [ext_resource type="Script" uid="uid://lmxi7y2gijuf" path="res://scripts/Mapas/celda.gd" id="1_hub43"]
-[ext_resource type="Texture2D" uid="uid://dsk0j7mtwsuv8" path="res://assets/images/alcancilito.png" id="2_jidy4"]
+[ext_resource type="Texture2D" uid="uid://jms7ncqqto1s" path="res://assets/images/celdaProv.png" id="2_hub43"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssuno"]
-size = Vector2(100, 100)
+size = Vector2(128, 128)
 
 [node name="Celda" type="Node2D"]
 script = ExtResource("1_hub43")
 
 [node name="ImagenCelda" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_jidy4")
+texture = ExtResource("2_hub43")
 
 [node name="CuerpoCelda" type="Area2D" parent="."]
 
 [node name="ColliderCelda" type="CollisionShape2D" parent="CuerpoCelda"]
 shape = SubResource("RectangleShape2D_ssuno")
-debug_color = Color(0.875072, 0.466138, 9.62615e-07, 1)
+debug_color = Color(0.87451, 0.466667, 0, 0)
