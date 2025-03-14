@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bronsjohbdjpq"]
+[gd_scene load_steps=5 format=3 uid="uid://bronsjohbdjpq"]
 
 [ext_resource type="Script" uid="uid://csgwo6cqwax3g" path="res://scripts/inventario/ItemInventario.gd" id="1_jj3tv"]
 [ext_resource type="Texture2D" uid="uid://ba4saabpnyihh" path="res://assets/images/iconPieza.png" id="1_nssk3"]
+[ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="3_nssk3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jj3tv"]
 bg_color = Color(0.447313, 0.614529, 0.804017, 1)
@@ -41,6 +42,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nssk3")
 theme_override_font_sizes/font_size = 80
 text = "Filosofía"
 

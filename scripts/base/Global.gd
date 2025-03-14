@@ -133,11 +133,11 @@ var Inventario = [4,4,4,4,4,4]
 var FeedbackText = ["Entorno", "Lenguas", "Artes", "Lógica", "Historia", "Filosofía"]
 var FeedbackColor = [
 	Color(0.427, 0.851, 0.49), 
-	Color(0.41, 0.694, 0.851), 
+	Color(0.878, 0.522, 0.286), 
 	Color(0.733, 0.408, 0.851), 
-	Color(0.82, 0.271, 0.271), 
-	Color(0.745, 0.769, 0.18),
-	Color(0.278, 0.271, 0.82)]
+	Color(0.325, 0.655, 0.871), 
+	Color(0.98, 0.847, 0.259),
+	Color(0.929, 0.376, 0.408)]
 
 # - Matriz de juego y celdas:
 var cellSize: float = 50 # Tamanyo de cada celda en x e y.
