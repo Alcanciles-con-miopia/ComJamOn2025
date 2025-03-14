@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr33c8imfaurg"]
+[gd_scene load_steps=8 format=3 uid="uid://cr33c8imfaurg"]
 
 [ext_resource type="Texture2D" uid="uid://burbk5nmn1kdj" path="res://assets/images/guias.png" id="1_2s6wm"]
 [ext_resource type="Script" uid="uid://b2ulmmobdk62" path="res://scripts/inventario/Inventario.gd" id="2_2v2om"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bs3fvn8jic5bx" path="res://scenes/Avanzar/fondo_automata.gd" id="5_2v2om"]
 [ext_resource type="Texture2D" uid="uid://d4hw2864dqgs2" path="res://assets/images/automataBEBE.png" id="5_oxxir"]
 [ext_resource type="Script" uid="uid://bqyu4s0syhkxy" path="res://scenes/creadorCeldas.gd" id="6_oxxir"]
+[ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="7_8m4t8"]
 
 [node name="ScenaNieves2" type="Node2D"]
 
@@ -35,3 +36,6 @@ script = ExtResource("5_2v2om")
 script = ExtResource("6_oxxir")
 
 [node name="Piezas" type="Node2D" parent="."]
+
+[node name="Arbol" parent="." instance=ExtResource("7_8m4t8")]
+position = Vector2(-364, -75)

@@ -19,7 +19,7 @@ colors = PackedColorArray(0.168627, 0.0784314, 0, 1, 0.913725, 0.819608, 0.22745
 [node name="Arbol" type="Node2D"]
 script = ExtResource("1_00qcm")
 
-[node name="Lineas" type="Node" parent="."]
+[node name="Lineas" type="Node2D" parent="."]
 
 [node name="Medio" type="Line2D" parent="Lineas"]
 position = Vector2(581, 533)

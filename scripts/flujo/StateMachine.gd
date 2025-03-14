@@ -45,8 +45,6 @@ func _input(event):
 # 		current_scente = next_scene
 
 func _on_game_end():
-	sfx_3.stream = load("res://sonido/pop.mp3")
-	sfx_3.play()
 	Global.change_scene(Global.Scenes.CREDITS)
 
 func _on_transition() -> void: #fade in
@@ -61,7 +59,7 @@ func _on_fade_end() -> void: #justo antes del fadeout, la idea es que esto sea u
 	scenes[Global.current_scene].process_mode = Node.PROCESS_MODE_DISABLED
 
 	# escena a encender
-	print("next: ", Global.next_scene, " ", scenes[Global.next_scene])
+	#print("next: ", Global.next_scene, " ", scenes[Global.next_scene])
 	scenes[Global.next_scene].visible = true
 	scenes[Global.next_scene].on_enable()
 	scenes[Global.next_scene].process_mode = Node.PROCESS_MODE_INHERIT
