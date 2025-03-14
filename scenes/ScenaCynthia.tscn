@@ -11,4 +11,4 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Arbol" parent="." instance=ExtResource("1_xl0sr")]
-position = Vector2(581, 533)
+position = Vector2(-42, -48)

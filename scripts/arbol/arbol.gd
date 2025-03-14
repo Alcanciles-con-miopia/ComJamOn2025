@@ -2,8 +2,7 @@ extends Node2D
 enum Ramas { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
 var current_branch = Ramas.MEDIO #solo para debugging
 
-@onready var ramas : Array = [$Lineas/Medio, $Lineas/Lengua, $Lineas/Creativo]
-#, $Lineas/Logica, $Lineas/Historia, $Lineas/Filo]
+@onready var ramas : Array = [$Lineas/Medio, $Lineas/Lengua, $Lineas/Creativo, $Lineas/Logica, $Lineas/Historia, $Lineas/Filo]
 
 func _ready() -> void:
 	#print(puntos[Ramas.MEDIO][1])
@@ -18,11 +17,11 @@ func _input(event):
 		Global.feedback_branch.emit(current_branch)
 	if event.is_action_pressed("cambiar rama derecha"):
 		current_branch += 1;
-		current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.CREATIVO)
+		current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.FILOSOFIA)
 		print("Current branch: ", current_branch)
 	if event.is_action_pressed("cambiar rama izquierda"):
 		current_branch -= 1;
-		current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.CREATIVO)
+		current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.FILOSOFIA)
 		print("Current branch: ", current_branch)
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
