@@ -7,7 +7,7 @@
 [ext_resource type="Gradient" uid="uid://bkmj5j2vltp72" path="res://scripts/arbol/gradiente_verde.tres" id="5_dmsxo"]
 [ext_resource type="Gradient" uid="uid://djvjy4u73nc4m" path="res://scripts/arbol/gradiente_naranja.tres" id="6_lo5rv"]
 [ext_resource type="Gradient" uid="uid://civ6w0mwrbohb" path="res://scripts/arbol/gradiente_morado.tres" id="7_w0l1a"]
-[ext_resource type="Gradient" path="res://scripts/arbol/gradiente_azul.tres" id="8_rksds"]
+[ext_resource type="Gradient" uid="uid://tejun7wl44tj" path="res://scripts/arbol/gradiente_azul.tres" id="8_rksds"]
 [ext_resource type="Gradient" uid="uid://bqedxfai4h1hn" path="res://scripts/arbol/gradiente_amarillo.tres" id="9_3cbeq"]
 [ext_resource type="Gradient" uid="uid://wl1nevpm1nxl" path="res://scenes/arbol/gradiente_rojo.tres" id="10_evprl"]
 
