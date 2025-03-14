@@ -97,8 +97,8 @@ func pieceExit(tipo: TipoPieza) -> void:
 
 # ---- GAME ----
 # --- Funcionalidad y logica
-var windowX
-var windowY
+var windowX = 1152.0
+var windowY = 598.0
 
 # - Draggables
 var clicked: bool = false
