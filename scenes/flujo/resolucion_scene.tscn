@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu7xf1aayujdy"]
+[gd_scene load_steps=3 format=3 uid="uid://bu7xf1aayujdy"]
 
 [ext_resource type="Script" uid="uid://ctt0y1qp3w13r" path="res://scripts/flujo/Resolucion.gd" id="1_vix67"]
+[ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="2_hertv"]
 
 [node name="Resolucion" type="Control"]
 layout_mode = 3
@@ -50,12 +51,46 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -386.0
-offset_top = 148.0
+offset_top = -319.0
 offset_right = 388.0
-offset_bottom = 239.0
+offset_bottom = -228.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "RESULTADO"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Arbol" parent="." instance=ExtResource("2_hertv")]
+position = Vector2(-575, -317)
+es_resolucion = true
+
+[node name="Porcentajes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cono" type="Label" parent="Porcentajes"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Logica" type="Label" parent="Porcentajes"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Lengua" type="Label" parent="Porcentajes"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Historia" type="Label" parent="Porcentajes"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Filo" type="Label" parent="Porcentajes"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Creativo" type="Label" parent="Porcentajes"]
+offset_right = 40.0
+offset_bottom = 23.0

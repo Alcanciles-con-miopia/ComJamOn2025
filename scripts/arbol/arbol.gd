@@ -2,6 +2,7 @@ extends Node2D
 enum Ramas { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
 var current_branch = Ramas.MEDIO #solo para debugging
 
+@export var es_resolucion = false;
 @onready var ramas : Array = [$Lineas/Medio, $Lineas/Lengua, $Lineas/Creativo, $Lineas/Logica, $Lineas/Historia, $Lineas/Filo]
 @onready var feedback_ramas : Array = [$Feedback/Medio, $Feedback/Lengua, $Feedback/Creativo, $Feedback/Logica, $Feedback/Historia, $Feedback/Filo]
 var anim_dur = 0.3
@@ -13,10 +14,11 @@ func _ready() -> void:
 	Global.feedback_unbranch.connect(on_branch_receed)
 	
 	for i in 6:
-		grow_branch(current_branch, Global.arbol[current_branch], true)
-		#await get_tree().create_timer(0.05).timeout
-		grow_branch(current_branch, Global.arbol[current_branch], false)
-		current_branch += 1;
+		if es_resolucion:
+			grow_branch(current_branch, 100, true)
+			await get_tree().create_timer(0.1).timeout
+			grow_branch(current_branch, Global.arbol[current_branch], false)
+			current_branch += 1;
 	pass
 
 func _input(event):
@@ -61,3 +63,5 @@ func grow_branch(rama, puntos, feedback):
 		else:
 			ramas[rama].create_point()
 		await get_tree().create_timer(anim_dur).timeout
+		Global.grow_branch.emit(rama)
+	print("he acabado de crecer inicialmente")

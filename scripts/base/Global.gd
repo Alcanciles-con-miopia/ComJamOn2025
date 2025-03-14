@@ -10,6 +10,7 @@ signal on_game_end()
 signal grow_branch(branch, points) #para cuando confirmas y la rama crece
 signal feedback_branch(branch, points) #solo para el feedback al poner una pieza
 signal feedback_unbranch(branch, points) #solo para el feedback al poner una pieza
+signal resultado_grown(branch)
 
 # crecer
 signal evolve() # para cuando crezca el automata
