@@ -49,6 +49,7 @@ points = PackedVector2Array(-1, -5, 38, -6, 39, -29, 51, -59, 97, -69, 81, -96, 
 width_curve = ExtResource("2_ibh5h")
 default_color = Color(0, 1, 0, 1)
 gradient = SubResource("Gradient_mesen")
+joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("3_l7xxu")

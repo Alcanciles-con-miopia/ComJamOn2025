@@ -13,7 +13,7 @@ signal feedback_branch(branch) #solo para el feedback al poner una pieza
 # crecer
 signal evolve() # para cuando crezca el automata
 
-enum Scenes { SPLASH, MAIN_MENU, INTRO, GAME, CREDITS, NULL}
+enum Scenes { SPLASH, MAIN_MENU, INTRO, GAME, RESOLUCION, CREDITS, NULL}
 
 var gms 
 var sfx

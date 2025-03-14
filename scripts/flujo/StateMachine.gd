@@ -36,7 +36,7 @@ func _input(event):
 	if event.is_action_pressed("5"):
 		Global.change_scene(Global.Scenes.CREDITS)
 	if event.is_action_pressed("6"):
-		Global.change_scene(Global.Scenes.NULL)
+		Global.change_scene(Global.Scenes.RESOLUCION)
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 
