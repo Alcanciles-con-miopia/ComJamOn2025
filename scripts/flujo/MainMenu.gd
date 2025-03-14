@@ -9,3 +9,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func on_enable():
+	print("hola")
+	# label.text = tr("INTRODUCCION")
+	# Global.sfx.stream= load("res://sonido/monologoIntroduccion.mp3")
+	# Global.sfx.play()
+	pass

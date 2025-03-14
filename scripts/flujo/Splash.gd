@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 
 
 func on_enable():
+	print("hHOOOOLA")
 	pass
 
 func on_disable():

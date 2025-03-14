@@ -39,10 +39,10 @@ func _pressed() -> void:
 		# Instanciamos la pieza
 		var piezaObj = pieza.instantiate()
 		get_node("../../Piezas").add_child(piezaObj)
-		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
-
 		piezaObj.global_position.x = global_position.x
 		piezaObj.global_position.y = global_position.y - 100
+		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
+
 		
 	else:
 		tween.tween_property(self, "scale", Vector2(0.03,0.03), 0.08)

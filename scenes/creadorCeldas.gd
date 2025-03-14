@@ -7,10 +7,12 @@ var cell = preload("res://scenes/Matrix/celda.tscn")
 
 # Start del creador de celdas.
 func _ready():
+	pass
+	
+func initialize() -> void:
 	_createMatrix()
 	print(matrix[0][0].getId())
 	actualizeMatrix(0)
-	pass
 
 # Devuelve la matriz.
 func getMatrix()->Array:
