@@ -114,3 +114,7 @@ var ramaFilo = 		{ nombre = "Filosofia",	punt = 0 }
 var arbol = [ramaMedio.punt, ramaLengua.punt, ramaCreativo.punt, ramaLogica.punt, ramaHistoria.punt, ramaFilo.punt]	
 # puntuacion max de una rama
 const ramaMax: int = 10
+
+# - Signales de las piezas:
+signal on_piece_enter(tipo: TipoPieza) # Cuando la pieza se coloca.
+signal on_piece_out # Cuando la pieza se quita.
