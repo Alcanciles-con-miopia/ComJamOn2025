@@ -36,7 +36,6 @@ func ocupar_celda() -> void :
 func desocupar_celda() ->void:
 	if celda != null:
 		celda.setState(Global.cellState.POTENTIAL_OCCUPED_STATE)
-	
 
 func bloquear_modulo() -> void:
 	bloqueada = true

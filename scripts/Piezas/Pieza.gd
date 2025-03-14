@@ -224,4 +224,4 @@ func suelta() -> bool:
 func bloquear_pieza() -> void:
 	#print("Bloquear pieza")
 	for c in get_children():
-		c.ocupar_celda()
+		c.bloquear_modulo()
