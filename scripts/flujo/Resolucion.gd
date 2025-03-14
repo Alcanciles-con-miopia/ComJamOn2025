@@ -18,3 +18,8 @@ func on_branch_grown(rama):
 	tween.tween_property(porcentajes[rama], "modulate", Color.WHITE, 1).set_delay(1)
 	#porcentajes[rama].
 	pass
+
+
+func _on_button_button_down() -> void:
+	Global.change_scene(Global.Scenes.CREDITS)
+	pass # Replace with function body.
