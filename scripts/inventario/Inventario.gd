@@ -15,10 +15,10 @@ func instantiate_inventario() -> void:
 	
 	for i in range(Global.PiezasDesbl):
 		Global.windowX = get_window().size.x
-		instantiate_item((get_window().size.x)*2/3 - Global.PiezasDesbl * 38 / 2 + 45 * i, i)
+		instantiate_item(1152*2/3 - Global.PiezasDesbl * 38 / 2 + 45 * i, i)
 
 func instantiate_item(x_pos, i) -> void:
-	var actualPos = Vector2(0,get_window().size.y-50)
+	var actualPos = Vector2(0,598.0)
 	actualPos.x = x_pos
 	var pieza = item.instantiate()
 	pieza.tipo = i
