@@ -17,13 +17,19 @@ func _ready() -> void:
 	panel_container.visible = false
 
 	label.text = rama_conocimiento
+	
+	
 
 var pieza = preload("res://scenes/Piezas/Pieza.tscn")
 
 func _pressed() -> void:
+	var tween = create_tween()
+	
 	if Global.Inventario[tipo] > 0:
-		var tween = create_tween()
 		tween.tween_property(self, "scale", Vector2(1.4,1.4), 0.08)
+		
+		var tween2 = create_tween()
+		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
 		
 		# Actualizamos la cantidad
 		print(Global.Inventario[tipo])
@@ -35,21 +41,37 @@ func _pressed() -> void:
 		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
 	
 	else:
+		tween.tween_property(self, "scale", Vector2(1,1), 0.08)
+		var tween2 = create_tween()
+		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
 		print("no quedan piezas")
 	
 func _on_button_up():
 	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector2(1.05,1.05), 0.1)
+	if Global.Inventario[tipo] > 0:
+		var tween2 = create_tween()
+		tween.tween_property(self, "scale", Vector2(1.05,1.05), 0.1)
+		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
+	else:
+		var tween2 = create_tween()
+		tween.tween_property(self, "scale", Vector2(1,1), 0.1)
+		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
 
 func _on_mouse_entered():
+	panel_container.visible = true
 	var tween = create_tween()
 	var tween2 = create_tween()
-	tween2.tween_property(panel_container, "rotation_degrees", -5, 0.1)
-	tween.tween_property(self, "scale", Vector2(1.05,1.05), 0.1)
-	tween.tween_property(self, "rotation_degrees", 2, 0.1)
-	tween2.tween_property(panel_container, "rotation_degrees", -2, 0.2)
-	panel_container.visible = true
-
+	
+	if Global.Inventario[tipo] > 0:
+		tween2.tween_property(panel_container, "rotation_degrees", -5, 0.1)
+		tween.tween_property(self, "scale", Vector2(1.05,1.05), 0.1)
+		tween.tween_property(self, "rotation_degrees", 2, 0.1)
+		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.2)
+	else:
+		tween2.tween_property(panel_container, "rotation_degrees", 0, 0.1)
+		tween.tween_property(self, "scale", Vector2(1,1), 0.1)
+		tween.tween_property(self, "rotation_degrees", 0, 0.1)
+		
 func _on_mouse_exited():
 	var tween = create_tween()
 	var tween2 = create_tween()
