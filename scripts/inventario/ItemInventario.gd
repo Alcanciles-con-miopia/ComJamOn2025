@@ -8,8 +8,14 @@ class_name ItemInventario
 
 @export var tipo: Global.TipoPieza
 
+@export var color: Color
+
 func _ready() -> void:
+	var styleBox: StyleBoxFlat = panel_container.get_theme_stylebox("panel").duplicate()
+	panel_container.add_theme_stylebox_override("panel", styleBox)
+	styleBox.set("bg_color", color)
 	panel_container.visible = false
+
 	label.text = rama_conocimiento
 
 var pieza = preload("res://scenes/Piezas/Pieza.tscn")
