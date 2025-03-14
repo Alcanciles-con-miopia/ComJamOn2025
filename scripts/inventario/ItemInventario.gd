@@ -9,6 +9,10 @@ class_name ItemInventario
 
 @export var tipo: Global.TipoPieza
 
+func _process(delta: float) -> void:
+	if Global.Inventario[tipo] <= 0:
+		modulate = Color(1.0, 1.0, 1.0, 0.5)
+
 func _ready() -> void:
 	var styleBox: StyleBoxFlat = panel_container.get_theme_stylebox("panel").duplicate()
 	panel_container.add_theme_stylebox_override("panel", styleBox)
@@ -39,7 +43,6 @@ func _pressed() -> void:
 		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
 	
 	else:	
-		modulate = Color(1.0, 1.0, 1.0, 0.5)
 		tween.tween_property(self, "scale", Vector2(0.03,0.03), 0.08)
 		var tween2 = create_tween()
 		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
