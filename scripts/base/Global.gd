@@ -117,4 +117,4 @@ const ramaMax: int = 10
 
 # - Signales de las piezas:
 signal on_piece_enter(tipo: TipoPieza) # Cuando la pieza se coloca.
-signal on_piece_out # Cuando la pieza se quita.
+signal on_piece_exit(tipo: TipoPieza) # Cuando la pieza se quita.

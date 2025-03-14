@@ -187,6 +187,8 @@ func exit_Pieza() -> void:
 func coge() -> void:
 	print(global_position)
 	isThisClicked = true
+	
+	Global.on_piece_exit.emit(tipo)
 
 func suelta() -> bool:
 	isThisClicked = false
@@ -206,6 +208,8 @@ func suelta() -> bool:
 		# Ocupamos lac celdas
 		for c in get_children():
 			c.ocupar_celda()
+		
+		Global.on_piece_enter.emit(tipo)
 		
 		return true
 	
