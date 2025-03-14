@@ -9,7 +9,7 @@ func _ready() -> void:
 	#print(puntos[Ramas.MEDIO][1])
 	Global.grow_branch.connect(on_branch_grow)
 	Global.feedback_branch.connect(on_branch_feed)
-	Global.feedback_unbranch.connect(on_branch_feed)
+	Global.feedback_unbranch.connect(on_branch_receed)
 	pass
 
 func _input(event):
@@ -30,17 +30,22 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 
-func on_branch_grow(rama) -> void:
+func on_branch_grow(rama, puntos) -> void:
 	#print("Branch grow: ", rama)
 	Global.arbol[rama] += 1;
 	print("Nivel de la rama ", rama, ": ", Global.arbol[rama])
 	ramas[rama].create_point()
 	pass
 	
-func on_branch_feed() -> void:
+func on_branch_feed(rama, puntos) -> void:
 	print("Branch feed")
+	for i in puntos:
+		feedback_ramas[rama].create_point()
+		await get_tree().create_timer(0.5).timeout
 	pass
 	
-func on_branch_receed() -> void:
-	print ("Branch receed")
+func on_branch_receed(rama, puntos) -> void:
+	Global.arbol[rama] -= 1
+	print("Branch receed")
+	feedback_ramas[rama].delete_point()
 	pass
