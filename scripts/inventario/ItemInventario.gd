@@ -14,6 +14,7 @@ func _ready() -> void:
 	panel_container.add_theme_stylebox_override("panel", styleBox)
 	styleBox.set("bg_color", color)
 	panel_container.visible = false
+	
 
 	label.text = rama_conocimiento
 
