@@ -74,6 +74,9 @@ enum TipoPieza { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
 var PiezasDesbl: int = 3
 var Inventario = [4,4,4,4,4,4]
 
+# - Hover
+var FeedbackText = ["Entorno", "Lenguas", "Artes", "Lógica", "Historia", "Filosofía"]
+
 # - Matriz de juego y celdas:
 var cellSize: float = 50 # Tamanyo de cada celda en x e y.
 var cellOfset: float = 0 # Offset entre las celdas.

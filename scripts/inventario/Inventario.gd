@@ -24,6 +24,7 @@ func instantiate_item(x_pos, i) -> void:
 	actualPos.x = x_pos
 	var pieza = item.instantiate()
 	pieza.tipo = i
+	pieza.rama_conocimiento = Global.FeedbackText[i]
 	pieza.global_position = actualPos
 	add_child(pieza)
 

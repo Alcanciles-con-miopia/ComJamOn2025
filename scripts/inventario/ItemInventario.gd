@@ -1,10 +1,16 @@
 extends Button
 class_name ItemInventario
 
-@export var tipo:Global.TipoPieza
+# para hover:
+@export_multiline var rama_conocimiento: String
+@onready var label = $PanelContainer/MarginContainer/Label
+@onready var panel_container = $PanelContainer
+
+@export var tipo: Global.TipoPieza
 
 func _ready() -> void:
-	pass
+	panel_container.visible = false
+	label.text = rama_conocimiento
 
 var pieza = preload("res://scenes/Piezas/Pieza.tscn")
 
@@ -22,3 +28,8 @@ func _pressed() -> void:
 	else:
 		print("no quedan piezas")
 	
+func _on_mouse_entered():
+	panel_container.visible = true
+
+func _on_mouse_exited():
+	panel_container.visible = false
