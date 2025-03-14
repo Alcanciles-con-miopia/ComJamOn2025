@@ -48,7 +48,7 @@ func _on_button_up():
 	var tween = create_tween()
 	if Global.Inventario[tipo] > 0:
 		var tween2 = create_tween()
-		tween.tween_property(self, "scale", Vector2(0.08,0.08), 0.1)
+		tween.tween_property(self, "scale", Vector2(0.03,0.03), 0.1)
 		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
 	else:
 		var tween2 = create_tween()
