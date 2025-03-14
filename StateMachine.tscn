@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b6qn383g7pwxp" path="res://scenes/flujo/null_scene.tscn" id="2_v7bwk"]
 [ext_resource type="PackedScene" uid="uid://bx0cn133vx2x4" path="res://scenes/flujo/game_scene.tscn" id="3_ea0l5"]
 [ext_resource type="PackedScene" uid="uid://dy4tygucl1fuu" path="res://scenes/flujo/main_menu.tscn" id="3_mwl0m"]
-[ext_resource type="PackedScene" uid="uid://bu7xf1aayujdy" path="res://scenes/flujo/resolucion_scene.tscn" id="3_ofqfh"]
+[ext_resource type="PackedScene" path="res://scenes/flujo/resolucion_scene.tscn" id="3_ofqfh"]
 [ext_resource type="PackedScene" uid="uid://kuee5s7qpvx2" path="res://scenes/flujo/intro_scene.tscn" id="4_jhmf0"]
 [ext_resource type="PackedScene" uid="uid://dnysdn0d3o7b2" path="res://scenes/flujo/splash_scene.tscn" id="14_aso3l"]
 [ext_resource type="PackedScene" uid="uid://5w0xl8fledrk" path="res://scenes/flujo/fade_scene.tscn" id="17_rgtxn"]
