@@ -88,8 +88,8 @@ func instantiate_creativo() -> void:
 	# De arriba a abajo
 	# 1
 	var actualPos = Vector2(0,0)
-	actualPos.x = actualPos.x - Global.cellSize
-	actualPos.y = actualPos.y + (Global.cellSize / 2)
+	actualPos.x = actualPos.x - (Global.cellSize * 0.8)
+	actualPos.y = actualPos.y + (Global.cellSize / 1.4)
 	var mod = modulo.instantiate()
 	mod.global_position = actualPos
 	add_child(mod)
@@ -134,7 +134,7 @@ func instantiate_logica() -> void:
 func instantiate_historia() -> void:
 	var actualPos = Vector2(0,0)
 	actualPos.x = actualPos.x - (Global.cellSize/2)
-	actualPos.y = actualPos.y + (Global.cellSize)
+	actualPos.y = actualPos.y + (Global.cellSize/3.7)
 	# centro abajo
 	var mod = modulo.instantiate()
 	mod.global_position = actualPos
