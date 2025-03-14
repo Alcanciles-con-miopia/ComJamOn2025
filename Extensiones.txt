@@ -30,3 +30,5 @@ var expansion4: Array = [Vector2(0,0),Vector2(1,0),Vector2(2,0),Vector2(3,0),Vec
 
 # El array de arrays.
 var expansions: Array = [initialCells, expansion1, expansion2, expansion3, expansion4] # Aqui estan todos para ir iterando al pasar de fase vital.
+
+Hola.
