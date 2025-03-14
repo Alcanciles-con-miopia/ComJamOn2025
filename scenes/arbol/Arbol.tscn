@@ -14,12 +14,12 @@
 [node name="Arbol" type="Node2D"]
 script = ExtResource("1_00qcm")
 
-[node name="feedback" type="Node2D" parent="."]
+[node name="Feedback" type="Node2D" parent="."]
 
-[node name="Medio" type="Line2D" parent="feedback"]
+[node name="Medio" type="Line2D" parent="Feedback"]
 modulate = Color(1, 1, 1, 0.768627)
 position = Vector2(581, 530)
-rotation = -0.213523
+rotation = -0.137928
 points = PackedVector2Array(-1, -3, -30, -5, -32, -33, -61, -38, -53, -72, -90, -92, -92, -124, -133, -146, -120, -164, -113, -182, -139, -190, -159, -199, -143, -226, -167, -257, -191, -263, -175, -286, -198, -295, -210, -305, -208, -330)
 width_curve = ExtResource("2_ibh5h")
 default_color = Color(1, 0, 0, 1)
@@ -29,7 +29,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("3_l7xxu")
 
-[node name="Lengua" type="Line2D" parent="feedback"]
+[node name="Lengua" type="Line2D" parent="Feedback"]
 modulate = Color(1, 1, 1, 0.768627)
 position = Vector2(581, 533)
 rotation = -0.148301
@@ -42,7 +42,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("3_l7xxu")
 
-[node name="Creativo" type="Line2D" parent="feedback"]
+[node name="Creativo" type="Line2D" parent="Feedback"]
 modulate = Color(1, 1, 1, 0.768627)
 position = Vector2(581, 533)
 rotation = 0.240351
@@ -55,11 +55,43 @@ begin_cap_mode = 2
 end_cap_mode = 2
 script = ExtResource("3_l7xxu")
 
+[node name="Logica" type="Line2D" parent="Feedback"]
+position = Vector2(581, 533)
+rotation = -0.170168
+points = PackedVector2Array(-2, -3, -24, -31, -26, -68, -55, -112, -24, -128, -74, -156, -48, -179, -74, -208, -93, -242, -63, -277, -101, -294, -113, -330)
+width_curve = ExtResource("2_ibh5h")
+gradient = ExtResource("3_ibh5h")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("3_l7xxu")
+
+[node name="Historia" type="Line2D" parent="Feedback"]
+position = Vector2(581, 533)
+rotation = -0.0435508
+points = PackedVector2Array(0, -5, 26, -39, 27, -73, 51, -87, 19, -106, 37, -152, 57, -143, 73, -165, 47, -200, 82, -217, 58, -246, 78, -266, 63, -289, 91, -291, 113, -320, 124, -320, 136, -339)
+width_curve = ExtResource("2_ibh5h")
+gradient = ExtResource("3_ibh5h")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("3_l7xxu")
+
+[node name="Filo" type="Line2D" parent="Feedback"]
+position = Vector2(581, 533)
+points = PackedVector2Array(1, -3, 54, -42, 72, -80, 118, -118, 117, -169, 205, -202, 167, -254, 221, -287)
+width_curve = ExtResource("2_ibh5h")
+gradient = ExtResource("3_ibh5h")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("3_l7xxu")
+
 [node name="Lineas" type="Node2D" parent="."]
 
 [node name="Medio" type="Line2D" parent="Lineas"]
 position = Vector2(581, 533)
-rotation = -0.213523
+rotation = -0.137928
 points = PackedVector2Array(-1, -3, -30, -5, -32, -33, -61, -38, -53, -72, -90, -92, -92, -124, -133, -146, -120, -164, -113, -182, -139, -190, -159, -199, -143, -226, -167, -257, -191, -263, -175, -286, -198, -295, -210, -305, -208, -330)
 width_curve = ExtResource("2_ibh5h")
 default_color = Color(1, 0, 0, 1)

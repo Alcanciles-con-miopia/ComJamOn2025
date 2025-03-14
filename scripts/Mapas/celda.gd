@@ -10,11 +10,15 @@ var visible: bool # Si esta visible o no. // Alomejor se peina // o alomejor no 
 func _ready() -> void:
 	$CuerpoCelda/ColliderCelda.shape.size.x = Global.cellSize/100
 	$CuerpoCelda/ColliderCelda.shape.size.y = Global.cellSize/100
-	pass
+	
+	
 
 # Devuelve es estado de la celda.
-func get_is_epty() -> bool:
-	return state == Global.cellState.EMPTY_STATE
+func get_is_empty() -> bool:
+	return state == Global.cellState.EMPTY_STATE or state == Global.cellState.POTENTIAL_OCCUPED_STATE
+
+func get_state() -> Global.cellState:
+	return state
 
 # Cambia el estado de la celda.
 func setState(newState: Global.cellState) -> void:
