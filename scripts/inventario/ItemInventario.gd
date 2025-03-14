@@ -15,7 +15,7 @@ func _ready() -> void:
 	styleBox.set("bg_color", color)
 	panel_container.visible = false
 	
-	panel_container.pivot_offset = Vector2(0, 150)
+	panel_container.pivot_offset = Vector2(0, 170)
 
 	label.text = rama_conocimiento
 
