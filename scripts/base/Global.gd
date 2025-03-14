@@ -75,7 +75,7 @@ enum TipoPieza { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
 var textureCVERDE = load("res://assets/images/casillaVerde.jpg")
 var textureCROJA = load("res://assets/images/casillaRoja.jpg")
 var textureCNARANJA = load("res://assets/images/casillaNaranja.jpg")
-var textureCMORADA = load("res://assets/images/casillaVerde.jpg")
+var textureCMORADA = load("res://assets/images/casillaMorada.jpg")
 var textureCAZUL = load("res://assets/images/casillaAzul.jpg")
 var textureCAMARILLA = load("res://assets/images/casillaAmarilla.jpg")
 var casillaTex = [textureCVERDE, textureCNARANJA, textureCMORADA, textureCAZUL, textureCAMARILLA, textureCROJA]	

@@ -19,13 +19,14 @@ func instantiate_inventario() -> void:
 
 func instantiate_item(x_pos, i) -> void:
 	var actualPos = Vector2(0,get_window().size.y-50)
-	print(get_window().size.y)
 	actualPos.x = x_pos
 	var pieza = item.instantiate()
 	pieza.tipo = i
 	pieza.rama_conocimiento = Global.FeedbackText[i]
 	pieza.color = Global.FeedbackColor[i]
 	pieza.global_position = actualPos
+	pieza.icon = Global.casillaTex[i]
+	pieza.scale = Vector2(0.03,0.03)
 	print(pieza.global_position)
 	add_child(pieza)
 

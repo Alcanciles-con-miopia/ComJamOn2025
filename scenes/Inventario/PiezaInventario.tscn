@@ -25,10 +25,10 @@ rama_conocimiento = "Filosofía"
 [node name="PanelContainer" type="PanelContainer" parent="."]
 z_index = 20
 layout_mode = 0
-offset_left = 20.0
-offset_top = -37.0
-offset_right = 557.0
-offset_bottom = 115.0
+offset_left = 14.0
+offset_top = -91.0
+offset_right = 551.0
+offset_bottom = 61.0
 scale = Vector2(0.2, 0.2)
 theme_override_styles/panel = SubResource("StyleBoxFlat_jj3tv")
 
