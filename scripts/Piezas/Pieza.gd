@@ -4,6 +4,7 @@ extends Control
 var modulo = preload("res://scenes/Piezas/modulo_pieza.tscn")
 
 var offset: Vector2
+var stopPosition: Vector2
 var isThisClicked: bool = false
 var puesta: bool = false
 var clikcDer: bool = false

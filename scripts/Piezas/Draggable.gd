@@ -60,11 +60,8 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		#print("Se ha salido")
 		celda = null
 
-
-func _on_area_2d_mouse_entered() -> void:
+func _on_mouse_entered() -> void:
 	get_parent().enter_Pieza()
 
-
-func _on_area_2d_mouse_exited() -> void:
+func _on_mouse_exited() -> void:
 	get_parent().exit_Pieza()
-	
