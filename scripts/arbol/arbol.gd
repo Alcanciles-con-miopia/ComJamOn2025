@@ -11,6 +11,12 @@ func _ready() -> void:
 	Global.grow_branch.connect(on_branch_grow)
 	Global.feedback_branch.connect(on_branch_feed)
 	Global.feedback_unbranch.connect(on_branch_receed)
+	
+	for i in 6:
+		grow_branch(current_branch, Global.arbol[current_branch], true)
+		#await get_tree().create_timer(0.05).timeout
+		grow_branch(current_branch, Global.arbol[current_branch], false)
+		current_branch += 1;
 	pass
 
 func _input(event):
@@ -19,7 +25,7 @@ func _input(event):
 	if event.is_action_pressed("branch feed"):
 		Global.feedback_branch.emit(current_branch, 2)
 	if event.is_action_pressed("branch unfeed"):
-		Global.feedback_unbranch.emit(current_branch, 1)
+		Global.feedback_unbranch.emit(current_branch, 2)
 	if event.is_action_pressed("cambiar rama derecha"):
 		current_branch += 1;
 		current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.FILOSOFIA)
@@ -32,23 +38,26 @@ func _input(event):
 		get_tree().quit()
 
 func on_branch_grow(rama, puntos) -> void:
-	Global.arbol[rama] += 1;
+	Global.arbol[rama] += puntos;
 	for i in puntos:
 		ramas[rama].create_point()
 		await get_tree().create_timer(anim_dur).timeout
 	pass
 	
 func on_branch_feed(rama, puntos) -> void:
-	print("Branch feed")
-	for i in puntos:
-		feedback_ramas[rama].create_point()
-		await get_tree().create_timer(anim_dur).timeout
+	grow_branch(rama, puntos, true)
 	pass
 	
 func on_branch_receed(rama, puntos) -> void:
-	Global.arbol[rama] -= 1
-	print("Branch receed")
 	for i in puntos:
 		feedback_ramas[rama].delete_point()
 		await get_tree().create_timer(anim_dur).timeout
 	pass
+
+func grow_branch(rama, puntos, feedback):
+	for i in puntos:
+		if feedback:
+			feedback_ramas[rama].create_point()
+		else:
+			ramas[rama].create_point()
+		await get_tree().create_timer(anim_dur).timeout
