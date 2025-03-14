@@ -5,11 +5,13 @@ var modulo = preload("res://scenes/Piezas/modulo_pieza.tscn")
 
 var offset: Vector2
 var isThisClicked: bool = false
+var clikcDer: bool = false
 
 func _input(event: InputEvent) -> void:
 	# Click derecho rota la pieza
-	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed() and clikcDer:
 		rotation += PI/2;
+	
 	if event is InputEventMouseButton:
 		offset = get_global_mouse_position() - get_parent().global_position
 	if isThisClicked and event is InputEventMouseMotion:
@@ -177,20 +179,38 @@ func instantiate_filosofia() -> void:
 	mod.global_position = actualPos
 	add_child(mod)
 
+func enter_Pieza() -> void:
+	clikcDer = true;
+func exit_Pieza() -> void:
+	clikcDer = false;
+
 func coge() -> void:
 	print(global_position)
 	isThisClicked = true
+	
+	Global.on_piece_exit.emit(tipo)
 
-func suelta() -> void:
+func suelta() -> bool:
 	isThisClicked = false
 	var modulosEnPosicion = 0
 	var suma_pos = Vector2.ZERO
 	var nMods = get_child_count()
 	
 	for c in get_children():
-		if c.getINPOS():
+		if c.check_celda():
 			modulosEnPosicion += 1
-			suma_pos += c.celdaDondeColocar()
-	if modulosEnPosicion >= 0:
+			suma_pos += c.celda_donde_colocar()
+		
+	if modulosEnPosicion >= nMods:
 		var nueva_pos = suma_pos / nMods  # media de posiciones de los modulos
 		global_position = nueva_pos
+		
+		# Ocupamos lac celdas
+		for c in get_children():
+			c.ocupar_celda()
+		
+		Global.on_piece_enter.emit(tipo)
+		
+		return true
+	
+	return false
