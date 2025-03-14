@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fj83bi7a8x5q"
-path="res://.godot/imported/automataNINO.PNG-dde3599ec994bebc1c445e42deb7c982.ctex"
+uid="uid://c3gnawg24quqh"
+path="res://.godot/imported/LataJoven.PNG-541963a8348d5ec9c1933e4f107ea983.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/automataNINO.PNG"
-dest_files=["res://.godot/imported/automataNINO.PNG-dde3599ec994bebc1c445e42deb7c982.ctex"]
+source_file="res://assets/images/LataJoven.PNG"
+dest_files=["res://.godot/imported/LataJoven.PNG-541963a8348d5ec9c1933e4f107ea983.ctex"]
 
 [params]
 

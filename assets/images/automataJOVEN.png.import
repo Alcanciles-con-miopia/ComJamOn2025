@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boosgfr4n7iso"
-path="res://.godot/imported/automataJOVEN.png-28978a6d697bb0a4568e13c18dd0b753.ctex"
+uid="uid://drbpaytdsgbwj"
+path="res://.godot/imported/automataJOVEN.PNG-2dfdf907aa880a6a3f775bb56a89dfee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/automataJOVEN.png"
-dest_files=["res://.godot/imported/automataJOVEN.png-28978a6d697bb0a4568e13c18dd0b753.ctex"]
+source_file="res://assets/images/automataJOVEN.PNG"
+dest_files=["res://.godot/imported/automataJOVEN.PNG-2dfdf907aa880a6a3f775bb56a89dfee.ctex"]
 
 [params]
 
