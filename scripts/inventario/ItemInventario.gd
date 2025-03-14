@@ -21,7 +21,6 @@ func _ready() -> void:
 	
 	panel_container.pivot_offset = Vector2(0, 200)
 
-	panel_container.pivot_offset = Vector2(0, 150)
 	label.text = rama_conocimiento
 
 var pieza = preload("res://scenes/Piezas/Pieza.tscn")
