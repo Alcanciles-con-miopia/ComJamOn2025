@@ -89,7 +89,7 @@ var cellSize: float = 50 # Tamanyo de cada celda en x e y.
 var cellOfset: float = 0 # Offset entre las celdas.
 var cellInitPos: Vector2 = Vector2(550, 100) # Posicion inicial de la primera celda.
 var matrixSize: Vector2 = Vector2(10, 10) # Entiendo que esto luego sera leido del json pero de momento aqui esta.
-enum cellState { EMPTY_STATE, OCCUPIED_STATE, NOT_VALID_STATE } # Enum de los estados que puede tener una celda.
+enum cellState { EMPTY_STATE, POTENTIAL_OCCUPED_STATE, OCCUPIED_STATE, NOT_VALID_STATE } # Enum de los estados que puede tener una celda.
 # - Expansion del tablero. Sease [col, fil]
 var debugUnlockAllCells: bool = true # // DEBUG //
 var initialCells: Array = [Vector2(4,4),Vector2(5,4),Vector2(5,5),Vector2(4,5),Vector2(3,5),Vector2(3,4),Vector2(3,3),Vector2(4,3),Vector2(5,3),Vector2(6,3),Vector2(6,4),Vector2(6,5),Vector2(6,6),Vector2(5,6),Vector2(4,6),Vector2(3,6)] # Celdas iniciales
