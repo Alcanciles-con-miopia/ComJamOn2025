@@ -14,9 +14,8 @@ func _ready() -> void:
 	panel_container.add_theme_stylebox_override("panel", styleBox)
 	styleBox.set("bg_color", color)
 	panel_container.visible = false
-	
-	panel_container.pivot_offset = Vector2(0, 150)
 
+	panel_container.pivot_offset = Vector2(0, 150)
 	label.text = rama_conocimiento
 
 var pieza = preload("res://scenes/Piezas/Pieza.tscn")
@@ -26,7 +25,6 @@ func _pressed() -> void:
 	
 	if Global.Inventario[tipo] > 0:
 		tween.tween_property(self, "scale", Vector2(0.08,0.08), 0.08)
-		
 		var tween2 = create_tween()
 		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
 		
@@ -39,6 +37,7 @@ func _pressed() -> void:
 		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
 	
 	else:	
+		modulate = Color(1.0, 1.0, 1.0, 0.5)
 		tween.tween_property(self, "scale", Vector2(0.03,0.03), 0.08)
 		var tween2 = create_tween()
 		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
