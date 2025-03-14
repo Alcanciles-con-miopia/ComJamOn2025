@@ -5,6 +5,7 @@ var modulo = preload("res://scenes/Piezas/modulo_pieza.tscn")
 
 var offset: Vector2
 var isThisClicked: bool = false
+var puesta: bool = false
 var clikcDer: bool = false
 
 func _ready() -> void:
@@ -192,7 +193,9 @@ func coge() -> void:
 	isThisClicked = true
 	for c in get_children():
 		c.desocupar_celda()
-	Global.on_piece_exit.emit(tipo)
+	if puesta:
+		Global.on_piece_exit.emit(tipo)
+		puesta = false
 
 func suelta() -> bool:
 	isThisClicked = false
@@ -214,7 +217,7 @@ func suelta() -> bool:
 			c.ocupar_celda()
 		
 		Global.on_piece_enter.emit(tipo)
-		
+		puesta = true
 		return true
 	return false
 
