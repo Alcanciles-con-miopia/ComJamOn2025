@@ -21,6 +21,7 @@ func _pressed() -> void:
 		Global.evolve.emit()
 		$"../Creador de Celdas".actualizeMatrix(Global.CurrentEdad) # Para que aparezcan las siguientes.
 	else:
+		Global.change_scene(Global.Scenes.RESOLUCION)
 		print("FINAL")
 
 func _on_mouse_exited():
