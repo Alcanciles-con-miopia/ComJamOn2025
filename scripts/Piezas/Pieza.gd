@@ -13,7 +13,7 @@ func _input(event: InputEvent) -> void:
 		rotation += PI/2;
 	
 	if event is InputEventMouseButton:
-		offset = get_global_mouse_position() - get_parent().global_position
+		offset = get_global_mouse_position() - global_position
 	if isThisClicked and event is InputEventMouseMotion:
 		global_position = (event.position - offset)
 
@@ -187,7 +187,8 @@ func exit_Pieza() -> void:
 func coge() -> void:
 	print(global_position)
 	isThisClicked = true
-	
+	for c in get_children():
+		c.desocupar_celda()
 	Global.on_piece_exit.emit(tipo)
 
 func suelta() -> bool:
@@ -212,5 +213,4 @@ func suelta() -> bool:
 		Global.on_piece_enter.emit(tipo)
 		
 		return true
-	
 	return false

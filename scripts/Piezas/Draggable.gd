@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _on_button_down() -> void:
 	if not Global.clicked:
-		print(global_position)
+		#print(global_position)
 		get_parent().coge()
 		Global.clicked = true
 	print(name)
@@ -26,6 +26,10 @@ func check_celda() -> bool:
 func ocupar_celda() -> void :
 	if celda != null:
 		celda.setState(Global.cellState.OCCUPIED_STATE)
+
+func desocupar_celda() ->void:
+	if celda != null:
+		celda.setState(Global.cellState.POTENTIAL_OCCUPED_STATE)
 
 func celda_donde_colocar() -> Vector2:
 	if celda != null:

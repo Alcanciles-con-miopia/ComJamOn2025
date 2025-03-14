@@ -10,8 +10,6 @@ var visible: bool # Si esta visible o no. // Alomejor se peina // o alomejor no 
 func _ready() -> void:
 	$CuerpoCelda/ColliderCelda.shape.size.x = Global.cellSize/100
 	$CuerpoCelda/ColliderCelda.shape.size.y = Global.cellSize/100
-	
-	
 
 # Devuelve es estado de la celda.
 func get_is_empty() -> bool:
