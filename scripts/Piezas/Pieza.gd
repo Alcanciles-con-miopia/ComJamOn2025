@@ -37,6 +37,8 @@ func instantiate_forma(tipoPieza: Global.TipoPieza) -> void:
 			instantiate_historia()
 		Global.TipoPieza.FILOSOFIA:
 			instantiate_filosofia()
+	
+	stopPosition = global_position
 
 func instantiate_medio() -> void:
 	var actualPos = Vector2(0,0)
@@ -218,8 +220,10 @@ func suelta() -> bool:
 			c.ocupar_celda()
 		
 		Global.on_piece_enter.emit(tipo)
+		stopPosition = nueva_pos
 		puesta = true
 		return true
+	global_position = stopPosition
 	return false
 
 func bloquear_pieza() -> void:
