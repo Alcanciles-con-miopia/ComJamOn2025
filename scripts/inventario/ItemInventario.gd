@@ -35,7 +35,13 @@ func _pressed() -> void:
 		print("no quedan piezas")
 	
 func _on_mouse_entered():
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.05,1.05), 0.1)
+	tween.tween_property(self, "rotation_degrees", 2, 0.1)
 	panel_container.visible = true
 
 func _on_mouse_exited():
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1,1), 0.1)
+	tween.tween_property(self, "rotation_degrees", 0, 0.1)
 	panel_container.visible = false

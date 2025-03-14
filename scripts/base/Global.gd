@@ -77,12 +77,12 @@ var Inventario = [4,4,4,4,4,4]
 # - Hover
 var FeedbackText = ["Entorno", "Lenguas", "Artes", "Lógica", "Historia", "Filosofía"]
 var FeedbackColor = [
-	Color(1.0, 0.0, 0.0), 
-	Color(0.0, 1.0, 0.0), 
-	Color(1.0, 1.0, 0.0), 
-	Color(0.0, 1.0, 1.0), 
-	Color(1.0, 0.0, 1.0),
-	Color(0.0, 0.5, 0.5)]
+	Color(0.427, 0.851, 0.49), 
+	Color(0.41, 0.694, 0.851), 
+	Color(0.733, 0.408, 0.851), 
+	Color(0.82, 0.271, 0.271), 
+	Color(0.745, 0.769, 0.18),
+	Color(0.278, 0.271, 0.82)]
 
 # - Matriz de juego y celdas:
 var cellSize: float = 50 # Tamanyo de cada celda en x e y.
