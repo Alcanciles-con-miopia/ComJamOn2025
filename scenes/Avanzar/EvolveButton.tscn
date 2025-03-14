@@ -1,9 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://beqvfn2j5vjsc"]
 
 [ext_resource type="Script" uid="uid://ogc2n2uvrebg" path="res://scripts/Avanzar/evolveButton.gd" id="1_bcjxt"]
-[ext_resource type="Texture2D" uid="uid://be3ugp7qw5to8" path="res://assets/images/punto.png" id="1_lm3am"]
+[ext_resource type="Texture2D" uid="uid://c56gaoo6kq8pe" path="res://assets/images/cadena.png" id="1_lm3am"]
 
 [node name="EvolveButton" type="Button"]
 modulate = Color(0.219235, 0.17738, 0.241102, 0.788235)
+offset_left = 30.0
+offset_top = -426.0
+offset_right = 90.0
+offset_bottom = 531.0
 icon = ExtResource("1_lm3am")
 script = ExtResource("1_bcjxt")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

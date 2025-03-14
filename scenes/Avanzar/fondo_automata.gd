@@ -1,15 +1,26 @@
 extends Sprite2D
 class_name FondoAutomata
 
+@onready var initX = 0
+@onready var initY = 0
+
 func _ready() -> void:
+	initX = self.global_position.x
+	initY = self.global_position.y
 	Global.evolve.connect(change_fondo)
-	Global.windowX = DisplayServer.window_get_size().x
 	texture = Global.edadTex[Global.CurrentEdad]
-	#scale = Vector2(0.5, 0.5)
-	#position.x = texture.get_size().x/2
-	#position.y = texture.get_size().y/2
 
 func change_fondo() -> void:
-	print(Global.CurrentEdad)
 	if Global.CurrentEdad < 5:
-		texture = Global.edadTex[Global.CurrentEdad]
+		var tween = create_tween()
+		tween.tween_property(self, "position", Vector2(191.437, -400.0), 0.3)
+		tween.connect("finished", cambiar_fondo)
+
+func cambiar_fondo() -> void:
+	texture = Global.edadTex[Global.CurrentEdad]
+	var x = self.global_position.x
+	var y = self.global_position.y 
+	global_position = Vector2(x, y-Global.windowY)
+	var tween = create_tween()
+	print(initX)
+	tween.tween_property(self, "position", Vector2(initX, initY), 0.3)

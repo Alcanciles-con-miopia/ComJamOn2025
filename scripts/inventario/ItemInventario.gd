@@ -40,8 +40,8 @@ func _pressed() -> void:
 		var piezaObj = pieza.instantiate()
 		get_node("../../Piezas").add_child(piezaObj)
 		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
-	
-	else:	
+
+	else:
 		tween.tween_property(self, "scale", Vector2(0.03,0.03), 0.08)
 		var tween2 = create_tween()
 		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
