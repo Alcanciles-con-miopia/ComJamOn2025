@@ -63,5 +63,5 @@ func grow_branch(rama, puntos, feedback):
 		else:
 			ramas[rama].create_point()
 		await get_tree().create_timer(anim_dur).timeout
-		Global.grow_branch.emit(rama)
+	Global.resultado_grown.emit(rama)
 	print("he acabado de crecer inicialmente")

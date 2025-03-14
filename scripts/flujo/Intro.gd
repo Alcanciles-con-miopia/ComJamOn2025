@@ -52,9 +52,6 @@ func _input(event):
 			
 
 func on_enable():
-	# label.text = tr("INTRODUCCION")
-	# Global.sfx.stream= load("res://sonido/monologoIntroduccion.mp3")
-	# Global.sfx.play()
 	pass
 
 func on_disable():

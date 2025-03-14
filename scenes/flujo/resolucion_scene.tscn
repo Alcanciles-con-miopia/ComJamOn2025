@@ -39,6 +39,7 @@ offset_bottom = 1490.0
 scale = Vector2(0.239999, 0.239999)
 
 [node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -71,26 +72,56 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Cono" type="Label" parent="Porcentajes"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -289.0
+offset_top = -157.0
+offset_right = -218.0
+offset_bottom = -90.0
+theme_override_font_sizes/font_size = 48
+text = "X%"
 
 [node name="Logica" type="Label" parent="Porcentajes"]
-offset_right = 40.0
-offset_bottom = 23.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -194.0
+offset_top = -157.0
+offset_right = -123.0
+offset_bottom = -90.0
+theme_override_font_sizes/font_size = 48
+text = "X%"
 
 [node name="Lengua" type="Label" parent="Porcentajes"]
-offset_right = 40.0
-offset_bottom = 23.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -68.0
+offset_top = -157.0
+offset_right = 3.0
+offset_bottom = -90.0
+theme_override_font_sizes/font_size = 48
+text = "X%"
 
 [node name="Historia" type="Label" parent="Porcentajes"]
-offset_right = 40.0
-offset_bottom = 23.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 84.0
+offset_top = -157.0
+offset_right = 155.0
+offset_bottom = -90.0
+theme_override_font_sizes/font_size = 48
+text = "X%"
 
 [node name="Filo" type="Label" parent="Porcentajes"]
-offset_right = 40.0
-offset_bottom = 23.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 214.0
+offset_top = -157.0
+offset_right = 285.0
+offset_bottom = -90.0
+theme_override_font_sizes/font_size = 48
+text = "X%"
 
 [node name="Creativo" type="Label" parent="Porcentajes"]
-offset_right = 40.0
-offset_bottom = 23.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 335.0
+offset_top = -157.0
+offset_right = 406.0
+offset_bottom = -90.0
+theme_override_font_sizes/font_size = 48
+text = "X%"
