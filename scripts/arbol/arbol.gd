@@ -3,17 +3,21 @@ enum Ramas { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
 var current_branch = Ramas.MEDIO #solo para debugging
 
 @onready var ramas : Array = [$Lineas/Medio, $Lineas/Lengua, $Lineas/Creativo, $Lineas/Logica, $Lineas/Historia, $Lineas/Filo]
+@onready var feedback_ramas : Array = [$Feedback/Medio, $Feedback/Lengua, $Feedback/Feedback, $Feedback/Logica, $Feedback/Historia, $Feedback/Filo]
 
 func _ready() -> void:
 	#print(puntos[Ramas.MEDIO][1])
 	Global.grow_branch.connect(on_branch_grow)
 	Global.feedback_branch.connect(on_branch_feed)
+	Global.feedback_unbranch.connect(on_branch_feed)
 	pass
 
 func _input(event):
 	if event.is_action_pressed("branch grow"):
 		Global.grow_branch.emit(current_branch)
 	if event.is_action_pressed("branch feed"):
+		Global.feedback_branch.emit(current_branch)
+	if event.is_action_pressed("branch unfeed"):
 		Global.feedback_branch.emit(current_branch)
 	if event.is_action_pressed("cambiar rama derecha"):
 		current_branch += 1;
@@ -35,4 +39,8 @@ func on_branch_grow(rama) -> void:
 	
 func on_branch_feed() -> void:
 	print("Branch feed")
+	pass
+	
+func on_branch_receed() -> void:
+	print ("Branch receed")
 	pass
