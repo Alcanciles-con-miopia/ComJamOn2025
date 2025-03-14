@@ -1,20 +1,26 @@
 extends Button
 class_name Draggable
 
-var enPosicion: bool = false
+var bloqueada: bool = false
 var celda = null
 
 func _ready() -> void:
 	scale = (Global.cellSize * Vector2(1,1)) / icon.get_size()
 
 func _on_button_down() -> void:
+	if bloqueada:
+		return
+	
 	if not Global.clicked:
 		#print(global_position)
 		get_parent().coge()
 		Global.clicked = true
-	print(name)
+	#print(name)
 
 func _on_button_up() -> void:
+	if bloqueada:
+		return
+	
 	get_parent().suelta()
 	
 	if Global.clicked:
@@ -30,6 +36,9 @@ func ocupar_celda() -> void :
 func desocupar_celda() ->void:
 	if celda != null:
 		celda.setState(Global.cellState.POTENTIAL_OCCUPED_STATE)
+
+func bloquear_modulo() -> void:
+	bloqueada = true
 
 func celda_donde_colocar() -> Vector2:
 	if celda != null:

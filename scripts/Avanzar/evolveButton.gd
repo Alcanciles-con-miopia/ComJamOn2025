@@ -16,6 +16,6 @@ func _pressed() -> void:
 		
 		Global.evolve.emit()
 		$"../Creador de Celdas".actualizeMatrix(Global.CurrentEdad) # Para que aparezcan las siguientes.
-		get_parent().print_tree()
+		#get_parent().print_tree()
 	else:
 		print("FINAL")

@@ -7,6 +7,9 @@ var offset: Vector2
 var isThisClicked: bool = false
 var clikcDer: bool = false
 
+func _ready() -> void:
+	Global.evolve.connect(bloquear_pieza)
+
 func _input(event: InputEvent) -> void:
 	# Click derecho rota la pieza
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed() and clikcDer:
@@ -185,7 +188,7 @@ func exit_Pieza() -> void:
 	clikcDer = false;
 
 func coge() -> void:
-	print(global_position)
+	#print(global_position)
 	isThisClicked = true
 	for c in get_children():
 		c.desocupar_celda()
@@ -214,3 +217,8 @@ func suelta() -> bool:
 		
 		return true
 	return false
+
+func bloquear_pieza() -> void:
+	#print("Bloquear pieza")
+	for c in get_children():
+		c.ocupar_celda()
