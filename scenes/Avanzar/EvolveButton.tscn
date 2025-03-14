@@ -4,6 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://be3ugp7qw5to8" path="res://assets/images/punto.png" id="1_lm3am"]
 
 [node name="EvolveButton" type="Button"]
-modulate = Color(0.498039, 0.847059, 0.537255, 1)
+modulate = Color(0.219235, 0.17738, 0.241102, 0.788235)
 icon = ExtResource("1_lm3am")
 script = ExtResource("1_bcjxt")
