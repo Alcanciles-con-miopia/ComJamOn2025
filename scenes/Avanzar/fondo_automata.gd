@@ -13,7 +13,11 @@ func _ready() -> void:
 func change_fondo() -> void:
 	if Global.CurrentEdad < 5:
 		var tween = create_tween()
-		tween.tween_property(self, "position", Vector2(191.437, -400.0), 0.3)
+		tween.tween_property(self, "position", Vector2(191.437, -400.0), 0.5)
+		var tween2 = create_tween()
+		tween2.tween_property(self, "rotation_degrees", -10, 0.2)
+		tween2.tween_property(self, "rotation_degrees", 10, 0.2)
+		tween2.tween_property(self, "rotation_degrees", 0, 0.1)
 		tween.connect("finished", cambiar_fondo)
 
 func cambiar_fondo() -> void:
