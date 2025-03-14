@@ -26,6 +26,8 @@ var coolDown = 0.5
 var startCoolDown = false
 
 func _ready() -> void:
+	on_piece_enter.connect(pieceEnter)
+	on_piece_exit.connect(pieceExit)
 	# change_scene(Scenes.SPLASH)
 	pass
 
@@ -49,6 +51,49 @@ func change_scene(next: Global.Scenes, force = true):
 	if ((current_scene != next || force)and not startCoolDown):
 		startCoolDown = true
 		Global.on_transition_begin.emit()
+#
+func pieceEnter(tipo: TipoPieza) -> void:
+	match tipo:
+		TipoPieza.MEDIO:
+			ramaMedio.punt += 1
+			print("Suma MEDIO")
+		TipoPieza.LENGUA:
+			ramaLengua.punt += 1
+			print("Suma LENGUA")
+		TipoPieza.CREATIVO:
+			ramaCreativo.punt += 1
+			print("Suma CREATIVO")
+		TipoPieza.LOGICA:
+			ramaLogica.punt += 1
+			print("Suma LOGICA")
+		TipoPieza.HISTORIA:
+			ramaHistoria.punt += 1
+			print("Suma HISOTORIA")
+		TipoPieza.FILOSOFIA:
+			ramaFilo.punt += 1
+			print("Suma FILO")
+
+#
+func pieceExit(tipo: TipoPieza) -> void:
+	match tipo:
+		TipoPieza.MEDIO:
+			ramaMedio.punt -= 1
+			print("Resta MEDIO")
+		TipoPieza.LENGUA:
+			ramaLengua.punt -= 1
+			print("Resta LENGUA")
+		TipoPieza.CREATIVO:
+			ramaCreativo.punt -= 1
+			print("Resta CREATIVO")
+		TipoPieza.LOGICA:
+			ramaLogica.punt -= 1
+			print("Resta LOGICA")
+		TipoPieza.HISTORIA:
+			ramaHistoria.punt -= 1
+			print("Resta HISOTORIA")
+		TipoPieza.FILOSOFIA:
+			ramaFilo.punt -= 1
+			print("Resta FILO")
 
 # ---- GAME ----
 # --- Funcionalidad y logica

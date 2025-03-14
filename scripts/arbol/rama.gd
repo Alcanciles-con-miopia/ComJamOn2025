@@ -7,7 +7,7 @@ var next_point = 0;
 var next_position
 
 func _ready() -> void:
-	print("Line size: ", points.size())
+	#print("Line size: ", points.size())
 	full_line = points
 	clear_points() # points = 0
 	
