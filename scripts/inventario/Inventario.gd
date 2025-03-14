@@ -9,8 +9,6 @@ func _ready() -> void:
 
 func instantiate_inventario() -> void:
 	Global.windowX = DisplayServer.window_get_size().x
-	Global.windowY = DisplayServer.window_get_size().y
-	
 	if get_children():
 		for n in get_children():
 			remove_child(n)
@@ -20,6 +18,8 @@ func instantiate_inventario() -> void:
 		instantiate_item(Global.windowX*2/3 - Global.PiezasDesbl * 38 / 2 + 45 * i, i)
 
 func instantiate_item(x_pos, i) -> void:
+	Global.windowY = DisplayServer.window_get_size().y
+	print(Global.windowY)
 	var actualPos = Vector2(0,Global.windowY-50)
 	actualPos.x = x_pos
 	var pieza = item.instantiate()
