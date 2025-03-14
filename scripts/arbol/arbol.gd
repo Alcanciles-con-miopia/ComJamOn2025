@@ -18,7 +18,7 @@ func _input(event):
 	if event.is_action_pressed("branch feed"):
 		Global.feedback_branch.emit(current_branch)
 	if event.is_action_pressed("branch unfeed"):
-		Global.feedback_branch.emit(current_branch)
+		Global.feedback_unbranch.emit(current_branch)
 	if event.is_action_pressed("cambiar rama derecha"):
 		current_branch += 1;
 		current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.FILOSOFIA)

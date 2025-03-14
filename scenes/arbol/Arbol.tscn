@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctwne4c1f753a"]
+[gd_scene load_steps=12 format=3 uid="uid://ctwne4c1f753a"]
 
 [ext_resource type="Script" uid="uid://cwvcjnhdcqf2n" path="res://scripts/arbol/arbol.gd" id="1_00qcm"]
 [ext_resource type="Curve" uid="uid://cvpyivcdhcqbs" path="res://scripts/arbol/branch_width_curve.tres" id="2_ibh5h"]
 [ext_resource type="Gradient" uid="uid://b73vigbklclcc" path="res://scripts/arbol/feedback_gradient.tres" id="3_ibh5h"]
 [ext_resource type="Script" uid="uid://dsn2x32rbtunm" path="res://scripts/arbol/rama.gd" id="3_l7xxu"]
+[ext_resource type="Script" uid="uid://doar0ny440q2o" path="res://scripts/arbol/feedback.gd" id="4_lo5rv"]
 [ext_resource type="Gradient" uid="uid://bkmj5j2vltp72" path="res://scripts/arbol/gradiente_verde.tres" id="5_dmsxo"]
 [ext_resource type="Gradient" uid="uid://djvjy4u73nc4m" path="res://scripts/arbol/gradiente_naranja.tres" id="6_lo5rv"]
 [ext_resource type="Gradient" uid="uid://civ6w0mwrbohb" path="res://scripts/arbol/gradiente_morado.tres" id="7_w0l1a"]
@@ -27,7 +28,7 @@ gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("3_l7xxu")
+script = ExtResource("4_lo5rv")
 
 [node name="Lengua" type="Line2D" parent="Feedback"]
 modulate = Color(1, 1, 1, 0.768627)
@@ -40,7 +41,7 @@ gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("3_l7xxu")
+script = ExtResource("4_lo5rv")
 
 [node name="Creativo" type="Line2D" parent="Feedback"]
 modulate = Color(1, 1, 1, 0.768627)
@@ -53,7 +54,7 @@ gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("3_l7xxu")
+script = ExtResource("4_lo5rv")
 
 [node name="Logica" type="Line2D" parent="Feedback"]
 position = Vector2(581, 533)
@@ -64,7 +65,7 @@ gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("3_l7xxu")
+script = ExtResource("4_lo5rv")
 
 [node name="Historia" type="Line2D" parent="Feedback"]
 position = Vector2(581, 533)
@@ -75,7 +76,7 @@ gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("3_l7xxu")
+script = ExtResource("4_lo5rv")
 
 [node name="Filo" type="Line2D" parent="Feedback"]
 position = Vector2(581, 533)
@@ -85,7 +86,7 @@ gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("3_l7xxu")
+script = ExtResource("4_lo5rv")
 
 [node name="Lineas" type="Node2D" parent="."]
 

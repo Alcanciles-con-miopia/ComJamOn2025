@@ -14,6 +14,12 @@ func _ready() -> void:
 	add_point(full_line[next_point])
 	next_point += 1
 	
+	add_point(full_line[next_point])
+	next_point += 1
+	
+	add_point(full_line[next_point])
+	next_point += 1
+	
 	next_position = full_line[next_point - 1]
 	
 	
@@ -23,6 +29,15 @@ func create_point() -> void:
 	next_point = clamp(next_point, 0, full_line.size() - 1)
 	next_position = full_line[next_point]
 	next_point += 1
+
+func delete_point() -> void:
+	remove_point(full_line[next_point])
+	
+	next_point = clamp(next_point, 0, full_line.size() - 1)
+	next_position = full_line[next_point - 1]
+	next_point -= 1
+	pass
+	
 
 #func _physics_process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
