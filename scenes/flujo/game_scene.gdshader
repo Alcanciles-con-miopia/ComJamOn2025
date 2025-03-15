@@ -26,4 +26,3 @@ void fragment() {
     // Output color with transparency
     COLOR = vec4(vec3(0.5), fog); // Gray fog (0.5 for gray)
 }
-
