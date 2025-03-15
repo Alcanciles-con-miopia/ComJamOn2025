@@ -23,3 +23,6 @@ func on_branch_grown(rama):
 func _on_button_button_down() -> void:
 	Global.change_scene(Global.Scenes.CREDITS)
 	pass # Replace with function body.
+
+func on_enable():
+	$Arbol.animate_tree()

@@ -1,7 +1,5 @@
 extends Line2D
 
-# TODO: feedback, puntos por puntuación, animar al iniciar
-
 var full_line: Array;
 var next_point = 0;
 var next_position
