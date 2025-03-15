@@ -249,6 +249,8 @@ func coge() -> void:
 			c.desocupar_celda()
 	if puesta:
 		puesta = false
+		Global.sfx.stream = load("res://assets/sounds/metal_click.ogg")
+		Global.sfx.play()
 		Global.on_piece_exit.emit(tipo)
 
 func suelta() -> bool:

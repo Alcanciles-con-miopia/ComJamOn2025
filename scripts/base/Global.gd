@@ -19,6 +19,9 @@ enum Scenes { SPLASH, MAIN_MENU, INTRO, GAME, RESOLUCION, CREDITS, NULL}
 
 var gms 
 var sfx
+var sfx2
+var sfx3
+var sfxs = [ sfx, sfx2, sfx3 ]
 var current_scene = Scenes.SPLASH 
 var next_scene = Scenes.SPLASH
 var stage = 0
