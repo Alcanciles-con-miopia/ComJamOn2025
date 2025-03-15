@@ -16,12 +16,14 @@ func _input(event: InputEvent) -> void:
 	# Click derecho rota la pieza
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed() and clikcDer:
 		rotation += PI/2;
-	
+	# Captura la posicion inicial del raton al hacer clic
 	if event is InputEventMouseButton:
 		offset = get_global_mouse_position() - global_position
+	# Si la pieza esta seleccionada y se mueve el raton, actualiza su posicion
 	if isThisClicked and event is InputEventMouseMotion:
 		global_position = (event.position - offset)
 
+# Funcion que instancia la forma de la pieza segun su tipo
 func instantiate_forma(tipoPieza: Global.TipoPieza) -> void:
 	tipo = tipoPieza
 	match tipo:
@@ -186,11 +188,13 @@ func instantiate_filosofia() -> void:
 	mod.global_position = actualPos
 	add_child(mod)
 
+# Funciones que indican cuando el cursor esta sobre la pieza para poderla rotar
 func enter_Pieza() -> void:
 	clikcDer = true;
 func exit_Pieza() -> void:
 	clikcDer = false;
 
+# Funciones que se usan cuando el jugador coge o suelta una pieza
 func coge() -> void:
 	#print(global_position)
 	isThisClicked = true
@@ -202,12 +206,12 @@ func coge() -> void:
 
 func suelta() -> bool:
 	isThisClicked = false
-	var modulosEnPosicion = 0
-	var suma_pos = Vector2.ZERO
-	var nMods = get_child_count()
+	var modulosEnPosicion = 0 # cantidad de modulos colocados en celdas validas
+	var suma_pos = Vector2.ZERO # suma posiciones para sacar el punto medio
+	var nMods = get_child_count() # cantidad de modulos de la pieza
 	
 	for c in get_children():
-		if c.check_celda():
+		if c.check_celda(): # si la celda esta disponible
 			modulosEnPosicion += 1
 			suma_pos += c.celda_donde_colocar()
 		
@@ -220,6 +224,11 @@ func suelta() -> bool:
 			c.ocupar_celda()
 		
 		Global.on_piece_enter.emit(tipo)
+		# Desregistra la pieza creada y guardada en el inventario
+		# porque ya ha sido puesta en la grid.
+		if Global.piezaEnInventario == self:
+			Global.piezaEnInventario = null
+		
 		stopPosition = nueva_pos
 		puesta = true
 		return true
@@ -228,5 +237,7 @@ func suelta() -> bool:
 
 func bloquear_pieza() -> void:
 	#print("Bloquear pieza")
-	for c in get_children():
-		c.bloquear_modulo()
+	# si esta pieza no es la que esta para usar en el inventario la bloquea
+	if Global.piezaEnInventario != self:
+		for c in get_children():
+			c.bloquear_modulo()

@@ -39,8 +39,9 @@ func _pressed() -> void:
 		# Instanciamos la pieza
 		var piezaObj = pieza.instantiate()
 		get_node("../../Piezas").add_child(piezaObj)
-		piezaObj.global_position.x = global_position.x
-		piezaObj.global_position.y = global_position.y - 100
+		if Global.piezaEnInventario != null:
+			Global.piezaEnInventario.queue_free()
+		Global.piezaEnInventario = piezaObj
 		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
 
 		

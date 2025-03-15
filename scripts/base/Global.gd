@@ -128,6 +128,7 @@ var casillaTex = [textureCVERDE, textureCNARANJA, textureCMORADA, textureCAZUL, 
 
 var PiezasDesbl: int = 3
 var Inventario = [4,4,4,4,4,4]
+var piezaEnInventario = null # Pieza que se muestra en el inventario cuando le das a un boton.
 
 # - Hover
 var FeedbackText = ["Entorno", "Lenguas", "Artes", "Lógica", "Historia", "Filosofía"]
