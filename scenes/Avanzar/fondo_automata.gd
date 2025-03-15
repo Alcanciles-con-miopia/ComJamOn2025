@@ -6,22 +6,25 @@ class_name FondoAutomata
 @onready var fondo_puzle_2: Sprite2D = $"../FondoPuzle2"
 
 func _ready() -> void:
-	initX = self.global_position.x
-	initY = self.global_position.y
+	self.global_position = Vector2(493.0, 52)
 	Global.evolve.connect(change_fondo)
 	texture = Global.edadTex[Global.CurrentEdad]
 
 func change_fondo() -> void:
 	if Global.CurrentEdad < 5:
 		var tween = create_tween()
-		tween.tween_property(fondo_puzle_2, "position", Vector2(205.0, 375), 0.5)
-		tween.tween_property(self, "scale",Vector2(0.4, 0.4), 0.25)
-		tween.tween_property(self, "position", Vector2(191.437, -400.0), 0.5)
-		var tween2 = create_tween()
-		tween2.tween_property(self, "position", Vector2(initX, initY+50), 0.1)
-		tween2.tween_property(self, "rotation_degrees", -10, 0.2)
-		tween2.tween_property(self, "rotation_degrees", 10, 0.2)
-		tween2.tween_property(self, "rotation_degrees", 0, 0.1)
+		var tween2 = create_tween() 
+		tween.tween_property(fondo_puzle_2, "position", Vector2(217.0, 52), 0.5)
+		tween.tween_property(fondo_puzle_2, "position", Vector2(217.0, 82), 0.2)
+		tween2.tween_property(self, "position", Vector2(205, 375), 0.5)
+		tween2.tween_property(self, "scale",Vector2(0.6, 0.6), 0.2)
+		
+		tween.tween_property(fondo_puzle_2, "position", Vector2(217.0, 52), 0.5)
+		tween2.tween_property(self, "position", Vector2(205.0, 355), 0.5)
+		
+		tween.tween_property(fondo_puzle_2, "position", Vector2(-100, 52), 0.5)
+		tween2.tween_property(self, "position", Vector2(-100.0, 355), 0.5)
+		
 		tween.connect("finished", cambiar_fondo)
 
 func cambiar_fondo() -> void:
@@ -32,9 +35,13 @@ func cambiar_fondo() -> void:
 	var tween = create_tween()
 	var tween2 = create_tween()
 	print(initX)
-	tween.tween_property(self, "position", Vector2(initX, initY+50), 0.3)
-	tween2.tween_property(self, "rotation_degrees", -10, 0.2)
-	tween2.tween_property(self, "rotation_degrees", 10, 0.2)
-	tween2.tween_property(self, "rotation_degrees", 0, 0.1)
-	tween2.tween_property(self, "position", Vector2(initX, initY), 0.1)
-	tween.tween_property(self, "scale",Vector2(0.6, 0.6), 0.25)
+	
+	tween.tween_property(fondo_puzle_2, "position", Vector2(217.0, 82), 0.5)
+	tween2.tween_property(self, "position", Vector2(205, 375), 0.5)
+	
+	
+	tween.tween_property(fondo_puzle_2, "position", Vector2(217.0, 52), 0.2)
+	
+	tween.tween_property(fondo_puzle_2, "position", Vector2(217.0, 52), 0.5)
+	tween.tween_property(fondo_puzle_2, "position", Vector2(493.0, 52), 0.5)
+	tween2.tween_property(self, "scale",Vector2(0.6, 0.6), 0.25)
