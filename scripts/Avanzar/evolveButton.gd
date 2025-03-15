@@ -32,6 +32,6 @@ func _manage_pressed() -> void:
 		Global.evolve.emit()
 		$"../Creador de Celdas".actualizeMatrix(Global.CurrentEdad) # Para que aparezcan las siguientes.
 	else:
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(2).timeout
 		Global.change_scene(Global.Scenes.RESOLUCION)
 		print("FINAL")

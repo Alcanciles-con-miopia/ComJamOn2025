@@ -1,6 +1,6 @@
 extends Scene
 
-@onready var porcentajes : Array = [ $Porcentajes/Cono, $Porcentajes/Logica, $Porcentajes/Lengua, $Porcentajes/Historia, $Porcentajes/Filo, $Porcentajes/Creativo]
+@onready var porcentajes : Array = [ $Porcentajes/Cono,$Porcentajes/Lengua, $Porcentajes/Creativo, $Porcentajes/Logica, $Porcentajes/Historia, $Porcentajes/Filo, ]
 var tween
 
 func _ready() -> void:
@@ -26,3 +26,8 @@ func _on_button_button_down() -> void:
 
 func on_enable():
 	$Arbol.animate_tree()
+	
+	# poner % en los labels
+	for i in 6:
+		var percent = Global.arbol[i] * 100 / Global.puntos_maximos_por_rama[i]
+		porcentajes[i].text = str(percent, "%")

@@ -76,9 +76,9 @@ offset_bottom = 40.0
 [node name="Cono" type="Label" parent="Porcentajes"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -289.0
+offset_left = -324.0
 offset_top = -157.0
-offset_right = -218.0
+offset_right = -253.0
 offset_bottom = -90.0
 theme_override_font_sizes/font_size = 48
 text = "X%"
@@ -86,9 +86,9 @@ text = "X%"
 [node name="Logica" type="Label" parent="Porcentajes"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -194.0
+offset_left = -204.0
 offset_top = -157.0
-offset_right = -123.0
+offset_right = -133.0
 offset_bottom = -90.0
 theme_override_font_sizes/font_size = 48
 text = "X%"
@@ -96,9 +96,9 @@ text = "X%"
 [node name="Lengua" type="Label" parent="Porcentajes"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -68.0
+offset_left = -79.0
 offset_top = -157.0
-offset_right = 3.0
+offset_right = -8.0
 offset_bottom = -90.0
 theme_override_font_sizes/font_size = 48
 text = "X%"
@@ -106,9 +106,9 @@ text = "X%"
 [node name="Historia" type="Label" parent="Porcentajes"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 84.0
+offset_left = 75.0
 offset_top = -157.0
-offset_right = 155.0
+offset_right = 146.0
 offset_bottom = -90.0
 theme_override_font_sizes/font_size = 48
 text = "X%"

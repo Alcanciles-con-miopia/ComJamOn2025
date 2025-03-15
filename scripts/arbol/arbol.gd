@@ -12,6 +12,10 @@ func _ready() -> void:
 	Global.grow_branch.connect(on_branch_grow)
 	Global.feedback_branch.connect(on_branch_feed)
 	Global.feedback_unbranch.connect(on_branch_receed)
+	
+	for i in 6:
+		Global.puntos_maximos_por_rama[i] = ramas[i].get_full_line_points()
+	
 	pass
 
 func _input(event):
