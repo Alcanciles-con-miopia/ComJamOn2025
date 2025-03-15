@@ -10,7 +10,9 @@ size = Vector2(1361, 1363)
 z_index = 2
 offset_right = 8.0
 offset_bottom = 8.0
+shortcut_feedback = false
 icon = ExtResource("1_vqrbx")
+flat = true
 script = ExtResource("2_6ry53")
 
 [node name="Area2D" type="Area2D" parent="."]
