@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu7xf1aayujdy"]
+[gd_scene load_steps=4 format=3 uid="uid://bu7xf1aayujdy"]
 
 [ext_resource type="Script" uid="uid://ctt0y1qp3w13r" path="res://scripts/flujo/Resolucion.gd" id="1_vix67"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="2_hertv"]
+[ext_resource type="Script" uid="uid://c2134tcpdsvos" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
 
 [node name="Resolucion" type="Control"]
 layout_mode = 3
@@ -61,6 +62,7 @@ theme_override_font_sizes/font_size = 50
 text = "RESULTADO"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_qoaxl")
 
 [node name="Arbol" parent="." instance=ExtResource("2_hertv")]
 position = Vector2(-575, -326)
@@ -139,5 +141,6 @@ offset_right = 91.0
 offset_bottom = 293.0
 theme_override_font_sizes/font_size = 31
 text = "Continuar"
+script = ExtResource("2_qoaxl")
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
