@@ -33,6 +33,8 @@ func _pressed() -> void:
 		var tween2 = create_tween()
 		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
 		
+		# Actualizamos la cantidad
+		Global.Inventario[tipo] -= 1
 		
 		# Instanciamos la pieza
 		var piezaObj = pieza.instantiate()

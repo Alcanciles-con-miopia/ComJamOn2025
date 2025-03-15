@@ -54,6 +54,7 @@ func change_scene(next: Global.Scenes, force = true):
 		Global.on_transition_begin.emit()
 #
 func pieceEnter(tipo: TipoPieza) -> void:
+	Global.arbol[tipo] += Global.puntos_por_rama[tipo]
 	match tipo:
 		TipoPieza.MEDIO:
 			ramaMedio.punt += 1
@@ -73,9 +74,11 @@ func pieceEnter(tipo: TipoPieza) -> void:
 		TipoPieza.FILOSOFIA:
 			ramaFilo.punt += 1
 			print("Suma FILO")
+	print_debug(Global.arbol)
 
 #
 func pieceExit(tipo: TipoPieza) -> void:
+	Global.arbol[tipo] -= Global.puntos_por_rama[tipo]
 	match tipo:
 		TipoPieza.MEDIO:
 			ramaMedio.punt -= 1
@@ -95,6 +98,7 @@ func pieceExit(tipo: TipoPieza) -> void:
 		TipoPieza.FILOSOFIA:
 			ramaFilo.punt -= 1
 			print("Resta FILO")
+	print_debug(Global.arbol)
 
 # ---- GAME ----
 # --- Funcionalidad y logica
@@ -159,18 +163,20 @@ var piezaVal: int = 1 		# Puntuacion que aporta cada pieza a una rama
 
 # ramas: MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA
 # { nombre , puntuacion (inicialmente 0) }
-var ramaMedio = 	{ nombre = "Medio",	 	punt = 5 }
-var ramaLengua = 	{ nombre = "Lengua", 	punt = 7 }
-var ramaCreativo = 	{ nombre = "Creativo", 	punt = 10 }
-var ramaLogica = 	{ nombre = "Logica", 	punt = 3 }
-var ramaHistoria = 	{ nombre = "Historia", 	punt = 2 }
-var ramaFilo = 		{ nombre = "Filosofia",	punt = 8 }
+var ramaMedio = 	{ nombre = "Medio",	 	punt = 0 }
+var ramaLengua = 	{ nombre = "Lengua", 	punt = 0 }
+var ramaCreativo = 	{ nombre = "Creativo", 	punt = 0 }
+var ramaLogica = 	{ nombre = "Logica", 	punt = 0 }
+var ramaHistoria = 	{ nombre = "Historia", 	punt = 0 }
+var ramaFilo = 		{ nombre = "Filosofia",	punt = 0 }
 
 # puntuacion acumulada por rama
 var arbol = [ramaMedio.punt, ramaLengua.punt, ramaCreativo.punt, ramaLogica.punt, ramaHistoria.punt, ramaFilo.punt]	
 # puntuacion max de una rama
 const ramaMax: int = 10
 var puntos_por_rama = [2,2,2,3,3,4]
+#var piezas_este_turno = [] #deprecated, lo dejo por si acaso
+var arbol_act = [0,0,0,0,0,0]
 
 # - Signales de las piezas:
 signal on_piece_enter(tipo: TipoPieza) # Cuando la pieza se coloca.

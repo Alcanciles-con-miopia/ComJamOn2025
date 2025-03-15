@@ -5,7 +5,14 @@ func _ready() -> void:
 	print(Global.CurrentEdad)
 
 func _pressed() -> void:
+	$"../Arbol".animate_tree()
 	
+	_manage_pressed()
+	disabled = true
+	await get_tree().create_timer(1.5).timeout
+	disabled = false
+
+func _manage_pressed() -> void:
 	Global.sfx.stream = load("res://assets/sounds/CintaMontaje.mp3")
 	Global.sfx.play()
 	
@@ -27,12 +34,3 @@ func _pressed() -> void:
 	else:
 		Global.change_scene(Global.Scenes.RESOLUCION)
 		print("FINAL")
-
-func _on_mouse_exited():
-	pass
-
-func _on_mouse_entered():
-	pass
-
-func _on_button_up():
-	pass
