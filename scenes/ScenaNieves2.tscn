@@ -37,7 +37,7 @@ script = ExtResource("5_2v2om")
 script = ExtResource("6_oxxir")
 
 [node name="Piezas" type="Node2D" parent="."]
-position = Vector2(450, 438)
+position = Vector2(487, 438)
 
 [node name="Arbol" parent="." instance=ExtResource("7_8m4t8")]
 position = Vector2(-364, -75)

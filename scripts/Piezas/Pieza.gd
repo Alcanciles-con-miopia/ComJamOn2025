@@ -8,13 +8,14 @@ var stopPosition: Vector2
 var isThisClicked: bool = false
 var puesta: bool = false
 var clikcDer: bool = false
+var piezaBloqueada: bool = false
 
 func _ready() -> void:
 	Global.evolve.connect(bloquear_pieza)
 
 func _input(event: InputEvent) -> void:
 	# Click derecho rota la pieza
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed() and clikcDer:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed() and not puesta and clikcDer:
 		rotation += PI/2;
 	# Captura la posicion inicial del raton al hacer clic
 	if event is InputEventMouseButton:
@@ -215,21 +216,35 @@ func instantiate_filosofia() -> void:
 
 # Funciones que indican cuando el cursor esta sobre la pieza para poderla rotar
 func enter_Pieza() -> void:
+	if not piezaBloqueada:
+		var tween = create_tween()
+		tween.tween_property(self, "rotation_degrees", -0.5, 0.1)
+		tween.tween_property(self, "rotation_degrees", 0, 0.1)
 	clikcDer = true;
 func exit_Pieza() -> void:
+	if not piezaBloqueada:
+		var tween = create_tween()
+		tween.tween_property(self, "rotation_degrees", -0.5, 0.1)
+		tween.tween_property(self, "rotation_degrees", 0, 0.1)
 	clikcDer = false;
 
 # Funciones que se usan cuando el jugador coge o suelta una pieza
 func coge() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(0.9,0.9), 0.1)
+	tween.tween_property(self, "scale", Vector2(1,1), 0.1)
 	#print(global_position)
 	isThisClicked = true
 	for c in get_children():
 		c.desocupar_celda()
 	if puesta:
 		Global.on_piece_exit.emit(tipo)
-		puesta = false
 
 func suelta() -> bool:
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(1.1,1.1), 0.05)
+	tween.tween_property(self, "scale", Vector2(1,1), 0.1)
+	
 	isThisClicked = false
 	var modulosEnPosicion = 0 # cantidad de modulos colocados en celdas validas
 	var suma_pos = Vector2.ZERO # suma posiciones para sacar el punto medio
@@ -257,12 +272,19 @@ func suelta() -> bool:
 		stopPosition = nueva_pos
 		puesta = true
 		return true
-	global_position = stopPosition
-	return false
+	elif puesta: # si esta puesta pero el jugador la ha sacado de las celdas
+		global_position = stopPosition # lo devuelve a la posicion de las celdas anteriores
+		for c in get_children():
+			c.ocupar_celda()
+		return true
+	else:
+		global_position = stopPosition # lo devuelve a la posicion de las celdas anteriores
+		return false
 
 func bloquear_pieza() -> void:
 	#print("Bloquear pieza")
 	# si esta pieza no es la que esta para usar en el inventario la bloquea
 	if Global.piezaEnInventario != self:
+		piezaBloqueada = true
 		for c in get_children():
 			c.bloquear_modulo()
