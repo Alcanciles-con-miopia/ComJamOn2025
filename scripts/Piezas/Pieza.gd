@@ -252,6 +252,10 @@ func coge() -> void:
 func suelta() -> bool:
 	if toEliminar:
 		Global.feedback_unbranch.emit(tipo, Global.puntos_por_rama[tipo])
+		
+		for c in get_children():
+			if c.name != "PanelContainer":
+				c.desocupar_celda()
 		queue_free()
 	
 	print_debug("Holaaa")
