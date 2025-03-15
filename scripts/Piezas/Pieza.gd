@@ -10,6 +10,7 @@ var puesta: bool = false
 var clikcDer: bool = false
 var piezaBloqueada: bool = false
 var actualRotation
+var se_ha_puesto_una_vez_xd = false
 
 @onready var panel_container: PanelContainer = $PanelContainer
 var toEliminar = false
@@ -282,7 +283,9 @@ func suelta() -> bool:
 				c.ocupar_celda()
 		
 		Global.on_piece_enter.emit(tipo)
-		Global.feedback_branch.emit(tipo, Global.puntos_por_rama[tipo])
+		if (!se_ha_puesto_una_vez_xd):
+			Global.feedback_branch.emit(tipo, Global.puntos_por_rama[tipo])
+			se_ha_puesto_una_vez_xd = true
 		# Desregistra la pieza creada y guardada en el inventario
 		# porque ya ha sido puesta en la grid.
 		if Global.piezaEnInventario == self:

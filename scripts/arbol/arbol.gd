@@ -12,13 +12,6 @@ func _ready() -> void:
 	Global.grow_branch.connect(on_branch_grow)
 	Global.feedback_branch.connect(on_branch_feed)
 	Global.feedback_unbranch.connect(on_branch_receed)
-	
-	for i in 6:
-		if es_resolucion:
-			grow_branch(current_branch, 100, true)
-			await get_tree().create_timer(0.1).timeout
-			grow_branch(current_branch, Global.arbol[current_branch], false)
-			current_branch += 1;
 	pass
 
 func _input(event):
@@ -65,3 +58,13 @@ func grow_branch(rama, puntos, feedback):
 		await get_tree().create_timer(anim_dur).timeout
 	Global.resultado_grown.emit(rama)
 	#print("he acabado de crecer inicialmente")
+
+func animate_tree():
+	current_branch = 0
+	for i in 6:
+		if es_resolucion:
+			grow_branch(current_branch, 100, true)
+			await get_tree().create_timer(0.1).timeout
+			grow_branch(current_branch, Global.arbol[current_branch], false)
+			current_branch += 1;
+			current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.FILOSOFIA)
