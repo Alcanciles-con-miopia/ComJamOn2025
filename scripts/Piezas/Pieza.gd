@@ -9,14 +9,18 @@ var isThisClicked: bool = false
 var puesta: bool = false
 var clikcDer: bool = false
 var piezaBloqueada: bool = false
+var actualRotation
 
 func _ready() -> void:
 	Global.evolve.connect(bloquear_pieza)
+	actualRotation = rotation
 
 func _input(event: InputEvent) -> void:
 	# Click derecho rota la pieza
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed() and not puesta and clikcDer:
-		rotation += PI/2;
+		actualRotation += 90;
+		rotation_degrees = actualRotation
+		print("ROTO LA PIEZA: ",actualRotation)
 	# Captura la posicion inicial del raton al hacer clic
 	if event is InputEventMouseButton:
 		offset = get_global_mouse_position() - global_position
@@ -218,14 +222,16 @@ func instantiate_filosofia() -> void:
 func enter_Pieza() -> void:
 	if not piezaBloqueada:
 		var tween = create_tween()
-		tween.tween_property(self, "rotation_degrees", -0.5, 0.1)
-		tween.tween_property(self, "rotation_degrees", 0, 0.1)
+		tween.tween_property(self, "rotation_degrees", -0.5 + actualRotation, 0.1)
+		tween.tween_property(self, "rotation_degrees", 0 + actualRotation, 0.1)
 	clikcDer = true;
 func exit_Pieza() -> void:
 	if not piezaBloqueada:
 		var tween = create_tween()
-		tween.tween_property(self, "rotation_degrees", -0.5, 0.1)
-		tween.tween_property(self, "rotation_degrees", 0, 0.1)
+		rotation_degrees = actualRotation
+		tween.tween_property(self, "rotation_degrees", -0.5 + actualRotation, 0.1)
+		tween.tween_property(self, "rotation_degrees", +0.5 + actualRotation, 0.1)
+		print("ON EXIT RATAON DE PIEZA: ",-0.5 + actualRotation)
 	clikcDer = false;
 
 # Funciones que se usan cuando el jugador coge o suelta una pieza

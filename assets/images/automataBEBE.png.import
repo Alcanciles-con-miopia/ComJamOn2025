@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q5es55aftudf"
-path="res://.godot/imported/automataBEBE.PNG-f7a51e533cdc8d4fa8b4ecb50cda3fc0.ctex"
+path="res://.godot/imported/automataBEBE.png-8ffbafed1720518d441152cc8655504a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/automataBEBE.PNG"
-dest_files=["res://.godot/imported/automataBEBE.PNG-f7a51e533cdc8d4fa8b4ecb50cda3fc0.ctex"]
+source_file="res://assets/images/automataBEBE.png"
+dest_files=["res://.godot/imported/automataBEBE.png-8ffbafed1720518d441152cc8655504a.ctex"]
 
 [params]
 
