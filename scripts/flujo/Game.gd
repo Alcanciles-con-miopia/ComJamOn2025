@@ -6,6 +6,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	
 	pass
 
 func on_enable():
@@ -15,14 +17,16 @@ func on_enable():
 
 # Coger la info del json para las celdas iniciales y las expansiones de la grid.
 func getJson() -> void:
-	for i in JsonParser.json_data["Mapas"][2]["Init"]:
+	var random: int = Global.random.randf_range(0, 4) # Random entre [0, 4).
+	print_debug("Random: ", random)
+	for i in JsonParser.json_data["Mapas"][random]["Init"]:
 		Global.initialCells.append(Vector2(i["x"], i["y"]))
-	for i in JsonParser.json_data["Mapas"][2]["Expansion1"]:
+	for i in JsonParser.json_data["Mapas"][random]["Expansion1"]:
 		Global.expansion1.append(Vector2(i["x"], i["y"]))
-	for i in JsonParser.json_data["Mapas"][2]["Expansion2"]:
+	for i in JsonParser.json_data["Mapas"][random]["Expansion2"]:
 		Global.expansion2.append(Vector2(i["x"], i["y"]))
-	for i in JsonParser.json_data["Mapas"][2]["Expansion3"]:
+	for i in JsonParser.json_data["Mapas"][random]["Expansion3"]:
 		Global.expansion3.append(Vector2(i["x"], i["y"]))
-	for i in JsonParser.json_data["Mapas"][2]["Expansion4"]:
+	for i in JsonParser.json_data["Mapas"][random]["Expansion4"]:
 		Global.expansion4.append(Vector2(i["x"], i["y"]))
 	Global.expansions = [Global.initialCells, Global.expansion1, Global.expansion2, Global.expansion3, Global.expansion4]

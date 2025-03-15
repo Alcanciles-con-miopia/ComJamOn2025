@@ -181,3 +181,6 @@ var arbol_act = [0,0,0,0,0,0]
 # - Signales de las piezas:
 signal on_piece_enter(tipo: TipoPieza) # Cuando la pieza se coloca.
 signal on_piece_exit(tipo: TipoPieza) # Cuando la pieza se quita.
+
+# - Random:
+var random = RandomNumberGenerator.new()
