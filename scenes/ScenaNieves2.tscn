@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr33c8imfaurg"]
+[gd_scene load_steps=11 format=3 uid="uid://cr33c8imfaurg"]
 
 [ext_resource type="Texture2D" uid="uid://burbk5nmn1kdj" path="res://assets/images/guias.png" id="1_2s6wm"]
 [ext_resource type="Script" uid="uid://b2ulmmobdk62" path="res://scripts/inventario/Inventario.gd" id="2_2v2om"]
@@ -6,12 +6,36 @@
 [ext_resource type="Script" uid="uid://bs3fvn8jic5bx" path="res://scenes/Avanzar/fondo_automata.gd" id="5_2v2om"]
 [ext_resource type="Texture2D" uid="uid://bcplscp34awim" path="res://assets/images/automataBEBE.png" id="5_oxxir"]
 [ext_resource type="Script" uid="uid://bqyu4s0syhkxy" path="res://scenes/creadorCeldas.gd" id="6_oxxir"]
+[ext_resource type="Texture2D" uid="uid://c1h6bjs25ae2n" path="res://assets/images/iman.png" id="7_3f1gi"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="7_8m4t8"]
+[ext_resource type="VideoStream" uid="uid://b63on8c1pyuvk" path="res://assets/Videos/fondo derecha.ogv" id="8_2s6wm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m4t8"]
 size = Vector2(765, 91)
 
 [node name="ScenaNieves2" type="Node2D"]
+
+[node name="FondoPuzle" type="Sprite2D" parent="."]
+z_index = -800
+position = Vector2(205, 375)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_oxxir")
+script = ExtResource("5_2v2om")
+
+[node name="FondoPuzle2" type="Sprite2D" parent="."]
+z_index = -800
+position = Vector2(217, 82)
+scale = Vector2(0.121335, 0.121335)
+texture = ExtResource("7_3f1gi")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = 386.0
+offset_right = 1151.0
+offset_bottom = 646.0
+stream = ExtResource("8_2s6wm")
+autoplay = true
+expand = true
+loop = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -4096
@@ -34,13 +58,6 @@ offset_top = -119.0
 offset_right = 451.0
 offset_bottom = 619.0
 scale = Vector2(0.72583, 0.668211)
-
-[node name="FondoPuzle" type="Sprite2D" parent="."]
-z_index = -800
-position = Vector2(205, 375)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("5_oxxir")
-script = ExtResource("5_2v2om")
 
 [node name="Creador de Celdas" type="Node2D" parent="."]
 script = ExtResource("6_oxxir")
