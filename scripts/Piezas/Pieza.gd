@@ -48,21 +48,25 @@ func instantiate_medio() -> void:
 	actualPos.x = actualPos.x - Global.cellSize
 	var mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCVERDE
 	add_child(mod)
 	# arriba izquierda
 	actualPos.x += Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCVERDE
 	add_child(mod)	
 	# abajo derecha
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCVERDE
 	add_child(mod)
 	# abajo izquierda
 	actualPos.x -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCVERDE
 	add_child(mod)
 func instantiate_lengua() -> void:
 	# De arriba a abajo
@@ -72,21 +76,25 @@ func instantiate_lengua() -> void:
 	actualPos.y = actualPos.y + Global.cellSize
 	var mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCNARANJA
 	add_child(mod)
 	# 2
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCNARANJA
 	add_child(mod)
 	# 3
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCNARANJA
 	add_child(mod)
 	# 4
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCNARANJA
 	add_child(mod)
 func instantiate_creativo() -> void:
 	# De arriba a abajo
@@ -96,21 +104,25 @@ func instantiate_creativo() -> void:
 	actualPos.y = actualPos.y + (Global.cellSize / 1.4)
 	var mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCMORADA
 	add_child(mod)
 	# 2
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCMORADA
 	add_child(mod)
 	# 3
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCMORADA
 	add_child(mod)
 	# a la derecha
 	actualPos.x += Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCMORADA
 	add_child(mod)
 func instantiate_logica() -> void:
 	# izquierda abajo
@@ -119,21 +131,25 @@ func instantiate_logica() -> void:
 	actualPos.y = actualPos.y + (Global.cellSize / 2)
 	var mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCAZUL
 	add_child(mod)
 	# izquierda centro
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCAZUL
 	add_child(mod)
 	# derecha centro
 	actualPos.x += Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCAZUL
 	add_child(mod)
 	# derecha arriba
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCAZUL
 	add_child(mod)
 func instantiate_historia() -> void:
 	var actualPos = Vector2(0,0)
@@ -142,21 +158,25 @@ func instantiate_historia() -> void:
 	# centro abajo
 	var mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCAMARILLA
 	add_child(mod)
 	# centro 
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCAMARILLA
 	add_child(mod)
 	# derecha 
 	actualPos.x += Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCAMARILLA
 	add_child(mod)
 	# izquierda
 	actualPos.x -= Global.cellSize * 2
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCAMARILLA
 	add_child(mod)
 func instantiate_filosofia() -> void:
 	var actualPos = Vector2(0,0)
@@ -165,27 +185,32 @@ func instantiate_filosofia() -> void:
 	# centro abajo
 	var mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCROJA
 	add_child(mod)
 	# centro 
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCROJA
 	add_child(mod)
 	# derecha 
 	actualPos.x += Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCROJA
 	add_child(mod)
 	# izquierda
 	actualPos.x -= Global.cellSize * 2
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCROJA
 	add_child(mod)
 	# centro arriba
 	actualPos.x += Global.cellSize
 	actualPos.y -= Global.cellSize
 	mod = modulo.instantiate()
 	mod.global_position = actualPos
+	mod.icon = Global.textureCROJA
 	add_child(mod)
 
 # Funciones que indican cuando el cursor esta sobre la pieza para poderla rotar
