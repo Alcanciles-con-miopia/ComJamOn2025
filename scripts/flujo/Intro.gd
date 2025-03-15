@@ -35,21 +35,22 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event):
-	if event.is_action_pressed("click"):
-		if label.visible_ratio == 1:
-			text_ended = true
-		if transitioned:
-			print(transitioned)
-			Global.change_scene(Global.Scenes.MAIN_MENU)
-		if !text_ended:
-			label.visible_ratio = 1
-			stop = true;
-			text_ended = true;
-		else:
-			if !clicked:
-				$AnimationPlayer.play("fadeout")
-				clicked = true
-			
+	pass
+	#if event.is_action_pressed("click"):
+		#if label.visible_ratio == 1:
+			#text_ended = true
+		#if transitioned:
+			#print(transitioned)
+			#Global.change_scene(Global.Scenes.MAIN_MENU)
+		#if !text_ended:
+			#label.visible_ratio = 1
+			#stop = true;
+			#text_ended = true;
+		#else:
+			#if !clicked:
+				#$AnimationPlayer.play("fadeout")
+				#clicked = true
+			#
 
 func on_enable():
 	pass
