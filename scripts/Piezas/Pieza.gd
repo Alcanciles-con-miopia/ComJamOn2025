@@ -11,6 +11,9 @@ var clikcDer: bool = false
 var piezaBloqueada: bool = false
 var actualRotation
 
+@onready var panel_container: PanelContainer = $PanelContainer
+var toEliminar = false
+
 func _ready() -> void:
 	Global.evolve.connect(bloquear_pieza)
 	actualRotation = rotation
@@ -18,9 +21,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	# Click derecho rota la pieza
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed() and not puesta and clikcDer:
-		actualRotation += 90;
+		actualRotation += 90
 		rotation_degrees = actualRotation
-		print("ROTO LA PIEZA: ",actualRotation)
 	# Captura la posicion inicial del raton al hacer clic
 	if event is InputEventMouseButton:
 		offset = get_global_mouse_position() - global_position
@@ -231,7 +233,6 @@ func exit_Pieza() -> void:
 		rotation_degrees = actualRotation
 		tween.tween_property(self, "rotation_degrees", -0.5 + actualRotation, 0.1)
 		tween.tween_property(self, "rotation_degrees", +0.5 + actualRotation, 0.1)
-		print("ON EXIT RATAON DE PIEZA: ",-0.5 + actualRotation)
 	clikcDer = false;
 
 # Funciones que se usan cuando el jugador coge o suelta una pieza
@@ -242,11 +243,15 @@ func coge() -> void:
 	#print(global_position)
 	isThisClicked = true
 	for c in get_children():
-		c.desocupar_celda()
+		if c.name != "PanelContainer":
+			c.desocupar_celda()
 	if puesta:
 		Global.on_piece_exit.emit(tipo)
 
 func suelta() -> bool:
+	if toEliminar:
+		queue_free()
+	
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1.1,1.1), 0.05)
 	tween.tween_property(self, "scale", Vector2(1,1), 0.1)
@@ -254,10 +259,10 @@ func suelta() -> bool:
 	isThisClicked = false
 	var modulosEnPosicion = 0 # cantidad de modulos colocados en celdas validas
 	var suma_pos = Vector2.ZERO # suma posiciones para sacar el punto medio
-	var nMods = get_child_count() # cantidad de modulos de la pieza
+	var nMods = get_child_count() -1 # cantidad de modulos de la pieza
 	
 	for c in get_children():
-		if c.check_celda(): # si la celda esta disponible
+		if c.name != "PanelContainer" and c.check_celda(): # si la celda esta disponible
 			modulosEnPosicion += 1
 			suma_pos += c.celda_donde_colocar()
 		
@@ -265,9 +270,10 @@ func suelta() -> bool:
 		var nueva_pos = suma_pos / nMods  # media de posiciones de los modulos
 		global_position = nueva_pos
 		
-		# Ocupamos lac celdas
+		# Ocupamos las celdas
 		for c in get_children():
-			c.ocupar_celda()
+			if c.name != "PanelContainer":
+				c.ocupar_celda()
 		
 		Global.on_piece_enter.emit(tipo)
 		# Desregistra la pieza creada y guardada en el inventario
@@ -281,7 +287,8 @@ func suelta() -> bool:
 	elif puesta: # si esta puesta pero el jugador la ha sacado de las celdas
 		global_position = stopPosition # lo devuelve a la posicion de las celdas anteriores
 		for c in get_children():
-			c.ocupar_celda()
+			if c.name != "PanelContainer":
+				c.ocupar_celda()
 		return true
 	else:
 		global_position = stopPosition # lo devuelve a la posicion de las celdas anteriores
@@ -293,4 +300,15 @@ func bloquear_pieza() -> void:
 	if Global.piezaEnInventario != self:
 		piezaBloqueada = true
 		for c in get_children():
-			c.bloquear_modulo()
+			if c.name != "PanelContainer":
+				c.bloquear_modulo()
+
+func preparar_para_eliminar() -> void:
+	panel_container.visible = true
+	Global.Inventario[tipo] += 1
+	toEliminar= true
+
+func despreparar_para_eliminar() -> void:
+	panel_container.visible = false
+	Global.Inventario[tipo] -= 1
+	toEliminar= false

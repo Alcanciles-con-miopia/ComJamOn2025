@@ -31,3 +31,15 @@ func instantiate_item(x_pos, i) -> void:
 func add_piezas() -> void:
 	for i in range(Global.PiezasDesbl-1):
 		Global.Inventario[i] += 1
+
+
+func devolver_Inventario_enter(area: Area2D) -> void:
+	if area.get_parent().get_parent().get_script() == preload("res://scripts/Piezas/Pieza.gd"):
+		# Anyadir pieza a cantidad del inventario NIEVES AQUI
+		area.get_parent().get_parent().preparar_para_eliminar()
+
+
+func _on_area_devolver_al_inventario_area_exited(area: Area2D) -> void:
+	if area.get_parent().get_parent().get_script() == preload("res://scripts/Piezas/Pieza.gd"):
+		# quitar pieza a cantidad del inventario NIEVES AQUI
+		area.get_parent().get_parent().despreparar_para_eliminar()
