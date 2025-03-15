@@ -3,6 +3,7 @@ class_name FondoAutomata
 
 @onready var initX = 0
 @onready var initY = 0
+@onready var fondo_puzle_2: Sprite2D = $"../FondoPuzle2"
 
 func _ready() -> void:
 	initX = self.global_position.x
@@ -13,6 +14,7 @@ func _ready() -> void:
 func change_fondo() -> void:
 	if Global.CurrentEdad < 5:
 		var tween = create_tween()
+		tween.tween_property(fondo_puzle_2, "position", Vector2(205.0, 375), 0.5)
 		tween.tween_property(self, "scale",Vector2(0.4, 0.4), 0.25)
 		tween.tween_property(self, "position", Vector2(191.437, -400.0), 0.5)
 		var tween2 = create_tween()

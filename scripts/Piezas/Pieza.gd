@@ -7,6 +7,7 @@ var offset: Vector2
 var stopPosition: Vector2
 var isThisClicked: bool = false
 var puesta: bool = false
+var colocada: bool = false
 var clikcDer: bool = false
 var piezaBloqueada: bool = false
 var actualRotation
@@ -247,6 +248,7 @@ func coge() -> void:
 		if c.name != "PanelContainer":
 			c.desocupar_celda()
 	if puesta:
+		puesta = false
 		Global.on_piece_exit.emit(tipo)
 
 func suelta() -> bool:
@@ -270,6 +272,7 @@ func suelta() -> bool:
 	for c in get_children():
 		if c.name != "PanelContainer" and c.check_celda(): # si la celda esta disponible
 			modulosEnPosicion += 1
+			Global.Inventario[tipo] += 1
 			suma_pos += c.celda_donde_colocar()
 		
 	if modulosEnPosicion >= nMods:
@@ -317,10 +320,8 @@ func bloquear_pieza() -> void:
 
 func preparar_para_eliminar() -> void:
 	panel_container.visible = true
-	Global.Inventario[tipo] += 1
 	toEliminar= true
 
 func despreparar_para_eliminar() -> void:
 	panel_container.visible = false
-	Global.Inventario[tipo] -= 1
 	toEliminar= false
