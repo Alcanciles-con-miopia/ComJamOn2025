@@ -16,6 +16,7 @@ shader_parameter/fog_opacity = 0.5
 [node name="ScenaNieves" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = 1100
 material = SubResource("ShaderMaterial_0jtfx")
 offset_right = 1173.0
