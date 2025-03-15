@@ -16,13 +16,13 @@ func _process(delta: float) -> void:
 		# control.scale =  Vector2((1+elapsedTime)/10,(1+elapsedTime)/10)
 		elapsedTime += delta
 	elif not aumentado:
-		print("FUERA SPLASH")
+		#print("FUERA SPLASH")
 		Global.change_scene(Global.Scenes.MAIN_MENU)
 		aumentado = true	
 
 
 func on_enable():
-	print("hHOOOOLA")
+	#print("hHOOOOLA")
 	pass
 
 func on_disable():

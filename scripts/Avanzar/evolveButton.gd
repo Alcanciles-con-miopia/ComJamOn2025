@@ -5,6 +5,8 @@ func _ready() -> void:
 	print(Global.CurrentEdad)
 
 func _pressed() -> void:
+	print_debug("hola")
+	$"../Arbol".animate_tree()
 	
 	Global.sfx.stream = load("res://assets/sounds/CintaMontaje.mp3")
 	Global.sfx.play()

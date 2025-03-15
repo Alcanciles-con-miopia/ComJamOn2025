@@ -68,3 +68,9 @@ func animate_tree():
 			grow_branch(current_branch, Global.arbol[current_branch], false)
 			current_branch += 1;
 			current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.FILOSOFIA)
+		else:
+			grow_branch(current_branch, Global.arbol[current_branch] - Global.arbol_act[current_branch], false)
+			Global.arbol_act[current_branch] += Global.arbol[current_branch] - Global.arbol_act[current_branch]
+			current_branch += 1;
+			current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.FILOSOFIA)
+	print_debug(Global.arbol_act)
