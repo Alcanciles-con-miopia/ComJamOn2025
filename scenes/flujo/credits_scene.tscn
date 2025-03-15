@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://doma3ldba1l8e"]
+[gd_scene load_steps=3 format=3 uid="uid://doma3ldba1l8e"]
 
 [ext_resource type="Script" uid="uid://c8k4nrtrs6b8j" path="res://scripts/flujo/Credits.gd" id="1_4f4al"]
+[ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_hv1m4"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -11,7 +12,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4f4al")
 bg_color = Color(0.054902, 0.054902, 0.054902, 1)
-title_color = Color(0.229852, 0.372948, 0.963856, 1)
+title_color = Color(0.482353, 0.203922, 0.054902, 1)
+text_color = Color(0.811765, 0.576471, 0.368627, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -50,10 +52,11 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 1080.0
-offset_bottom = 1106.0
+offset_top = 672.0
+offset_bottom = 717.0
 grow_horizontal = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_hv1m4")
 theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 
@@ -62,11 +65,13 @@ volume_db = -10.0
 autoplay = true
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 389.0
 offset_top = 249.0
 offset_right = 753.0
 offset_bottom = 360.0
+theme_override_fonts/font = ExtResource("2_hv1m4")
 theme_override_font_sizes/font_size = 32
 text = "CREDITS"
 horizontal_alignment = 1

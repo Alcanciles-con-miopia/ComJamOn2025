@@ -13,7 +13,7 @@ func _pressed() -> void:
 	disabled = false
 
 func _manage_pressed() -> void:
-	Global.sfx.stream = load("res://assets/sounds/CintaMontaje.mp3")
+	Global.sfx.stream = load("res://assets/sounds/CintaMontaje.ogg")
 	Global.sfx.play()
 	
 	var tween = create_tween()
@@ -32,5 +32,6 @@ func _manage_pressed() -> void:
 		Global.evolve.emit()
 		$"../Creador de Celdas".actualizeMatrix(Global.CurrentEdad) # Para que aparezcan las siguientes.
 	else:
+		await get_tree().create_timer(2).timeout
 		Global.change_scene(Global.Scenes.RESOLUCION)
 		print("FINAL")

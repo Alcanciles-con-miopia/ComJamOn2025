@@ -23,3 +23,6 @@ func create_point() -> void:
 #func _physics_process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	points[next_point - 1] = points[next_point - 1].lerp(next_position, 0.1)
+
+func get_full_line_points() -> int:
+	return full_line.size();
