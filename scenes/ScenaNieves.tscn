@@ -1,11 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://70tqyfchhk6i"]
+[gd_scene load_steps=7 format=3 uid="uid://70tqyfchhk6i"]
 
+[ext_resource type="Shader" uid="uid://gnnx637i7mi5" path="res://scenes/ScenaNieves.gdshader" id="1_cjuq2"]
 [ext_resource type="PackedScene" uid="uid://vrgyjl7ypn7c" path="res://scenes/Piezas/Pieza.tscn" id="2_qwlru"]
 [ext_resource type="PackedScene" uid="uid://l2ddglorsawq" path="res://celda.tscn" id="3_78lqt"]
 [ext_resource type="Script" uid="uid://b2ulmmobdk62" path="res://scripts/inventario/Inventario.gd" id="3_x0rob"]
 [ext_resource type="PackedScene" uid="uid://beqvfn2j5vjsc" path="res://scenes/Avanzar/EvolveButton.tscn" id="4_78lqt"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0jtfx"]
+shader = ExtResource("1_cjuq2")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
+
 [node name="ScenaNieves" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1100
+material = SubResource("ShaderMaterial_0jtfx")
+offset_right = 1173.0
+offset_bottom = 653.0
 
 [node name="Pieza" parent="." instance=ExtResource("2_qwlru")]
 
