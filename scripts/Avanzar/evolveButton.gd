@@ -5,6 +5,10 @@ func _ready() -> void:
 	print(Global.CurrentEdad)
 
 func _pressed() -> void:
+	
+	Global.sfx.stream = load("res://assets/sounds/CintaMontaje.mp3")
+	Global.sfx.play()
+	
 	var tween = create_tween()
 	tween.tween_property(self, "position", Vector2(394.0, 0.0), 0.2)
 	tween.tween_property(self, "position", Vector2(394.0, -120.0), 0.1)
