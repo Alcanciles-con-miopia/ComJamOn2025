@@ -33,14 +33,19 @@ func _pressed() -> void:
 		var tween2 = create_tween()
 		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
 		
-		# Actualizamos la cantidad
-		Global.Inventario[tipo] = Global.Inventario[tipo]-1
 		
 		# Instanciamos la pieza
 		var piezaObj = pieza.instantiate()
 		get_node("../../Piezas").add_child(piezaObj)
+		# instanciamos pieza
 		if Global.piezaEnInventario != null:
 			Global.piezaEnInventario.queue_free()
+			if Global.piezaEnInventario.tipo != tipo:
+				# Actualizamos la cantidad
+				Global.Inventario[Global.piezaEnInventario.tipo] += 1
+		else:
+			# Actualizamos la cantidad
+			Global.Inventario[tipo] = Global.Inventario[tipo]-1
 		Global.piezaEnInventario = piezaObj
 		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
 
