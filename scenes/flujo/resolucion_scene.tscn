@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu7xf1aayujdy"]
+[gd_scene load_steps=5 format=3 uid="uid://bu7xf1aayujdy"]
 
 [ext_resource type="Script" uid="uid://ctt0y1qp3w13r" path="res://scripts/flujo/Resolucion.gd" id="1_vix67"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="2_hertv"]
 [ext_resource type="Script" uid="uid://c2134tcpdsvos" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
+[ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_sjyt0"]
 
 [node name="Resolucion" type="Control"]
 layout_mode = 3
@@ -58,6 +59,7 @@ offset_right = 388.0
 offset_bottom = -228.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 50
 text = "RESULTADO"
 horizontal_alignment = 1
@@ -80,6 +82,7 @@ offset_left = -324.0
 offset_top = -157.0
 offset_right = -253.0
 offset_bottom = -90.0
+theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 48
 text = "X%"
 
@@ -90,6 +93,7 @@ offset_left = -204.0
 offset_top = -157.0
 offset_right = -133.0
 offset_bottom = -90.0
+theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 48
 text = "X%"
 
@@ -100,6 +104,7 @@ offset_left = -79.0
 offset_top = -157.0
 offset_right = -8.0
 offset_bottom = -90.0
+theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 48
 text = "X%"
 
@@ -110,6 +115,7 @@ offset_left = 75.0
 offset_top = -157.0
 offset_right = 146.0
 offset_bottom = -90.0
+theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 48
 text = "X%"
 
@@ -120,6 +126,7 @@ offset_left = 214.0
 offset_top = -157.0
 offset_right = 285.0
 offset_bottom = -90.0
+theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 48
 text = "X%"
 
@@ -130,6 +137,7 @@ offset_left = 335.0
 offset_top = -157.0
 offset_right = 406.0
 offset_bottom = -90.0
+theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 48
 text = "X%"
 
@@ -139,6 +147,7 @@ offset_left = -67.0
 offset_top = 241.0
 offset_right = 91.0
 offset_bottom = 293.0
+theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 31
 text = "Continuar"
 script = ExtResource("2_qoaxl")
