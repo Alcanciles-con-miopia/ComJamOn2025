@@ -18,20 +18,20 @@ func _ready() -> void:
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if stop:
-		label.visible_ratio =  1
-		text_ended = true
-	elif elapsedTime <= maxTime:
-		if textDisplay < 1:
-			if timer >= frames_per_letter:
-				timer = 0
-				label.visible_ratio = textDisplay
-				textDisplay += delta
-			else:
-				timer += 1
-		else:
-			label.visible_ratio =  1
-		elapsedTime += delta
+	#if stop:
+		#label.visible_ratio =  1
+		#text_ended = true
+	#elif elapsedTime <= maxTime:
+		#if textDisplay < 1:
+			#if timer >= frames_per_letter:
+				#timer = 0
+				#label.visible_ratio = textDisplay
+				#textDisplay += delta
+			#else:
+				#timer += 1
+		#else:
+			#label.visible_ratio =  1
+		#elapsedTime += delta
 	pass
 
 func _input(event):
