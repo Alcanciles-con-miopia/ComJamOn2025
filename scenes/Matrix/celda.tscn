@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdb0khef2y231"]
 
 [ext_resource type="Script" uid="uid://lmxi7y2gijuf" path="res://scripts/Mapas/celda.gd" id="1_hub43"]
-[ext_resource type="Texture2D" uid="uid://jms7ncqqto1s" path="res://assets/images/celdaProv.png" id="2_hub43"]
+[ext_resource type="Texture2D" uid="uid://8qi0ma8ncl7y" path="res://assets/images/celda.png" id="2_hub43"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssuno"]
 size = Vector2(50, 50)

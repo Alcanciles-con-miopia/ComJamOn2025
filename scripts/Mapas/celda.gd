@@ -8,8 +8,11 @@ var visible: bool # Si esta visible o no. // Alomejor se peina // o alomejor no 
 
 # Start de la celda.
 func _ready() -> void:
+	# Reescalar cosas collider e imagen.
 	$CuerpoCelda/ColliderCelda.shape.size.x = Global.cellSize/100
 	$CuerpoCelda/ColliderCelda.shape.size.y = Global.cellSize/100
+	self.scale = (Global.cellSize * Vector2(1,1)) / $ImagenCelda.texture.get_size()
+
 
 # Devuelve es estado de la celda.
 func get_is_empty() -> bool:
