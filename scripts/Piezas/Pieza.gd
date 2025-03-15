@@ -250,7 +250,10 @@ func coge() -> void:
 
 func suelta() -> bool:
 	if toEliminar:
+		Global.feedback_unbranch.emit(tipo, Global.puntos_por_rama[tipo])
 		queue_free()
+	
+	print_debug("Holaaa")
 	
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(1.1,1.1), 0.05)
@@ -276,6 +279,7 @@ func suelta() -> bool:
 				c.ocupar_celda()
 		
 		Global.on_piece_enter.emit(tipo)
+		Global.feedback_branch.emit(tipo, Global.puntos_por_rama[tipo])
 		# Desregistra la pieza creada y guardada en el inventario
 		# porque ya ha sido puesta en la grid.
 		if Global.piezaEnInventario == self:

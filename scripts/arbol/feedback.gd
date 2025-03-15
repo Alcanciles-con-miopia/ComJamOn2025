@@ -32,10 +32,12 @@ func create_point() -> void:
 	next_point += 1
 
 func delete_point() -> void:
+	print("me ejecuto")
 	if next_point >= 2:
-		remove_point(points.size() - 1)
 		next_point -= 1
+		remove_point(points.size() - 1)
 		next_position = full_line[next_point - 1]
+		next_point = clamp(next_point, 1, full_line.size() - 1)
 	pass
 	
 
