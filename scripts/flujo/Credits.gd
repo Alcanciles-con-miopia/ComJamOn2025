@@ -33,25 +33,34 @@ var lines := []
 
 var credits = [
 	[
-		"BURBUJARRONES"
+		"MACHI-MENTIBUS"
 	], [
 		"PROGRAMACIÓN",
-		"Pablo Iglesias Rodrigo",
+		"Nieves Alonso Gilsanz",
 		"Andrés García Navarro",
+		"Pablo Iglesias Rodrigo",
 		"Cynthia Tristán Álvarez"
 	], [
 		"ARTE",
-		"Paula Alemany Rodriguez",
+		"Carmen Gómez Becerra",
+		"Ariadna Ruiz Castillo",
+	], [
+		"ANIMACIÓN",
+		"Pablo Iglesias Rodrigo",
+		"Andrés García Navarro",
 		"Nieves Alonso Gilsanz"
 	], [
 		"NARRATIVA",
 		"Carmen Gómez Becerra"
 	], [
-		"SOUND DESIGN",
+		"MÚSICA",
 		"Ariadna Ruiz Castillo"
 	], [
+		"DISEÑO DE SONIDO",
+		"Cynthia Tristán Álvarez"
+	], [
 		"AGRADECIMIENTOS ESPECIALES",
-		"King Africa"
+		"Rocío Sánchez"
 	], [
 		"y a ti :^]"
 	]
