@@ -51,11 +51,11 @@ func _pressed() -> void:
 			Global.piezaEnInventario.queue_free() # La elimina.
 			# Si hay una pieza de un tipo y la que queremos es de otro tipo le sumamos al inventario de la original.mp3 (temazo)
 			if Global.piezaEnInventario.tipo != tipo:
-				Global.Inventario[Global.piezaEnInventario.tipo] += 1
-				Global.Inventario[tipo] -= 1 
+				Global.sumaInventarioPieza(Global.piezaEnInventario.tipo)
+				Global.restaInventarioPieza(tipo)
 		# Si esta vacio simplemente quitamos.
 		else:
-			Global.Inventario[tipo] -= 1 
+			Global.restaInventarioPieza(tipo)
 
 		Global.piezaEnInventario = piezaObj # La pieza del inventario es la nueva.
 		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo

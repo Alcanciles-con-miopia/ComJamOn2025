@@ -139,9 +139,19 @@ var textureCAZUL = load("res://assets/images/casillaAzul.jpg")
 var textureCAMARILLA = load("res://assets/images/casillaAmarilla.jpg")
 var casillaTex = [textureCVERDE, textureCNARANJA, textureCMORADA, textureCAZUL, textureCAMARILLA, textureCROJA]	
 
-var PiezasDesbl: int = 3
-var Inventario = [4,4,4,4,4,4]
+# - Inventario:
+var PiezasDesbl: int = 1 # Piezas que se desbloquean cada nivel.
+var maxPiezas: int = 3 # Maximo total de piezas.
+var Inventario = [1,1,1,0,0,0] # Inventario.
 var piezaEnInventario = null # Pieza que se muestra en el inventario cuando le das a un boton.
+# Mete una pieza al inventario (numericamente)
+func sumaInventarioPieza(tipo: TipoPieza)-> void:
+	# No puedes tener mas de x piezas.
+	if Inventario[tipo] <= maxPiezas:
+		Inventario[tipo] += 1
+# Lo contrario que el anterior.
+func restaInventarioPieza(tipo: TipoPieza) -> void:
+	Inventario[tipo] -= 1
 
 # - Hover
 var FeedbackText = ["Entorno", "Lenguas", "Artes", "Lógica", "Historia", "Filosofía"]
