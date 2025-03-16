@@ -10,6 +10,13 @@ class_name ItemInventario
 @export var tipo: Global.TipoPieza
 
 func _process(delta: float) -> void:
+	print_debug("Inventario: ",
+	" MEDIO: ", Global.Inventario[Global.TipoPieza.MEDIO],
+	" LENGUA: ", Global.Inventario[Global.TipoPieza.LENGUA],
+	" CREATIVO: ", Global.Inventario[Global.TipoPieza.CREATIVO],
+	" LOGICA: ", Global.Inventario[Global.TipoPieza.LOGICA],
+	" HISTORIA: ", Global.Inventario[Global.TipoPieza.HISTORIA],
+	" FILOSOFIA: ", Global.Inventario[Global.TipoPieza.FILOSOFIA])
 	if Global.Inventario[tipo] <= 0:
 		modulate = Color(1.0, 1.0, 1.0, 0.5)
 
@@ -45,6 +52,7 @@ func _pressed() -> void:
 			# Si hay una pieza de un tipo y la que queremos es de otro tipo le sumamos al inventario de la original.mp3 (temazo)
 			if Global.piezaEnInventario.tipo != tipo:
 				Global.Inventario[Global.piezaEnInventario.tipo] += 1
+				Global.Inventario[tipo] -= 1 
 		# Si esta vacio simplemente quitamos.
 		else:
 			Global.Inventario[tipo] -= 1 
