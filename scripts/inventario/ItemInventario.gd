@@ -6,10 +6,14 @@ class_name ItemInventario
 @onready var label = $PanelContainer/MarginContainer/Label
 @onready var panel_container = $PanelContainer
 @export var color: Color
+@onready var numero = $Numero
 
 @export var tipo: Global.TipoPieza
 
 func _process(delta: float) -> void:
+	print_debug(numero.global_position)
+	
+	
 	print_debug("Inventario: ",
 	" MEDIO: ", Global.Inventario[Global.TipoPieza.MEDIO],
 	" LENGUA: ", Global.Inventario[Global.TipoPieza.LENGUA],
@@ -22,13 +26,15 @@ func _process(delta: float) -> void:
 		modulate = Color(1.0, 1.0, 1.0, 0.5)
 	else: # Para que deje de ser transparente.
 		modulate = Color(1.0, 1.0, 1.0, 1)
+	if numero!= null:
+		numero.text = str(Global.Inventario[tipo]) + "/" + str(Global.maxPiezas)
 
 func _ready() -> void:
 	var styleBox: StyleBoxFlat = panel_container.get_theme_stylebox("panel").duplicate()
 	panel_container.add_theme_stylebox_override("panel", styleBox)
 	styleBox.set("bg_color", color)
 	panel_container.visible = false
-	
+
 	panel_container.pivot_offset = Vector2(0, 200)
 
 	label.text = rama_conocimiento

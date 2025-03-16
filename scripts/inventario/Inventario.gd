@@ -14,7 +14,7 @@ func instantiate_inventario() -> void:
 			n.queue_free()
 	
 	for i in range(Global.PiezasDesbl):
-		instantiate_item(Global.windowX*2/3 - Global.PiezasDesbl * 38 / 2 + 45 * i, i)
+		instantiate_item(Global.windowX * 2/3 - Global.PiezasDesbl * 38 / 2 + Global.inventarioOffset * i, i)
 
 func instantiate_item(x_pos, i) -> void:
 	var actualPos = Vector2(0,Global.windowY)
@@ -24,6 +24,7 @@ func instantiate_item(x_pos, i) -> void:
 	pieza.rama_conocimiento = Global.FeedbackText[i]
 	pieza.color = Global.FeedbackColor[i]
 	pieza.global_position = actualPos
+	pieza.numero = 6
 	pieza.icon = Global.casillaTex[i]
 	pieza.scale = Vector2(0.03,0.03)
 	add_child(pieza)

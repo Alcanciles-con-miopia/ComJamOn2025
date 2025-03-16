@@ -23,6 +23,16 @@ icon = ExtResource("1_nssk3")
 script = ExtResource("1_jj3tv")
 rama_conocimiento = "Filosofía"
 
+[node name="Numero" type="Label" parent="."]
+z_index = 4096
+layout_mode = 0
+offset_left = 1489.0
+offset_top = 658.0
+offset_right = 7429.0
+offset_bottom = 1739.0
+theme_override_fonts/font = ExtResource("3_nssk3")
+theme_override_font_sizes/font_size = 600
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 z_index = 20
 layout_mode = 0

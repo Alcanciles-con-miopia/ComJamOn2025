@@ -145,6 +145,7 @@ var PiezasDesbl: int = 3 # Tipos de pieza que se van desbloqueando cada nivel. (
 var maxPiezas: int = 4 # Maximo total de piezas.
 var Inventario = [1,1,1,0,0,0] # Inventario.
 var piezaEnInventario = null # Pieza que se muestra en el inventario cuando le das a un boton.
+var inventarioOffset: float = 80
 # Mete una pieza al inventario (numericamente)
 func sumaInventarioPieza(tipo: TipoPieza)-> void:
 	# No puedes tener mas de x piezas.
