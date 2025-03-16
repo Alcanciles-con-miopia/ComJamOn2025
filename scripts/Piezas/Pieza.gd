@@ -264,7 +264,7 @@ func suelta() -> bool:
 	if toEliminar:
 		if (se_ha_puesto_una_vez_xd):
 			Global.feedback_unbranch.emit(tipo, Global.puntos_por_rama[tipo])
-			Global.sumaInventarioPieza(tipo)
+		Global.sumaInventarioPieza(tipo) # Aqui fuera mejor para que se sume siempre que se meta en el inventario.
 		##########################
 		# SONIDO GUARDAR
 		Global.sfx2.stream = load("res://assets/sounds/recortar/body2.wav")
