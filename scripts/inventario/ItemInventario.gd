@@ -10,7 +10,6 @@ class_name ItemInventario
 @export var tipo: Global.TipoPieza
 
 func _process(delta: float) -> void:
-	print_debug(Global.Inventario[Global.TipoPieza.MEDIO])
 	if Global.Inventario[tipo] <= 0:
 		modulate = Color(1.0, 1.0, 1.0, 0.5)
 
@@ -56,7 +55,7 @@ func _pressed() -> void:
 		tween.tween_property(self, "scale", Vector2(0.03,0.03), 0.08)
 		var tween2 = create_tween()
 		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
-		print_debug("no quedan piezas")
+		print_debug("No quedan piezas.")
 
 func _on_button_up():
 	var tween = create_tween()
