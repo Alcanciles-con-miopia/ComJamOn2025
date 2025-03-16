@@ -11,6 +11,12 @@ func _process(delta: float) -> void:
 	pass
 
 func on_enable():
+	Global.bgm1.play()
+	Global.bgm2.play()
+	Global.bgm3.play()
+	Global.bgm4.play()
+	Global.bgm5.play()
+	
 	#await get_tree().create_timer(1).timeout
 	getJson() # Coger los datos del json.
 	get_node("ScenaNieves2/Creador de Celdas").initialize() # Llamar al creador de celdas para que se cree la grid inicial.

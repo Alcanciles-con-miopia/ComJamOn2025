@@ -22,6 +22,12 @@ var sfx
 var sfx2
 var sfx3
 var sfxs = [ sfx, sfx2, sfx3 ]
+var bgm1
+var bgm2
+var bgm3
+var bgm4
+var bgm5
+var bgm = [bgm1, bgm2, bgm3, bgm4, bgm5]
 var current_scene = Scenes.SPLASH 
 var next_scene = Scenes.SPLASH
 var stage = 0

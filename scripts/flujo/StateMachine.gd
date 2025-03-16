@@ -3,7 +3,11 @@ extends Node
 @export var scenes: Array[Node] = [] 
 @onready var fade = $Fade
 
-@onready var bgm: AudioStreamPlayer2D = $Sound/BGM
+@onready var bgm1: AudioStreamPlayer2D = $Sound/BGM1
+@onready var bgm2: AudioStreamPlayer2D = $Sound/BGM2
+@onready var bgm3: AudioStreamPlayer2D = $Sound/BGM3
+@onready var bgm4: AudioStreamPlayer2D = $Sound/BGM4
+@onready var bgm5: AudioStreamPlayer2D = $Sound/BGM5
 @onready var sfx_1: AudioStreamPlayer2D = $Sound/SFX1
 @onready var sfx_2: AudioStreamPlayer2D = $Sound/SFX2
 @onready var sfx_3: AudioStreamPlayer2D = $Sound/SFX3
@@ -14,11 +18,18 @@ func _ready() -> void:
 	Global.sfx = sfx_1
 	Global.sfx2 = sfx_2
 	Global.sfx3 = sfx_3
+	Global.bgm1 = bgm1
+	Global.bgm2 = bgm2
+	Global.bgm3 = bgm3
+	Global.bgm4 = bgm4
+	Global.bgm5 = bgm5
+	Global.bgm = [ bgm1, bgm2, bgm3, bgm4, bgm5 ]
 	#Global.window = DisplayServer.window_get_size().x
 	#Global.window = get_viewport().get_visible_rect().size.x
 	# Global.to_transition.connect(_on_totransition)
 	Global.on_transition_end.connect(_on_fade_end)
 	Global.on_game_end.connect(_on_game_end)
+	Global.evolve.connect(add_bgm_channel)
 	pass # Replace with function body.
 
 
@@ -45,6 +56,10 @@ func _input(event):
 # func _change_to_scene(newScene: scenes):
 # 	if current_scente != next_scene:
 # 		current_scente = next_scene
+
+func add_bgm_channel():
+	Global.bgm[Global.CurrentEdad].volume_db = 0.0
+	pass
 
 func _on_game_end():
 	Global.change_scene(Global.Scenes.CREDITS)
