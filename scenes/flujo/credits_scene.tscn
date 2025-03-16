@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://doma3ldba1l8e"]
+[gd_scene load_steps=4 format=3 uid="uid://doma3ldba1l8e"]
 
 [ext_resource type="Script" uid="uid://c8k4nrtrs6b8j" path="res://scripts/flujo/Credits.gd" id="1_4f4al"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_hv1m4"]
+[ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="3_x3w6v"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -66,3 +67,7 @@ theme_override_font_sizes/font_size = 32
 text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ColorRect" parent="." instance=ExtResource("3_x3w6v")]
+layout_mode = 0
+anchors_preset = 0

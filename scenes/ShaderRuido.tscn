@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cha3ikohwmopv"]
+
+[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="1_oy6vy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wphq6"]
+shader = ExtResource("1_oy6vy")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
+
+[node name="ColorRect" type="ColorRect"]
+z_index = 4096
+material = SubResource("ShaderMaterial_wphq6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
