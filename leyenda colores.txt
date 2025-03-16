@@ -16,6 +16,7 @@ naranja lengua
 pantalla de carga
 dibujar líneas
 intro skipeable
+implementar arte
 
 
 MIO:
