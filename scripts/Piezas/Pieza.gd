@@ -292,6 +292,9 @@ func suelta() -> bool:
 		Global.sfx.stream = load("res://assets/sounds/pieza2.mp3")
 		Global.sfx.play()
 		
+		# Quitamos una.
+		Global.Inventario[tipo] -= 1
+		
 		var nueva_pos = suma_pos / nMods  # media de posiciones de los modulos
 		global_position = nueva_pos
 		
