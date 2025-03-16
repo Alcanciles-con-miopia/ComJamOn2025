@@ -34,6 +34,10 @@ func on_enable():
 	label.activate()
 	boton.activate()
 	
+	for i in 6:
+		if Global.arbol[i] >= 0.95:
+			Global.arbol[i] == 1
+	
 	# poner % en los labels
 	for i in 6:
 		var percent = Global.arbol[i] * 100 / Global.puntos_maximos_por_rama[i]
