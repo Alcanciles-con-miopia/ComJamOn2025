@@ -123,11 +123,11 @@ signal CheckPieza
 # - Edad
 enum Edad {BEBE, NINO, JOVEN, ADULTO, VIEJO}
 var CurrentEdad = Edad.BEBE
-var textureBEBE = load("res://assets/images/automataBEBE.png")
-var textureNINO = load("res://assets/images/automataNINO.png")
-var textureJOVEN = load("res://assets/images/automataJOVEN.png")
-var textureADULTO = load("res://assets/images/automataADULTO.png")
-var textureVIEJO = load("res://assets/images/automataVIEJO.png")
+var textureBEBE = load("res://assets/images/Arbolcabeza/Cabeza1.png")
+var textureNINO = load("res://assets/images/Arbolcabeza/Cabeza2.png")
+var textureJOVEN = load("res://assets/images/Arbolcabeza/Cabeza3.png")
+var textureADULTO = load("res://assets/images/Arbolcabeza/Cabeza4.png")
+var textureVIEJO = load("res://assets/images/Arbolcabeza/Cabeza5.png")
 var edadTex = [textureBEBE, textureNINO, textureJOVEN, textureADULTO, textureVIEJO]	
 
 # - Inventario
