@@ -21,6 +21,11 @@ func on_enable():
 	getJson() # Coger los datos del json.
 	get_node("ScenaNieves2/Creador de Celdas").initialize() # Llamar al creador de celdas para que se cree la grid inicial.
 
+func on_disable():
+	for i in 5:
+		Global.bgm[i].stop()
+	pass
+
 # Coger la info del json para las celdas iniciales y las expansiones de la grid.
 func getJson() -> void:
 	var random: int = Global.random.randf_range(0, 4) # Random entre [0, 4).
