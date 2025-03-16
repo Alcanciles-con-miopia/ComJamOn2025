@@ -130,6 +130,11 @@ var textureADULTO = load("res://assets/images/Arbolcabeza/Cabeza4.png")
 var textureVIEJO = load("res://assets/images/Arbolcabeza/Cabeza5.png")
 var edadTex = [textureBEBE, textureNINO, textureJOVEN, textureADULTO, textureVIEJO]	
 
+const ARBOL_1 = preload("res://assets/images/Arbolcabeza/Arbol1.png")
+const ARBOL_2 = preload("res://assets/images/Arbolcabeza/Arbol2.png")
+const ARBOL_3 = preload("res://assets/images/Arbolcabeza/Arbol3.png")
+var arbol_text = [ARBOL_1,ARBOL_2,ARBOL_3]
+
 # - Inventario
 enum TipoPieza { MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA }
 var textureCVERDE = load("res://assets/images/casillaVerde.jpg")

@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://doma3ldba1l8e"]
+[gd_scene load_steps=7 format=3 uid="uid://doma3ldba1l8e"]
 
 [ext_resource type="Script" uid="uid://c8k4nrtrs6b8j" path="res://scripts/flujo/Credits.gd" id="1_4f4al"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_hv1m4"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="3_x3w6v"]
-[ext_resource type="Texture2D" uid="uid://dll25i0tvge7d" path="res://assets/images/icon_nobg.png" id="4_qj4wf"]
+[ext_resource type="Texture2D" uid="uid://dyagc8t4ewohm" path="res://assets/images/icon_nobg.png" id="4_qj4wf"]
+[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="5_j2uam"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pvki8"]
+shader = ExtResource("5_j2uam")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -84,3 +92,12 @@ offset_top = 2913.0
 offset_right = 814.0
 offset_bottom = 3373.0
 texture = ExtResource("4_qj4wf")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_pvki8")
+layout_mode = 0
+offset_left = -21.0
+offset_top = -38.0
+offset_right = 1183.0
+offset_bottom = 687.0
+mouse_filter = 2

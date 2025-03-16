@@ -4,6 +4,8 @@ class_name FondoAutomata
 @onready var initX = 0
 @onready var initY = 0
 @onready var fondo_puzle_2: Sprite2D = $"../FondoPuzle2"
+@onready var sprite_2d: Sprite2D = $Sprite2Dç
+@onready var arbol: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	fondo_puzle_2.global_position = Vector2(493.0, 52)
@@ -29,6 +31,8 @@ func change_fondo() -> void:
 
 func cambiar_fondo() -> void:
 	texture = Global.edadTex[Global.CurrentEdad]
+	if Global.CurrentEdad <= Global.Edad.JOVEN:
+		arbol.texture = Global.arbol_text[Global.CurrentEdad]
 	#var x = self.global_position.x
 	#var y = self.global_position.y 
 	#global_position = Vector2(x, y-Global.windowY)
