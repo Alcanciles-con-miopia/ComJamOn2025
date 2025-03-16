@@ -4,7 +4,7 @@ class_name FondoAutomata
 @onready var initX = 0
 @onready var initY = 0
 @onready var fondo_puzle_2: Sprite2D = $"../FondoPuzle2"
-@onready var sprite_2d: Sprite2D = $Sprite2Dç
+@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var arbol: Sprite2D = $Sprite2D
 
 func _ready() -> void:
