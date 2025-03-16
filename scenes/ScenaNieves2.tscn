@@ -212,7 +212,7 @@ color = Color(0.141176, 0.00392157, 0, 1)
 
 [node name="Engranaje" type="Sprite2D" parent="Pantalla de carga"]
 z_index = 4096
-position = Vector2(382.244, 468.5)
+position = Vector2(382.244, 524.5)
 scale = Vector2(0.18357, 0.18357)
 texture = ExtResource("14_nxyjx")
 
@@ -225,9 +225,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 386.244
-offset_top = 452.5
+offset_top = 508.5
 offset_right = 810.244
-offset_bottom = 479.5
+offset_bottom = 535.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -236,7 +236,7 @@ value = 50.0
 [node name="coger" type="AnimatedSprite2D" parent="Pantalla de carga"]
 z_index = 4096
 texture_filter = 3
-position = Vector2(335, 200)
+position = Vector2(206, 200)
 sprite_frames = SubResource("SpriteFrames_fhrml")
 animation = &"Coger"
 script = ExtResource("16_twbgl")
@@ -244,18 +244,20 @@ script = ExtResource("16_twbgl")
 [node name="rotar" type="AnimatedSprite2D" parent="Pantalla de carga"]
 z_index = 4096
 texture_filter = 1
-position = Vector2(797, 200)
+position = Vector2(554, 200)
 sprite_frames = SubResource("SpriteFrames_xd7e7")
 animation = &"Rotar"
 script = ExtResource("18_d3dcn")
 
 [node name="evolucionar" type="AnimatedSprite2D" parent="Pantalla de carga"]
+z_index = 4096
+position = Vector2(-129, 0)
 
 [node name="CogerLabel" type="Label" parent="Pantalla de carga"]
 z_index = 4096
-offset_left = 236.0
+offset_left = 107.0
 offset_top = 320.0
-offset_right = 418.0
+offset_right = 289.0
 offset_bottom = 357.0
 theme_override_fonts/font = ExtResource("19_fhrml")
 theme_override_font_sizes/font_size = 30
@@ -263,17 +265,22 @@ text = "COGER PIEZA"
 
 [node name="RotarLabel" type="Label" parent="Pantalla de carga"]
 z_index = 4096
-offset_left = 699.0
+offset_left = 465.0
 offset_top = 320.0
-offset_right = 881.0
+offset_right = 647.0
 offset_bottom = 357.0
 theme_override_fonts/font = ExtResource("19_fhrml")
 theme_override_font_sizes/font_size = 30
 text = "ROTAR PIEZA"
 
 [node name="EvolucionarLabel" type="Label" parent="Pantalla de carga"]
-offset_right = 40.0
-offset_bottom = 23.0
+z_index = 4096
+offset_left = 831.0
+offset_top = 320.0
+offset_right = 1013.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("19_fhrml")
+theme_override_font_sizes/font_size = 30
 text = "EVOLUCIONAR"
 
 [node name="ColorRect2" parent="." instance=ExtResource("15_j6lm8")]
