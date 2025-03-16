@@ -27,5 +27,5 @@ func _on_button_button_down() -> void:
 
 func _on_button_2_button_down() -> void:
 	Global.sfx.stream = load("res://assets/sounds/metal_click.ogg")
-	Global.sfx.play()
+	Global.sfx.play()	
 	get_tree().quit()

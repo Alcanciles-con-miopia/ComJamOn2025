@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cwvcjnhdcqf2n" path="res://scripts/arbol/arbol.gd" id="1_00qcm"]
 [ext_resource type="Curve" uid="uid://cvpyivcdhcqbs" path="res://scripts/arbol/branch_width_curve.tres" id="2_ibh5h"]
+[ext_resource type="Texture2D" uid="uid://lquy6b6otkq4" path="res://assets/images/Arbolcabeza/Arbol3.png" id="2_w0l1a"]
 [ext_resource type="Gradient" uid="uid://b73vigbklclcc" path="res://scripts/arbol/feedback_gradient.tres" id="3_ibh5h"]
 [ext_resource type="Script" uid="uid://dsn2x32rbtunm" path="res://scripts/arbol/rama.gd" id="3_l7xxu"]
-[ext_resource type="Script" uid="uid://doar0ny440q2o" path="res://scripts/arbol/feedback.gd" id="4_lo5rv"]
 [ext_resource type="Gradient" uid="uid://bkmj5j2vltp72" path="res://scripts/arbol/gradiente_verde.tres" id="5_dmsxo"]
 [ext_resource type="Gradient" uid="uid://djvjy4u73nc4m" path="res://scripts/arbol/gradiente_naranja.tres" id="6_lo5rv"]
 [ext_resource type="Gradient" uid="uid://civ6w0mwrbohb" path="res://scripts/arbol/gradiente_morado.tres" id="7_w0l1a"]
@@ -15,86 +15,88 @@
 [node name="Arbol" type="Node2D"]
 script = ExtResource("1_00qcm")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(573, 478)
+scale = Vector2(0.290123, 0.290123)
+texture = ExtResource("2_w0l1a")
+
 [node name="Feedback" type="Node2D" parent="."]
 
 [node name="Medio" type="Line2D" parent="Feedback"]
-modulate = Color(1, 1, 1, 0.768627)
-position = Vector2(581, 530)
-rotation = -0.137928
-points = PackedVector2Array(-1, -3, -30, -5, -32, -33, -61, -38, -53, -72, -90, -92, -92, -124, -133, -146, -120, -164, -113, -182, -139, -190, -159, -199, -143, -226, -167, -257, -191, -263, -175, -286, -198, -295, -210, -305, -208, -330)
+position = Vector2(582, 529)
+rotation = -0.146173
+points = PackedVector2Array(0, 0, -5.35339, -4.83124, -17.0495, -14.6394, -23.6534, -24.7087, -29.5894, -25.5826, -37.1825, -35.7975, -37.559, -46.9715, -44.0171, -58.0301, -48.351, -69.7867, -48.4362, -82.9394, -52.6243, -95.6853, -59.0825, -106.744, -64.8426, -115.678, -71.3008, -126.737, -77.6435, -131.714, -86.0803, -143.064, -89.9772, -157.788, -91.78, -166.14, -96.2292, -183.978)
 width_curve = ExtResource("2_ibh5h")
 default_color = Color(1, 0, 0, 1)
 gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("4_lo5rv")
-debug = true
+script = ExtResource("3_l7xxu")
 
 [node name="Lengua" type="Line2D" parent="Feedback"]
-modulate = Color(1, 1, 1, 0.768627)
 position = Vector2(581, 533)
 rotation = -0.148301
-points = PackedVector2Array(-2, -3, 17, -33, -17, -42, 16, -72, -21, -94, 4, -130, 21, -162, -25, -172, 21, -198, -36, -224, 6, -242, 18, -278, -16, -286, -24, -312, 4, -334)
+points = PackedVector2Array(2.42136, -2.67151, -3.71777, -15.7219, -6.04849, -27.1922, -15.7457, -36.7297, -21.3391, -46.6652, -26.6369, -58.5788, -26.1484, -68.6168, -24.2275, -81.4741, -23.739, -91.5121, -22.4091, -100.413, -24.0463, -109.758, -31.868, -125.082, -44.487, -142.133, -48.7505, -160.97, -46.1361, -171.702, -40.2592, -183.968, -28.4028, -202.419, -21.389, -215.526, -29.6659, -248.107)
 width_curve = ExtResource("2_ibh5h")
 default_color = Color(0, 0, 1, 1)
 gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("4_lo5rv")
+script = ExtResource("3_l7xxu")
 
 [node name="Creativo" type="Line2D" parent="Feedback"]
-modulate = Color(1, 1, 1, 0.768627)
 position = Vector2(581, 533)
 rotation = 0.240351
-points = PackedVector2Array(-1, -5, 38, -6, 39, -29, 51, -59, 97, -69, 81, -96, 93, -130, 129, -148, 114, -169, 149, -180, 149, -215, 183, -238, 224, -248, 190, -286, 253, -300, 217, -326, 252, -335)
+points = PackedVector2Array(0.495178, -2.18054, -1.40918, -9.95059, -11.7786, -22.8531, -18.5392, -29.433, -26.9661, -42.8116, -34.1837, -55.4569, -37.7544, -70.0257, -42.2772, -88.4796, -42.9341, -103.763, -40.9153, -120.731, -38.9346, -129.453, -41.077, -138.194, -53.8269, -160.809, -57.6547, -172.226, -58.5687, -184.358, -61.3489, -212.505, -64.4434, -225.131, -73.0894, -243.604)
 width_curve = ExtResource("2_ibh5h")
 default_color = Color(0, 1, 0, 1)
 gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("4_lo5rv")
+script = ExtResource("3_l7xxu")
 
 [node name="Logica" type="Line2D" parent="Feedback"]
 position = Vector2(581, 533)
 rotation = -0.170168
-points = PackedVector2Array(-2, -3, -24, -31, -26, -68, -55, -112, -24, -128, -74, -156, -48, -179, -74, -208, -93, -242, -63, -277, -101, -294, -113, -330)
+points = PackedVector2Array(1.15488, -0.816223, 6.31314, -13.1204, 5.38858, -25.4551, 3.13986, -35.9881, 3.40082, -55.2217, 10.8688, -69.1583, 34.6443, -89.4247, 47.8563, -101.36, 60.2826, -120.532, 64.4857, -139.088, 64.0693, -154.38, 59.2331, -173.475, 52.287, -198.005, 47.2815, -216.115, 47.3425, -228.28, 50.5907, -253.088)
 width_curve = ExtResource("2_ibh5h")
 gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("4_lo5rv")
+script = ExtResource("3_l7xxu")
+
+[node name="Filo" type="Line2D" parent="Feedback"]
+position = Vector2(581, 533)
+points = PackedVector2Array(34, -32, 33, -45, 37, -64, 46, -77, 57, -91, 66, -106, 76, -127, 76, -136, 74, -146, 64, -166, 61, -175, 63, -187, 67, -193, 86, -209)
+width_curve = ExtResource("2_ibh5h")
+gradient = ExtResource("3_ibh5h")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("3_l7xxu")
 
 [node name="Historia" type="Line2D" parent="Feedback"]
 position = Vector2(581, 533)
 rotation = -0.0435508
-points = PackedVector2Array(0, -5, 26, -39, 27, -73, 51, -87, 19, -106, 37, -152, 57, -143, 73, -165, 47, -200, 82, -217, 58, -246, 78, -266, 63, -289, 91, -291, 113, -320, 124, -320, 136, -339)
+points = PackedVector2Array(-3.04297, 23.8901, 10.9873, 23.5005, 22.5428, 10.9918, 29.1031, -1.73462, 31.6672, -14.6353, 36.2729, -28.4478, 45.874, -42.0427, 68.8109, -63.064, 85.5793, -80.3504, 93.0516, -91.0352, 97.0937, -114.882, 100.7, -128.738, 115.558, -148.109, 120.945, -156.883, 122.336, -165.831, 118.298, -188.028)
 width_curve = ExtResource("2_ibh5h")
 gradient = ExtResource("3_ibh5h")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
-script = ExtResource("4_lo5rv")
-
-[node name="Filo" type="Line2D" parent="Feedback"]
-position = Vector2(581, 533)
-points = PackedVector2Array(1, -3, 54, -42, 72, -80, 118, -118, 117, -169, 205, -202, 167, -254, 221, -287)
-width_curve = ExtResource("2_ibh5h")
-gradient = ExtResource("3_ibh5h")
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-script = ExtResource("4_lo5rv")
+script = ExtResource("3_l7xxu")
 
 [node name="Lineas" type="Node2D" parent="."]
 
 [node name="Medio" type="Line2D" parent="Lineas"]
 position = Vector2(582, 529)
 rotation = -0.146173
-points = PackedVector2Array(-1, -3, -30, -5, -32, -33, -61, -38, -53, -72, -90, -92, -92, -124, -133, -146, -120, -164, -113, -182, -139, -190, -159, -199, -143, -226, -167, -257, -191, -263, -175, -286, -198, -295, -210, -305, -208, -330)
+points = PackedVector2Array(0, 0, -5.35339, -4.83124, -17.0495, -14.6394, -23.6534, -24.7087, -29.5894, -25.5826, -37.1825, -35.7975, -37.559, -46.9715, -44.0171, -58.0301, -48.351, -69.7867, -48.4362, -82.9394, -52.6243, -95.6853, -59.0825, -106.744, -64.8426, -115.678, -71.3008, -126.737, -77.6435, -131.714, -86.0803, -143.064, -89.9772, -157.788, -91.78, -166.14, -96.2292, -183.978)
 width_curve = ExtResource("2_ibh5h")
 default_color = Color(1, 0, 0, 1)
 gradient = ExtResource("5_dmsxo")
@@ -106,7 +108,7 @@ script = ExtResource("3_l7xxu")
 [node name="Lengua" type="Line2D" parent="Lineas"]
 position = Vector2(581, 533)
 rotation = -0.148301
-points = PackedVector2Array(-2, -3, 17, -33, -17, -42, 16, -72, -21, -94, 4, -130, 21, -162, -25, -172, 21, -198, -36, -224, 6, -242, 18, -278, -16, -286, -24, -312, 4, -334)
+points = PackedVector2Array(2.42136, -2.67151, -3.71777, -15.7219, -6.04849, -27.1922, -15.7457, -36.7297, -21.3391, -46.6652, -26.6369, -58.5788, -26.1484, -68.6168, -24.2275, -81.4741, -23.739, -91.5121, -22.4091, -100.413, -24.0463, -109.758, -31.868, -125.082, -44.487, -142.133, -48.7505, -160.97, -46.1361, -171.702, -40.2592, -183.968, -28.4028, -202.419, -21.389, -215.526, -29.6659, -248.107)
 width_curve = ExtResource("2_ibh5h")
 default_color = Color(0, 0, 1, 1)
 gradient = ExtResource("6_lo5rv")
@@ -118,7 +120,7 @@ script = ExtResource("3_l7xxu")
 [node name="Creativo" type="Line2D" parent="Lineas"]
 position = Vector2(581, 533)
 rotation = 0.240351
-points = PackedVector2Array(-1, -5, 38, -6, 39, -29, 51, -59, 97, -69, 81, -96, 93, -130, 129, -148, 114, -169, 149, -180, 149, -215, 183, -238, 224, -248, 190, -286, 253, -300, 217, -326, 252, -335)
+points = PackedVector2Array(0.495178, -2.18054, -1.40918, -9.95059, -11.7786, -22.8531, -18.5392, -29.433, -26.9661, -42.8116, -34.1837, -55.4569, -37.7544, -70.0257, -42.2772, -88.4796, -42.9341, -103.763, -40.9153, -120.731, -38.9346, -129.453, -41.077, -138.194, -53.8269, -160.809, -57.6547, -172.226, -58.5687, -184.358, -61.3489, -212.505, -64.4434, -225.131, -73.0894, -243.604)
 width_curve = ExtResource("2_ibh5h")
 default_color = Color(0, 1, 0, 1)
 gradient = ExtResource("7_w0l1a")
@@ -130,9 +132,19 @@ script = ExtResource("3_l7xxu")
 [node name="Logica" type="Line2D" parent="Lineas"]
 position = Vector2(581, 533)
 rotation = -0.170168
-points = PackedVector2Array(-2, -3, -24, -31, -26, -68, -55, -112, -24, -128, -74, -156, -48, -179, -74, -208, -93, -242, -63, -277, -101, -294, -113, -330)
+points = PackedVector2Array(1.15488, -0.816223, 6.31314, -13.1204, 5.38858, -25.4551, 3.13986, -35.9881, 3.40082, -55.2217, 10.8688, -69.1583, 34.6443, -89.4247, 47.8563, -101.36, 60.2826, -120.532, 64.4857, -139.088, 64.0693, -154.38, 59.2331, -173.475, 52.287, -198.005, 47.2815, -216.115, 47.3425, -228.28, 50.5907, -253.088)
 width_curve = ExtResource("2_ibh5h")
 gradient = ExtResource("8_rksds")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("3_l7xxu")
+
+[node name="Filo" type="Line2D" parent="Lineas"]
+position = Vector2(581, 533)
+points = PackedVector2Array(34, -32, 33, -45, 37, -64, 46, -77, 57, -91, 66, -106, 76, -127, 76, -136, 74, -146, 64, -166, 61, -175, 63, -187, 67, -193, 86, -209)
+width_curve = ExtResource("2_ibh5h")
+gradient = ExtResource("10_evprl")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -141,19 +153,9 @@ script = ExtResource("3_l7xxu")
 [node name="Historia" type="Line2D" parent="Lineas"]
 position = Vector2(581, 533)
 rotation = -0.0435508
-points = PackedVector2Array(0, -5, 26, -39, 27, -73, 51, -87, 19, -106, 37, -152, 57, -143, 73, -165, 47, -200, 82, -217, 58, -246, 78, -266, 63, -289, 91, -291, 113, -320, 124, -320, 136, -339)
+points = PackedVector2Array(-3.04297, 23.8901, 10.9873, 23.5005, 22.5428, 10.9918, 29.1031, -1.73462, 31.6672, -14.6353, 36.2729, -28.4478, 45.874, -42.0427, 68.8109, -63.064, 85.5793, -80.3504, 93.0516, -91.0352, 97.0937, -114.882, 100.7, -128.738, 115.558, -148.109, 120.945, -156.883, 122.336, -165.831, 118.298, -188.028)
 width_curve = ExtResource("2_ibh5h")
 gradient = ExtResource("9_3cbeq")
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-script = ExtResource("3_l7xxu")
-
-[node name="Filo" type="Line2D" parent="Lineas"]
-position = Vector2(581, 533)
-points = PackedVector2Array(1, -3, 54, -42, 72, -80, 118, -118, 117, -169, 205, -202, 167, -254, 221, -287)
-width_curve = ExtResource("2_ibh5h")
-gradient = ExtResource("10_evprl")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2

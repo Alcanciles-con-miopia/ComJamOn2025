@@ -14,8 +14,9 @@ func _process(delta: float) -> void:
 	
 func on_branch_grown(rama):
 	#print("hola")
+	await get_tree().create_timer(1.5).timeout
 	tween = get_tree().create_tween()
-	tween.tween_property(porcentajes[rama], "modulate", Color.WHITE, 1).set_delay(1)
+	tween.tween_property(porcentajes[rama], "modulate", Color.WHITE, 1).set_delay(3)
 	#porcentajes[rama].
 	pass
 
@@ -27,6 +28,7 @@ func _on_button_button_down() -> void:
 	pass # Replace with function body.
 
 func on_enable():
+	await get_tree().create_timer(2.0).timeout
 	$Arbol.animate_tree()
 	
 	# poner % en los labels
