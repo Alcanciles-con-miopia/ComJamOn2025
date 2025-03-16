@@ -19,7 +19,6 @@ func on_disable():
 	Global.bgm0.stop()
 	pass
 
-
 func _on_button_button_down() -> void:
 	Global.change_scene(Global.Scenes.INTRO)
 	pass # Replace with function body.

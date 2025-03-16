@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu7xf1aayujdy"]
+[gd_scene load_steps=7 format=3 uid="uid://bu7xf1aayujdy"]
 
 [ext_resource type="Script" uid="uid://ctt0y1qp3w13r" path="res://scripts/flujo/Resolucion.gd" id="1_vix67"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="2_hertv"]
-[ext_resource type="Script" uid="uid://c2134tcpdsvos" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
+[ext_resource type="Script" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_sjyt0"]
+[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="5_utenc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ixi4i"]
+shader = ExtResource("5_utenc")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
 
 [node name="Resolucion" type="Control"]
 layout_mode = 3
@@ -139,9 +147,22 @@ offset_left = -67.0
 offset_top = 241.0
 offset_right = 91.0
 offset_bottom = 293.0
+theme_override_colors/font_hover_color = Color(0.380392, 0.168627, 0.0901961, 1)
+theme_override_colors/font_color = Color(0.8, 0.564706, 0.360784, 1)
 theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 31
-text = "Continuar"
+text = "CRÉDITOS"
+flat = true
 script = ExtResource("2_qoaxl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4000
+material = SubResource("ShaderMaterial_ixi4i")
+layout_mode = 0
+offset_left = -583.0
+offset_top = -329.0
+offset_right = 599.0
+offset_bottom = 332.0
+mouse_filter = 2
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
