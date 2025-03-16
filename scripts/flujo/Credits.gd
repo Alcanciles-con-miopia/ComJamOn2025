@@ -9,6 +9,8 @@ extends Scene
 @export var Music : AudioStream = null
 @export var Use_Video_Audio : bool = false
 @export var Video : VideoStream = null
+@onready var final_icon = $Icon
+var final_icon_en_mitad = false;
 
 const section_time := 2.0
 const line_time := 0.3
@@ -132,6 +134,11 @@ func _process(delta):
 	if speed_up:
 		scroll_speed *= speed_up_multiplier
 	
+	if final_icon.position.y <= 90:
+		final_icon_en_mitad = true
+	
+	if (!final_icon_en_mitad):
+		final_icon.set_global_position(final_icon.get_global_position() - Vector2(0, scroll_speed))
 	if lines.size() > 0:
 		for l in lines:
 			l.set_global_position(l.get_global_position() - Vector2(0, scroll_speed))
@@ -149,6 +156,8 @@ func finish():
 			var path = to_scene.get_path()
 			get_tree().change_scene_to_file(path)
 		else:
+			#var tween = create_tween()
+			#tween.tween_property(final_icon, "position.y", -100, 2)
 			await get_tree().create_timer(6.5).timeout
 			get_tree().quit()
 
@@ -187,4 +196,6 @@ func _unhandled_input(event):
 func on_enable():
 	Global.bgm0.stream = load("res://assets/music/credits.mp3")
 	Global.bgm0.play()
+	#var tween = create_tween()
+	#tween.tween_property(final_icon, "position:y", 100, 2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	pass
