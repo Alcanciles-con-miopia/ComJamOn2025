@@ -28,7 +28,6 @@ func _on_button_button_down() -> void:
 	pass # Replace with function body.
 
 func on_enable():
-	await get_tree().create_timer(2.0).timeout
 	$Arbol.animate_tree()
 	
 	# poner % en los labels

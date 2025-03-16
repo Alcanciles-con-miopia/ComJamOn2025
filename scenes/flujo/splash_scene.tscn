@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cp306wps2uf73" path="res://scripts/flujo/Splash.gd" id="1_bqrie"]
 [ext_resource type="Texture2D" uid="uid://dsk0j7mtwsuv8" path="res://assets/images/alcancilito.png" id="2_gbxxp"]
-[ext_resource type="Texture2D" uid="uid://dlluj0w4tqpt1" path="res://assets/images/alcachofita.png" id="2_p1ety"]
+[ext_resource type="Texture2D" uid="uid://bmpdoxo2xhmn6" path="res://assets/images/alcachofita.png" id="2_p1ety"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="3_brpdo"]
-[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="4_7i2l4"]
+[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="4_7i2l4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p1ety"]
 shader = ExtResource("4_7i2l4")
@@ -42,7 +42,8 @@ scale = Vector2(0.239999, 0.239999)
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
+offset_left = -21.0
+offset_right = 19.0
 offset_bottom = 40.0
 
 [node name="Alcancil1" type="TextureRect" parent="Control"]

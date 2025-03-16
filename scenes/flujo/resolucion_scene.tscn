@@ -1,10 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu7xf1aayujdy"]
+[gd_scene load_steps=19 format=3 uid="uid://bu7xf1aayujdy"]
 
 [ext_resource type="Script" uid="uid://ctt0y1qp3w13r" path="res://scripts/flujo/Resolucion.gd" id="1_vix67"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="2_hertv"]
-[ext_resource type="Script" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
+[ext_resource type="Script" uid="uid://c2134tcpdsvos" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_sjyt0"]
 [ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="5_utenc"]
+[ext_resource type="PackedScene" uid="uid://bjdrwnkpyva5i" path="res://scenes/cursor.tscn" id="6_ixi4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wa72"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpon5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ccoqp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1djue"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stvy2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y3rrq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b24aw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4pou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3t6nh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxykw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i08fe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ixi4i"]
 shader = ExtResource("5_utenc")
@@ -47,6 +70,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -142,6 +166,7 @@ theme_override_font_sizes/font_size = 48
 text = "X%"
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -67.0
 offset_top = 241.0
@@ -151,6 +176,17 @@ theme_override_colors/font_hover_color = Color(0.380392, 0.168627, 0.0901961, 1)
 theme_override_colors/font_color = Color(0.8, 0.564706, 0.360784, 1)
 theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 31
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2wa72")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_xpon5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ccoqp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_1djue")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_stvy2")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_y3rrq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b24aw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_e4pou")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3t6nh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_uxykw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i08fe")
 text = "CRÉDITOS"
 flat = true
 script = ExtResource("2_qoaxl")
@@ -164,5 +200,7 @@ offset_top = -329.0
 offset_right = 599.0
 offset_bottom = 332.0
 mouse_filter = 2
+
+[node name="cursor" parent="." instance=ExtResource("6_ixi4i")]
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr33c8imfaurg"]
+[gd_scene load_steps=24 format=3 uid="uid://cr33c8imfaurg"]
 
 [ext_resource type="Texture2D" uid="uid://burbk5nmn1kdj" path="res://assets/images/guias.png" id="1_2s6wm"]
 [ext_resource type="Script" uid="uid://b2ulmmobdk62" path="res://scripts/inventario/Inventario.gd" id="2_2v2om"]
@@ -14,6 +14,28 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m4t8"]
 size = Vector2(765, 91)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xve1p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ptgak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cvup"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxyjx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j6lm8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqstj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyi1n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twbgl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3dcn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fhrml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_th8mh"]
 
 [node name="ScenaNieves2" type="Node2D"]
 
@@ -77,6 +99,17 @@ offset_top = -120.0
 offset_right = 953.0
 offset_bottom = 1460.0
 scale = Vector2(0.231, 0.213)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xve1p")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ptgak")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8cvup")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_nxyjx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_j6lm8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_bqstj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kyi1n")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_twbgl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d3dcn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_fhrml")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_th8mh")
 flat = true
 
 [node name="Creador de Celdas" type="Node2D" parent="."]

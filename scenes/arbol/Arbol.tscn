@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwvcjnhdcqf2n" path="res://scripts/arbol/arbol.gd" id="1_00qcm"]
 [ext_resource type="Curve" uid="uid://cvpyivcdhcqbs" path="res://scripts/arbol/branch_width_curve.tres" id="2_ibh5h"]
-[ext_resource type="Texture2D" uid="uid://baux2ikqi22iy" path="res://assets/images/Arbolcabeza/Arbol3.png" id="2_w0l1a"]
+[ext_resource type="Texture2D" uid="uid://lquy6b6otkq4" path="res://assets/images/Arbolcabeza/Arbol3.png" id="2_w0l1a"]
 [ext_resource type="Gradient" uid="uid://b73vigbklclcc" path="res://scripts/arbol/feedback_gradient.tres" id="3_ibh5h"]
 [ext_resource type="Script" uid="uid://dsn2x32rbtunm" path="res://scripts/arbol/rama.gd" id="3_l7xxu"]
 [ext_resource type="Gradient" uid="uid://bkmj5j2vltp72" path="res://scripts/arbol/gradiente_verde.tres" id="5_dmsxo"]
@@ -20,6 +20,23 @@ visible = false
 position = Vector2(573, 478)
 scale = Vector2(0.290123, 0.290123)
 texture = ExtResource("2_w0l1a")
+
+[node name="tronco" type="Line2D" parent="."]
+points = PackedVector2Array(580, 529, 583, 539, 583, 548, 579, 556, 579, 566, 574, 576, 572, 590, 570, 600, 571, 614, 572, 628, 576, 645, 576, 656, 576, 677, 573, 691)
+width_curve = ExtResource("2_ibh5h")
+default_color = Color(0.141176, 0.00392157, 0, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="tronco2" type="Line2D" parent="."]
+position = Vector2(1, 0)
+points = PackedVector2Array(564, 693, 572, 694, 578, 696, 583, 696, 582, 689, 579, 683, 578, 670, 577, 662, 576, 646, 570, 629, 568, 615, 567, 605, 569, 598, 568, 636, 568, 647, 569, 653, 569, 663, 567, 668, 567, 676, 565, 681, 563, 689, 569, 690, 570, 686, 570, 680, 568, 685, 576, 689, 572, 677, 570, 673, 572, 670, 572, 666, 559, 693, 561, 696, 564, 696)
+width_curve = ExtResource("2_ibh5h")
+default_color = Color(0.141176, 0.00392157, 0, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
 
 [node name="Feedback" type="Node2D" parent="."]
 
