@@ -262,6 +262,7 @@ offset_bottom = 535.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("19_fhrml")
 value = 50.0
 
 [node name="coger" type="AnimatedSprite2D" parent="Pantalla de carga"]
