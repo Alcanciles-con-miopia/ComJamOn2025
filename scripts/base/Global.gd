@@ -140,14 +140,14 @@ var textureCAMARILLA = load("res://assets/images/casillaAmarilla.jpg")
 var casillaTex = [textureCVERDE, textureCNARANJA, textureCMORADA, textureCAZUL, textureCAMARILLA, textureCROJA]	
 
 # - Inventario:
-var PiezasDesbl: int = 1 # Piezas que se desbloquean cada nivel.
-var maxPiezas: int = 3 # Maximo total de piezas.
+var PiezasDesbl: int = 3 # Tipos de pieza que se van desbloqueando cada nivel. (+2) y (+1).
+var maxPiezas: int = 4 # Maximo total de piezas.
 var Inventario = [1,1,1,0,0,0] # Inventario.
 var piezaEnInventario = null # Pieza que se muestra en el inventario cuando le das a un boton.
 # Mete una pieza al inventario (numericamente)
 func sumaInventarioPieza(tipo: TipoPieza)-> void:
 	# No puedes tener mas de x piezas.
-	if Inventario[tipo] <= maxPiezas:
+	if Inventario[tipo] < maxPiezas:
 		Inventario[tipo] += 1
 # Lo contrario que el anterior.
 func restaInventarioPieza(tipo: TipoPieza) -> void:

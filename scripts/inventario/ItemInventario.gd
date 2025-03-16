@@ -17,8 +17,11 @@ func _process(delta: float) -> void:
 	" LOGICA: ", Global.Inventario[Global.TipoPieza.LOGICA],
 	" HISTORIA: ", Global.Inventario[Global.TipoPieza.HISTORIA],
 	" FILOSOFIA: ", Global.Inventario[Global.TipoPieza.FILOSOFIA])
+	# Para que se ponga transparente si no hay piezas.
 	if Global.Inventario[tipo] <= 0:
 		modulate = Color(1.0, 1.0, 1.0, 0.5)
+	else: # Para que deje de ser transparente.
+		modulate = Color(1.0, 1.0, 1.0, 1)
 
 func _ready() -> void:
 	var styleBox: StyleBoxFlat = panel_container.get_theme_stylebox("panel").duplicate()
