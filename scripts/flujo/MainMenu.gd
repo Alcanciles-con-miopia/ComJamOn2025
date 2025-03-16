@@ -23,3 +23,6 @@ func on_disable():
 func _on_button_button_down() -> void:
 	Global.change_scene(Global.Scenes.INTRO)
 	pass # Replace with function body.
+
+func _on_button_2_button_down() -> void:
+	get_tree().quit()

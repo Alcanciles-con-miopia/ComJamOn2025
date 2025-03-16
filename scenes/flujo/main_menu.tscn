@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dy4tygucl1fuu"]
 
 [ext_resource type="Script" uid="uid://ovognw1joqnr" path="res://scripts/flujo/MainMenu.gd" id="1_rpswa"]
-[ext_resource type="Texture2D" uid="uid://cuw3japja5by6" path="res://assets/images/logo.png" id="2_1urw7"]
-[ext_resource type="VideoStream" path="res://assets/Videos/Fondo Derecha (2).ogv" id="2_ewfsx"]
+[ext_resource type="Texture2D" uid="uid://coj5eexdyryu2" path="res://assets/images/logo.png" id="2_1urw7"]
+[ext_resource type="VideoStream" uid="uid://cym2wc5n8q2rp" path="res://assets/Videos/Fondo Derecha (2).ogv" id="2_ewfsx"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="3_fh5dn"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="4_6d6cj"]
 
@@ -34,30 +34,46 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -491.0
-offset_top = 40.0
-offset_right = 867.0
-offset_bottom = 689.0
+offset_left = -474.0
+offset_right = 884.0
+offset_bottom = 649.0
 grow_horizontal = 2
 scale = Vector2(0.73, 0.73)
 texture = ExtResource("2_1urw7")
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 456.0
+offset_top = 514.0
+offset_right = 700.0
+offset_bottom = 626.0
+theme_override_colors/font_hover_color = Color(0.380392, 0.168627, 0.0901961, 1)
+theme_override_colors/font_color = Color(0.54962, 0.365902, 0.202171, 1)
+theme_override_fonts/font = ExtResource("3_fh5dn")
+theme_override_font_sizes/font_size = 56
+text = "SALIR"
+flat = true
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 488.0
-offset_top = 486.0
-offset_right = 732.0
-offset_bottom = 598.0
+offset_left = 456.0
+offset_top = 420.0
+offset_right = 700.0
+offset_bottom = 532.0
+theme_override_colors/font_hover_color = Color(0.380392, 0.168627, 0.0901961, 1)
+theme_override_colors/font_color = Color(0.8, 0.564706, 0.360784, 1)
 theme_override_fonts/font = ExtResource("3_fh5dn")
 theme_override_font_sizes/font_size = 86
 text = "JUGAR"
+flat = true
 
 [node name="ColorRect2" parent="." instance=ExtResource("4_6d6cj")]
 visible = false
 layout_mode = 1
-offset_left = 57.0
-offset_top = 40.0
-offset_right = 57.0
-offset_bottom = 40.0
+offset_left = -39.0
+offset_top = -5.0
+offset_right = -10.0
+offset_bottom = 13.0
 
+[connection signal="button_down" from="Button2" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
