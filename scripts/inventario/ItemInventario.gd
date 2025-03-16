@@ -10,6 +10,7 @@ class_name ItemInventario
 @export var tipo: Global.TipoPieza
 
 func _process(delta: float) -> void:
+	print_debug(Global.Inventario[Global.TipoPieza.MEDIO])
 	if Global.Inventario[tipo] <= 0:
 		modulate = Color(1.0, 1.0, 1.0, 0.5)
 
@@ -41,9 +42,15 @@ func _pressed() -> void:
 		get_node("../../Piezas").add_child(piezaObj)
 		# Si ya hay una pieza la eliminamos.
 		if Global.piezaEnInventario != null:
-			Global.piezaEnInventario.queue_free() #La elimina.
-		
-		Global.piezaEnInventario = piezaObj #La pieza del inventario es la nueva.
+			Global.piezaEnInventario.queue_free() # La elimina.
+			# Si hay una pieza de un tipo y la que queremos es de otro tipo le sumamos al inventario de la original.mp3 (temazo)
+			if Global.piezaEnInventario.tipo != tipo:
+				Global.Inventario[Global.piezaEnInventario.tipo] += 1
+		# Si esta vacio simplemente quitamos.
+		else:
+			Global.Inventario[tipo] -= 1 
+
+		Global.piezaEnInventario = piezaObj # La pieza del inventario es la nueva.
 		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
 	else:
 		tween.tween_property(self, "scale", Vector2(0.03,0.03), 0.08)
