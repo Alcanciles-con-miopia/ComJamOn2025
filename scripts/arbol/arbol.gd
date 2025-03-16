@@ -69,7 +69,7 @@ func grow_branch(rama, puntos, feedback, resolucion = true):
 			Global.sfx2.play()
 			ramas[rama].create_point()
 		await get_tree().create_timer(anim_dur).timeout
-	Global.resultado_grown.emit(rama)
+		Global.resultado_grown.emit(rama)
 	#print("he acabado de crecer inicialmente")
 
 func animate_tree():
