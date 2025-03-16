@@ -1,11 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://bu7xf1aayujdy"]
+[gd_scene load_steps=22 format=3 uid="uid://bu7xf1aayujdy"]
 
 [ext_resource type="Script" uid="uid://ctt0y1qp3w13r" path="res://scripts/flujo/Resolucion.gd" id="1_vix67"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="2_hertv"]
-[ext_resource type="Script" uid="uid://c2134tcpdsvos" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
+[ext_resource type="Script" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_sjyt0"]
-[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="5_utenc"]
+[ext_resource type="Texture2D" uid="uid://bqfoeeaqtj8i5" path="res://assets/images/cabezaresolucion.png" id="5_ccoqp"]
+[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="5_utenc"]
+[ext_resource type="Texture2D" uid="uid://bmabom043so76" path="res://assets/images/Arbolcabeza/Arbol3.png" id="6_1djue"]
 [ext_resource type="PackedScene" uid="uid://bjdrwnkpyva5i" path="res://scenes/cursor.tscn" id="6_ixi4i"]
+[ext_resource type="Texture2D" uid="uid://par0e8gri2d2" path="res://assets/images/fondo derecha.jpg" id="7_2wa72"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wa72"]
 
@@ -46,6 +49,16 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vix67")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+modulate = Color(0.355314, 0.355314, 0.355314, 1)
+z_index = -1050
+offset_left = -599.0
+offset_top = -344.0
+offset_right = 2865.0
+offset_bottom = 2186.0
+scale = Vector2(0.349, 0.274)
+texture = ExtResource("7_2wa72")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
@@ -89,6 +102,19 @@ text = "RESULTADO"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_qoaxl")
+
+[node name="Cabezaresolucion" type="Sprite2D" parent="."]
+modulate = Color(0.75, 0.5775, 0.637875, 1)
+position = Vector2(21.7499, 29.8125)
+rotation = 0.0698252
+scale = Vector2(0.279399, 0.234782)
+texture = ExtResource("5_ccoqp")
+
+[node name="Arbol3" type="Sprite2D" parent="Cabezaresolucion"]
+position = Vector2(-100.179, 111.611)
+rotation = -0.0862424
+scale = Vector2(1.91928, 1.45832)
+texture = ExtResource("6_1djue")
 
 [node name="Arbol" parent="." instance=ExtResource("2_hertv")]
 position = Vector2(-575, -326)
