@@ -14,12 +14,20 @@ var stop = false
 var transitioned = false
 var mostrar_aviso = false
 @onready var aviso = $Aviso
+var counter = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if mostrar_aviso:
+		counter += 1
+		if counter >= 400:
+			mostrar_aviso = false
+			counter = 0
+			var tween = create_tween()
+			tween.tween_property(aviso, "modulate", Color.TRANSPARENT, 0.5)
 	#if stop:
 		#label.visible_ratio =  1
 		#text_ended = true
