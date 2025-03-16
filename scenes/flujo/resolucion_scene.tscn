@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="2_hertv"]
 [ext_resource type="Script" uid="uid://c2134tcpdsvos" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_sjyt0"]
-[ext_resource type="Texture2D" uid="uid://cof7m5w1qfe1n" path="res://assets/images/cabezaresolucion.png" id="5_ccoqp"]
+[ext_resource type="Texture2D" uid="uid://pnn8xt853ojp" path="res://assets/images/cabezaresolucion.png" id="5_ccoqp"]
 [ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="5_utenc"]
-[ext_resource type="Texture2D" uid="uid://baux2ikqi22iy" path="res://assets/images/Arbolcabeza/Arbol3.png" id="6_1djue"]
+[ext_resource type="Texture2D" uid="uid://lquy6b6otkq4" path="res://assets/images/Arbolcabeza/Arbol3.png" id="6_1djue"]
 [ext_resource type="PackedScene" uid="uid://bjdrwnkpyva5i" path="res://scenes/cursor.tscn" id="6_ixi4i"]
-[ext_resource type="Texture2D" uid="uid://b0nhahxh2ca0" path="res://assets/images/fondo derecha.jpg" id="7_2wa72"]
+[ext_resource type="Texture2D" uid="uid://ddsg8x1f7s60f" path="res://assets/images/fondo derecha.jpg" id="7_2wa72"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wa72"]
 
@@ -109,65 +109,66 @@ offset_top = -157.0
 offset_right = -253.0
 offset_bottom = -90.0
 theme_override_fonts/font = ExtResource("2_sjyt0")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 text = "X%"
 
 [node name="Logica" type="Label" parent="Porcentajes"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -204.0
-offset_top = -157.0
-offset_right = -133.0
-offset_bottom = -90.0
+offset_left = 48.0
+offset_top = -268.0
+offset_right = 119.0
+offset_bottom = -201.0
 theme_override_fonts/font = ExtResource("2_sjyt0")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 text = "X%"
 
 [node name="Lengua" type="Label" parent="Porcentajes"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -79.0
-offset_top = -157.0
-offset_right = -8.0
-offset_bottom = -90.0
+offset_left = -192.0
+offset_top = -236.0
+offset_right = -121.0
+offset_bottom = -169.0
 theme_override_fonts/font = ExtResource("2_sjyt0")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 text = "X%"
 
 [node name="Historia" type="Label" parent="Porcentajes"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 75.0
-offset_top = -157.0
-offset_right = 146.0
-offset_bottom = -90.0
+offset_left = 242.0
+offset_top = -155.0
+offset_right = 313.0
+offset_bottom = -88.0
 theme_override_fonts/font = ExtResource("2_sjyt0")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 text = "X%"
 
 [node name="Filo" type="Label" parent="Porcentajes"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 214.0
-offset_top = -157.0
-offset_right = 285.0
-offset_bottom = -90.0
+offset_left = 137.0
+offset_top = -215.0
+offset_right = 208.0
+offset_bottom = -148.0
 theme_override_fonts/font = ExtResource("2_sjyt0")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 text = "X%"
 
 [node name="Creativo" type="Label" parent="Porcentajes"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 335.0
-offset_top = -157.0
-offset_right = 406.0
-offset_bottom = -90.0
+offset_left = -74.0
+offset_top = -272.0
+offset_right = -3.0
+offset_bottom = -205.0
 theme_override_fonts/font = ExtResource("2_sjyt0")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 text = "X%"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
