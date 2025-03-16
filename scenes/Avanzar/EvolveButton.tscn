@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ogc2n2uvrebg" path="res://scripts/Avanzar/evolveButton.gd" id="1_bcjxt"]
 [ext_resource type="Texture2D" uid="uid://c56gaoo6kq8pe" path="res://assets/images/cadena.png" id="1_lm3am"]
-[ext_resource type="Texture2D" uid="uid://cos43pww2wd21" path="res://assets/images/sombra.png" id="3_7vw0l"]
+[ext_resource type="Texture2D" uid="uid://dqs56rrc1btsy" path="res://assets/images/sombra.png" id="3_7vw0l"]
 
 [node name="EvolveButton" type="Button"]
 z_index = 4
@@ -16,8 +16,9 @@ script = ExtResource("1_bcjxt")
 [node name="Sombra" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
 z_as_relative = false
-position = Vector2(273, 823.5)
-scale = Vector2(0.7028, 0.826581)
+texture_filter = 1
+position = Vector2(332.5, 856.097)
+scale = Vector2(1.05059, 0.982829)
 texture = ExtResource("3_7vw0l")
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]

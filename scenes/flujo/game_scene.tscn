@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7mpxibnl8ann" path="res://scripts/flujo/Game.gd" id="1_pa1jb"]
 [ext_resource type="PackedScene" uid="uid://cr33c8imfaurg" path="res://scenes/ScenaNieves2.tscn" id="2_pa1jb"]
-[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="3_ds4u8"]
+[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="3_ds4u8"]
 [ext_resource type="PackedScene" uid="uid://bjdrwnkpyva5i" path="res://scenes/cursor.tscn" id="4_ab273"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ds4u8"]

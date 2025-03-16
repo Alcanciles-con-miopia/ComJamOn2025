@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://kuee5s7qpvx2"]
 
 [ext_resource type="Script" uid="uid://b3dlqri07ib85" path="res://scripts/flujo/Intro.gd" id="1_bqrie"]
-[ext_resource type="VideoStream" uid="uid://dvwtj4ynr1u6k" path="res://assets/Videos/Intro (3).ogv" id="3_oxccj"]
-[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="3_xdv7v"]
+[ext_resource type="VideoStream" uid="uid://dhhsmukbf1opk" path="res://assets/Videos/Intro (3).ogv" id="3_oxccj"]
+[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="3_xdv7v"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="4_xdv7v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oxccj"]
