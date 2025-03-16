@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://kuee5s7qpvx2"]
+[gd_scene load_steps=7 format=3 uid="uid://kuee5s7qpvx2"]
 
 [ext_resource type="Script" uid="uid://b3dlqri07ib85" path="res://scripts/flujo/Intro.gd" id="1_bqrie"]
 [ext_resource type="Texture2D" uid="uid://be3ugp7qw5to8" path="res://assets/images/punto.png" id="2_oqq3y"]
+[ext_resource type="VideoStream" uid="uid://bmverc8jsvoil" path="res://assets/Videos/Intro.ogv" id="3_oxccj"]
 
 [sub_resource type="Animation" id="Animation_f2rc0"]
 length = 0.001
@@ -96,5 +97,16 @@ autoplay = true
 [node name="Punto" type="Sprite2D" parent="."]
 position = Vector2(567, 311)
 texture = ExtResource("2_oqq3y")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_oxccj")
+autoplay = true
+expand = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
