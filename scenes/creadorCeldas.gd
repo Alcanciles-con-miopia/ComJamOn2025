@@ -55,6 +55,8 @@ func actualizeMatrix(index: int) -> void:
 		matrix[newExpansion[i].x][newExpansion[i].y].setState(Global.cellState.EMPTY_STATE)
 		#########################
 		#  sonido animar
+		Global.sfx2.stream = load("res://assets/sounds/recortar/burst.wav")
+		Global.sfx2.play()
 		#########################
 		await get_tree().create_timer(0.05).timeout
 	# Tanda siguiente de celdas si no es la ultima expansion.
