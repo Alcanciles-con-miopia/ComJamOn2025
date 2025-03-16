@@ -1,16 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://beqvfn2j5vjsc"]
+[gd_scene load_steps=4 format=3 uid="uid://beqvfn2j5vjsc"]
 
 [ext_resource type="Script" uid="uid://ogc2n2uvrebg" path="res://scripts/Avanzar/evolveButton.gd" id="1_bcjxt"]
 [ext_resource type="Texture2D" uid="uid://c56gaoo6kq8pe" path="res://assets/images/cadena.png" id="1_lm3am"]
+[ext_resource type="Texture2D" uid="uid://cos43pww2wd21" path="res://assets/images/sombra.png" id="3_7vw0l"]
 
 [node name="EvolveButton" type="Button"]
-modulate = Color(0.219235, 0.17738, 0.241102, 0.788235)
+z_index = 4
 offset_left = 30.0
 offset_top = -426.0
 offset_right = 90.0
 offset_bottom = 531.0
 icon = ExtResource("1_lm3am")
 script = ExtResource("1_bcjxt")
+
+[node name="Sombra" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_as_relative = false
+position = Vector2(273, 823.5)
+scale = Vector2(0.7028, 0.826581)
+texture = ExtResource("3_7vw0l")
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
