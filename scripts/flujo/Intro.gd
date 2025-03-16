@@ -12,6 +12,8 @@ var clicked = false
 var clicks = 0;
 var stop = false
 var transitioned = false
+var mostrar_aviso = false
+@onready var aviso = $Aviso
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,6 +37,14 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event):
+	if (event is InputEventKey && event.pressed) || event.is_action_pressed("any"):
+		if (!mostrar_aviso):
+			mostrar_aviso = true
+			var tween = create_tween()
+			tween.tween_property(aviso, "modulate", Color.WHITE, 0.5)
+		else:
+			Global.change_scene(Global.Scenes.GAME)
+			pass
 	pass
 	#if event.is_action_pressed("click"):
 		#if label.visible_ratio == 1:

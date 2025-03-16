@@ -6,18 +6,9 @@ azul lógico
 naranja lengua
 
 
-
-0: bajo
-1: piano
-2: batería
-3: trompeta
-
-
 pantalla de carga
-dibujar líneas
 intro skipeable
 implementar arte
+casillas bloqueadas
 
-
-MIO:
-redibujar líneas cuando este implementado el arte + balancear dependiente de:
+cursor (nieves)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://kuee5s7qpvx2"]
+[gd_scene load_steps=7 format=3 uid="uid://kuee5s7qpvx2"]
 
 [ext_resource type="Script" uid="uid://b3dlqri07ib85" path="res://scripts/flujo/Intro.gd" id="1_bqrie"]
 [ext_resource type="VideoStream" path="res://assets/Videos/Intro (3).ogv" id="3_oxccj"]
-[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="3_xdv7v"]
+[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="3_xdv7v"]
+[ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="4_xdv7v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oxccj"]
 shader = ExtResource("3_xdv7v")
@@ -52,5 +53,30 @@ offset_top = -30.0
 offset_right = 1302.0
 offset_bottom = 682.0
 mouse_filter = 2
+
+[node name="Aviso" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Aviso"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 538.0
+offset_right = 351.0
+offset_bottom = 578.0
+scale = Vector2(13.96, 1.08)
+color = Color(0.141176, 0.00392157, 0, 0.729412)
+
+[node name="Label" type="Label" parent="Aviso"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 544.0
+offset_right = 826.0
+offset_bottom = 574.0
+theme_override_fonts/font = ExtResource("4_xdv7v")
+theme_override_font_sizes/font_size = 24
+text = "Pulsa cualquier botón para continuar"
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

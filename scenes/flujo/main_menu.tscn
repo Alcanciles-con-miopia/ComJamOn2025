@@ -64,6 +64,9 @@ theme_override_font_sizes/font_size = 56
 text = "SALIR"
 flat = true
 
+[node name="Sprite2D" type="Sprite2D" parent="Button2"]
+texture_filter = 1
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 456.0
