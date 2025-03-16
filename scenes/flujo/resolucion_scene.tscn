@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://ctt0y1qp3w13r" path="res://scripts/flujo/Resolucion.gd" id="1_vix67"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="2_hertv"]
-[ext_resource type="Script" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
+[ext_resource type="Script" uid="uid://c2134tcpdsvos" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_sjyt0"]
-[ext_resource type="Texture2D" uid="uid://bqfoeeaqtj8i5" path="res://assets/images/cabezaresolucion.png" id="5_ccoqp"]
-[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="5_utenc"]
-[ext_resource type="Texture2D" uid="uid://bmabom043so76" path="res://assets/images/Arbolcabeza/Arbol3.png" id="6_1djue"]
+[ext_resource type="Texture2D" uid="uid://pnn8xt853ojp" path="res://assets/images/cabezaresolucion.png" id="5_ccoqp"]
+[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="5_utenc"]
+[ext_resource type="Texture2D" uid="uid://lquy6b6otkq4" path="res://assets/images/Arbolcabeza/Arbol3.png" id="6_1djue"]
 [ext_resource type="PackedScene" uid="uid://bjdrwnkpyva5i" path="res://scenes/cursor.tscn" id="6_ixi4i"]
-[ext_resource type="Texture2D" uid="uid://par0e8gri2d2" path="res://assets/images/fondo derecha.jpg" id="7_2wa72"]
+[ext_resource type="Texture2D" uid="uid://ddsg8x1f7s60f" path="res://assets/images/fondo derecha.jpg" id="7_2wa72"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wa72"]
 
@@ -53,6 +53,7 @@ script = ExtResource("1_vix67")
 [node name="TextureRect3" type="TextureRect" parent="."]
 modulate = Color(0.355314, 0.355314, 0.355314, 1)
 z_index = -1050
+layout_mode = 0
 offset_left = -599.0
 offset_top = -344.0
 offset_right = 2865.0
@@ -76,33 +77,6 @@ offset_right = 1139.0
 offset_bottom = 1490.0
 scale = Vector2(0.239999, 0.239999)
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="Control"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -388.0
-offset_top = -319.0
-offset_right = 386.0
-offset_bottom = -228.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_sjyt0")
-theme_override_font_sizes/font_size = 50
-text = "RESULTADO"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("2_qoaxl")
-
 [node name="Cabezaresolucion" type="Sprite2D" parent="."]
 modulate = Color(0.75, 0.5775, 0.637875, 1)
 position = Vector2(21.7499, 29.8125)
@@ -111,13 +85,15 @@ scale = Vector2(0.279399, 0.234782)
 texture = ExtResource("5_ccoqp")
 
 [node name="Arbol3" type="Sprite2D" parent="Cabezaresolucion"]
+modulate = Color(1, 1, 1, 0.741176)
 position = Vector2(-100.179, 111.611)
 rotation = -0.0862424
 scale = Vector2(1.91928, 1.45832)
 texture = ExtResource("6_1djue")
 
 [node name="Arbol" parent="." instance=ExtResource("2_hertv")]
-position = Vector2(-575, -326)
+position = Vector2(-1056, -532)
+scale = Vector2(1.82643, 1.23311)
 es_resolucion = true
 
 [node name="Porcentajes" type="Control" parent="."]
@@ -191,6 +167,27 @@ theme_override_fonts/font = ExtResource("2_sjyt0")
 theme_override_font_sizes/font_size = 48
 text = "X%"
 
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -299.0
+offset_right = 406.0
+offset_bottom = -208.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sjyt0")
+theme_override_font_sizes/font_size = 50
+text = "RESULTADO"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_qoaxl")
+
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -216,6 +213,12 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_i08fe")
 text = "CRÉDITOS"
 flat = true
 script = ExtResource("2_qoaxl")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 4000
