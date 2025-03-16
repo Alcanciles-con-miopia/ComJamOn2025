@@ -1,20 +1,25 @@
-[gd_scene load_steps=28 format=3 uid="uid://cr33c8imfaurg"]
+[gd_scene load_steps=41 format=3 uid="uid://cr33c8imfaurg"]
 
 [ext_resource type="Texture2D" uid="uid://burbk5nmn1kdj" path="res://assets/images/guias.png" id="1_2s6wm"]
-[ext_resource type="Texture2D" uid="uid://jqqeo6uu4ku2" path="res://assets/images/fondo izquierda.jpg" id="1_ptgak"]
+[ext_resource type="Texture2D" uid="uid://dlfmihffygfuw" path="res://assets/images/fondo izquierda.jpg" id="1_ptgak"]
 [ext_resource type="Script" uid="uid://b2ulmmobdk62" path="res://scripts/inventario/Inventario.gd" id="2_2v2om"]
-[ext_resource type="Texture2D" uid="uid://chy011d860ra1" path="res://assets/images/Arbolcabeza/Arbol1.png" id="3_xve1p"]
-[ext_resource type="VideoStream" uid="uid://1cw7em33lx4e" path="res://assets/Videos/Fondo Derecha (2).ogv" id="4_3f1gi"]
+[ext_resource type="Texture2D" uid="uid://57rkjyvgg4uw" path="res://assets/images/Arbolcabeza/Arbol1.png" id="3_xve1p"]
+[ext_resource type="VideoStream" uid="uid://cym2wc5n8q2rp" path="res://assets/Videos/Fondo Derecha (2).ogv" id="4_3f1gi"]
 [ext_resource type="PackedScene" uid="uid://beqvfn2j5vjsc" path="res://scenes/Avanzar/EvolveButton.tscn" id="4_8m4t8"]
 [ext_resource type="Script" uid="uid://bs3fvn8jic5bx" path="res://scenes/Avanzar/fondo_automata.gd" id="5_2v2om"]
 [ext_resource type="Texture2D" uid="uid://bcplscp34awim" path="res://assets/images/automataBEBE.png" id="5_oxxir"]
 [ext_resource type="Script" uid="uid://bqyu4s0syhkxy" path="res://scenes/creadorCeldas.gd" id="6_oxxir"]
-[ext_resource type="Texture2D" uid="uid://c1h6bjs25ae2n" path="res://assets/images/iman.png" id="7_3f1gi"]
+[ext_resource type="Texture2D" uid="uid://c3vq3sfa8jhou" path="res://assets/images/iman.png" id="7_3f1gi"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="7_8m4t8"]
-[ext_resource type="Texture2D" uid="uid://cmxflnmpnrcj1" path="res://assets/images/celdaPanel.png" id="10_k374c"]
+[ext_resource type="Texture2D" uid="uid://dj2nlwbtbd184" path="res://assets/images/celdaPanel.png" id="10_k374c"]
 [ext_resource type="Script" uid="uid://10186dx7yrk5" path="res://scripts/pantalla_de_carga.gd" id="13_8cvup"]
-[ext_resource type="Texture2D" uid="uid://3k7sl6ulwr7q" path="res://assets/images/Engranaje.png" id="14_nxyjx"]
+[ext_resource type="Texture2D" uid="uid://bptjm7tswtvc6" path="res://assets/images/Engranaje.png" id="14_nxyjx"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="15_j6lm8"]
+[ext_resource type="Texture2D" uid="uid://dbpcnvw7446we" path="res://assets/controles/controles_coger_sheet.png" id="16_bqstj"]
+[ext_resource type="Script" uid="uid://cd4vc550llkn3" path="res://scenes/coger.gd" id="16_twbgl"]
+[ext_resource type="Texture2D" uid="uid://cse605ixysn7e" path="res://assets/controles/controles_rotar_sheet.png" id="17_kyi1n"]
+[ext_resource type="Script" uid="uid://bck8rbwnr5xow" path="res://scenes/rotar.gd" id="18_d3dcn"]
+[ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="19_fhrml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m4t8"]
 size = Vector2(765, 91)
@@ -41,6 +46,64 @@ size = Vector2(765, 91)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88abv"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyi1n"]
+atlas = ExtResource("16_bqstj")
+region = Rect2(0, 0, 336, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twbgl"]
+atlas = ExtResource("16_bqstj")
+region = Rect2(336, 0, 336, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3dcn"]
+atlas = ExtResource("16_bqstj")
+region = Rect2(672, 0, 336, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhrml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyi1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twbgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3dcn")
+}],
+"loop": true,
+"name": &"Coger",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhrml"]
+atlas = ExtResource("17_kyi1n")
+region = Rect2(0, 0, 336, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th8mh"]
+atlas = ExtResource("17_kyi1n")
+region = Rect2(336, 0, 336, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xafak"]
+atlas = ExtResource("17_kyi1n")
+region = Rect2(672, 0, 336, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xd7e7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhrml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th8mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xafak")
+}],
+"loop": true,
+"name": &"Rotar",
+"speed": 1.0
+}]
+
 [node name="ScenaNieves2" type="Node2D"]
 
 [node name="Fondo izquierda" type="Sprite2D" parent="."]
@@ -53,7 +116,7 @@ texture = ExtResource("1_ptgak")
 [node name="FondoPuzle" type="Sprite2D" parent="."]
 z_index = -800
 position = Vector2(205, 375)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_oxxir")
 script = ExtResource("5_2v2om")
 
@@ -149,7 +212,7 @@ color = Color(0.141176, 0.00392157, 0, 1)
 
 [node name="Engranaje" type="Sprite2D" parent="Pantalla de carga"]
 z_index = 4096
-position = Vector2(382, 410)
+position = Vector2(382.244, 468.5)
 scale = Vector2(0.18357, 0.18357)
 texture = ExtResource("14_nxyjx")
 
@@ -161,14 +224,50 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 386.0
-offset_top = 394.0
-offset_right = 810.0
-offset_bottom = 421.0
+offset_left = 386.244
+offset_top = 452.5
+offset_right = 810.244
+offset_bottom = 479.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 value = 50.0
+
+[node name="coger" type="AnimatedSprite2D" parent="Pantalla de carga"]
+z_index = 4096
+texture_filter = 3
+position = Vector2(335, 200)
+sprite_frames = SubResource("SpriteFrames_fhrml")
+animation = &"Coger"
+script = ExtResource("16_twbgl")
+
+[node name="rotar" type="AnimatedSprite2D" parent="Pantalla de carga"]
+z_index = 4096
+texture_filter = 1
+position = Vector2(797, 200)
+sprite_frames = SubResource("SpriteFrames_xd7e7")
+animation = &"Rotar"
+script = ExtResource("18_d3dcn")
+
+[node name="CogerLabel" type="Label" parent="Pantalla de carga"]
+z_index = 4096
+offset_left = 236.0
+offset_top = 320.0
+offset_right = 418.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("19_fhrml")
+theme_override_font_sizes/font_size = 30
+text = "COGER PIEZA"
+
+[node name="RotarLabel" type="Label" parent="Pantalla de carga"]
+z_index = 4096
+offset_left = 699.0
+offset_top = 320.0
+offset_right = 881.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("19_fhrml")
+theme_override_font_sizes/font_size = 30
+text = "ROTAR PIEZA"
 
 [node name="ColorRect2" parent="." instance=ExtResource("15_j6lm8")]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cha3ikohwmopv"]
 
-[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="1_oy6vy"]
+[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="1_oy6vy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wphq6"]
 shader = ExtResource("1_oy6vy")

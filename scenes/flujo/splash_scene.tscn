@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cp306wps2uf73" path="res://scripts/flujo/Splash.gd" id="1_bqrie"]
 [ext_resource type="Texture2D" uid="uid://dsk0j7mtwsuv8" path="res://assets/images/alcancilito.png" id="2_gbxxp"]
-[ext_resource type="Texture2D" uid="uid://bmpdoxo2xhmn6" path="res://assets/images/alcachofita.png" id="2_p1ety"]
+[ext_resource type="Texture2D" uid="uid://cbarggwwisn42" path="res://assets/images/alcachofita.png" id="2_p1ety"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="3_brpdo"]
 [ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="4_7i2l4"]
 
