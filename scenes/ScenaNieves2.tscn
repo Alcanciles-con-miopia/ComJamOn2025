@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cr33c8imfaurg"]
+[gd_scene load_steps=28 format=3 uid="uid://cr33c8imfaurg"]
 
 [ext_resource type="Texture2D" uid="uid://burbk5nmn1kdj" path="res://assets/images/guias.png" id="1_2s6wm"]
 [ext_resource type="Texture2D" uid="uid://jqqeo6uu4ku2" path="res://assets/images/fondo izquierda.jpg" id="1_ptgak"]
@@ -12,9 +12,34 @@
 [ext_resource type="Texture2D" uid="uid://c1h6bjs25ae2n" path="res://assets/images/iman.png" id="7_3f1gi"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="7_8m4t8"]
 [ext_resource type="Texture2D" uid="uid://cmxflnmpnrcj1" path="res://assets/images/celdaPanel.png" id="10_k374c"]
+[ext_resource type="Script" uid="uid://10186dx7yrk5" path="res://scripts/pantalla_de_carga.gd" id="13_8cvup"]
+[ext_resource type="Texture2D" uid="uid://3k7sl6ulwr7q" path="res://assets/images/Engranaje.png" id="14_nxyjx"]
+[ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="15_j6lm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m4t8"]
 size = Vector2(765, 91)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j6lm8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqstj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyi1n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twbgl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3dcn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fhrml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_th8mh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xafak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xd7e7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2pbh1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88abv"]
 
 [node name="ScenaNieves2" type="Node2D"]
 
@@ -85,6 +110,17 @@ offset_top = -120.0
 offset_right = 953.0
 offset_bottom = 1460.0
 scale = Vector2(0.231, 0.213)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j6lm8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bqstj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kyi1n")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_twbgl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_d3dcn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_fhrml")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_th8mh")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_xafak")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xd7e7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2pbh1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_88abv")
 flat = true
 
 [node name="Creador de Celdas" type="Node2D" parent="."]
@@ -99,6 +135,42 @@ offset_left = 373.0
 offset_right = 394.0
 offset_bottom = 672.0
 color = Color(0.141176, 0.00392157, 0, 1)
+
+[node name="Pantalla de carga" type="Node2D" parent="."]
+script = ExtResource("13_8cvup")
+
+[node name="Fondo" type="ColorRect" parent="Pantalla de carga"]
+z_index = 4096
+offset_left = -16.0
+offset_top = -10.0
+offset_right = 1171.0
+offset_bottom = 658.0
+color = Color(0.141176, 0.00392157, 0, 1)
+
+[node name="Engranaje" type="Sprite2D" parent="Pantalla de carga"]
+z_index = 4096
+position = Vector2(382, 410)
+scale = Vector2(0.18357, 0.18357)
+texture = ExtResource("14_nxyjx")
+
+[node name="ProgressBar" type="ProgressBar" parent="Pantalla de carga"]
+modulate = Color(0.65098, 0.454902, 0.286275, 1)
+z_index = 4096
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 386.0
+offset_top = 394.0
+offset_right = 810.0
+offset_bottom = 421.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+value = 50.0
+
+[node name="ColorRect2" parent="." instance=ExtResource("15_j6lm8")]
 
 [connection signal="area_entered" from="AreaDevolverAlInventario" to="Inventario" method="devolver_Inventario_enter"]
 [connection signal="area_exited" from="AreaDevolverAlInventario" to="Inventario" method="_on_area_devolver_al_inventario_area_exited"]
