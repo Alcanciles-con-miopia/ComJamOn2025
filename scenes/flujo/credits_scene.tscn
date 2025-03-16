@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c8k4nrtrs6b8j" path="res://scripts/flujo/Credits.gd" id="1_4f4al"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_hv1m4"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="3_x3w6v"]
-[ext_resource type="Texture2D" uid="uid://dyagc8t4ewohm" path="res://assets/images/icon_nobg.png" id="4_qj4wf"]
+[ext_resource type="Texture2D" uid="uid://dll25i0tvge7d" path="res://assets/images/icon_nobg.png" id="4_qj4wf"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3

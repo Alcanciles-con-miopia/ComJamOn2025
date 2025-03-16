@@ -21,6 +21,8 @@ func on_branch_grown(rama):
 
 
 func _on_button_button_down() -> void:
+	Global.sfx.stream = load("res://assets/sounds/metal_click.ogg")
+	Global.sfx.play()
 	Global.change_scene(Global.Scenes.CREDITS)
 	pass # Replace with function body.
 

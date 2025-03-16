@@ -13,21 +13,10 @@ naranja lengua
 3: trompeta
 
 
-musica:
-amigo
-main menú (falta)
-resolucion
-
-sfx que no tienen: 
-clicks
+pantalla de carga
+dibujar líneas
+intro skipeable
 
 
 MIO:
 redibujar líneas cuando este implementado el arte + balancear dependiente de:
-ARTE:
-Implementar
-9-Slice
-
-
-INVENTARIO:
-numerito piezas inventario (paigro + nieves)
