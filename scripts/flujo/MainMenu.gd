@@ -20,8 +20,12 @@ func on_disable():
 	pass
 
 func _on_button_button_down() -> void:
+	Global.sfx.stream = load("res://assets/sounds/metal_click.ogg")
+	Global.sfx.play()
 	Global.change_scene(Global.Scenes.INTRO)
 	pass # Replace with function body.
 
 func _on_button_2_button_down() -> void:
+	Global.sfx.stream = load("res://assets/sounds/metal_click.ogg")
+	Global.sfx.play()
 	get_tree().quit()
