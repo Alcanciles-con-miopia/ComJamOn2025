@@ -200,7 +200,7 @@ var ramaFilo = 		{ nombre = "Filosofia",	punt = 0 }
 var arbol = [ramaMedio.punt, ramaLengua.punt, ramaCreativo.punt, ramaLogica.punt, ramaHistoria.punt, ramaFilo.punt]	
 # puntuacion max de una rama
 const ramaMax: int = 10
-var puntos_por_rama = [2,2,2,3,3,4] #hola soy cynthia
+var puntos_por_rama = [3,3,3,5,5,6] #hola soy cynthia
 #var piezas_este_turno = [] #deprecated, lo dejo por si acaso
 var arbol_act = [0,0,0,0,0,0]
 var puntos_maximos_por_rama = [0, 0, 0, 0, 0, 0] #esto va a ser rellenado en el ready del arbol
