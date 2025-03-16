@@ -2,7 +2,7 @@ extends Scene
 
 @onready var porcentajes : Array = [ $Porcentajes/Cono,$Porcentajes/Lengua, $Porcentajes/Creativo, $Porcentajes/Logica, $Porcentajes/Historia, $Porcentajes/Filo, ]
 var tween
-@onready var label = $Control/Label
+@onready var label = $Label
 @onready var boton = $Button
 
 func _ready() -> void:
