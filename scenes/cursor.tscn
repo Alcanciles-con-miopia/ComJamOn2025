@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjdrwnkpyva5i"]
 
-[ext_resource type="Texture2D" uid="uid://ct30yikj4ltlc" path="res://assets/cursor/cursor_spritesheet.png" id="1_s0nli"]
-[ext_resource type="Script" uid="uid://le05a2x5yqvs" path="res://scenes/flujo/cursor.gd" id="2_ndevg"]
+[ext_resource type="Texture2D" uid="uid://prbpkygaavro" path="res://assets/cursor/cursor_spritesheet.png" id="1_s0nli"]
+[ext_resource type="Script" path="res://scenes/flujo/cursor.gd" id="2_ndevg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f33ph"]
 atlas = ExtResource("1_s0nli")
@@ -28,6 +28,7 @@ animations = [{
 [node name="cursor" type="AnimatedSprite2D"]
 z_index = 4096
 texture_filter = 1
+scale = Vector2(0.56, 0.56)
 sprite_frames = SubResource("SpriteFrames_qjggc")
 animation = &"click"
 frame = 1

@@ -39,10 +39,10 @@ func bloquear_modulo() -> void:
 	var tween = create_tween()
 	var modulate =  Color.WHITE
 	var modulate_color: Color
-	modulate_color.r = 1
-	modulate_color.g = 1
-	modulate_color.b = 1
-	modulate_color.a = 0.7
+	modulate_color.r = 0.5
+	modulate_color.g = 0.5
+	modulate_color.b = 0.5
+	modulate_color.a = 1.0
 	tween.tween_property(self, 'modulate', modulate_color, 0.1)
 	bloqueada = true
 
