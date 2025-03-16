@@ -15,13 +15,13 @@
 [ext_resource type="Script" uid="uid://10186dx7yrk5" path="res://scripts/pantalla_de_carga.gd" id="13_8cvup"]
 [ext_resource type="Texture2D" uid="uid://bptjm7tswtvc6" path="res://assets/images/Engranaje.png" id="14_nxyjx"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="15_j6lm8"]
-[ext_resource type="Texture2D" uid="uid://dml7fsjtojx0c" path="res://assets/controles/controles_coger.png" id="15_xafak"]
 [ext_resource type="Texture2D" uid="uid://dbpcnvw7446we" path="res://assets/controles/controles_coger_sheet.png" id="16_bqstj"]
 [ext_resource type="Script" uid="uid://cd4vc550llkn3" path="res://scenes/coger.gd" id="16_twbgl"]
 [ext_resource type="Texture2D" uid="uid://cse605ixysn7e" path="res://assets/controles/controles_rotar_sheet.png" id="17_kyi1n"]
 [ext_resource type="Script" uid="uid://bck8rbwnr5xow" path="res://scenes/rotar.gd" id="18_d3dcn"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="19_fhrml"]
 [ext_resource type="Script" uid="uid://bj4ygo7wia73x" path="res://scenes/evolucionar.gd" id="19_th8mh"]
+[ext_resource type="Texture2D" uid="uid://dgwafly1ylps" path="res://assets/controles/controles_evolucionar_sheet.png" id="19_xafak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m4t8"]
 size = Vector2(765, 91)
@@ -49,16 +49,16 @@ size = Vector2(765, 91)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88abv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cajgi"]
-atlas = ExtResource("15_xafak")
-region = Rect2(0, 0, 371, 241)
+atlas = ExtResource("16_bqstj")
+region = Rect2(0, 0, 336, 240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgkvw"]
-atlas = ExtResource("15_xafak")
-region = Rect2(371, 0, 371, 241)
+atlas = ExtResource("16_bqstj")
+region = Rect2(336, 0, 336, 240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmkbk"]
-atlas = ExtResource("15_xafak")
-region = Rect2(742, 0, 371, 241)
+atlas = ExtResource("16_bqstj")
+region = Rect2(672, 0, 336, 240)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhrml"]
 animations = [{
@@ -107,15 +107,15 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xd7e7"]
-atlas = ExtResource("16_bqstj")
+atlas = ExtResource("19_xafak")
 region = Rect2(0, 0, 336, 240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2pbh1"]
-atlas = ExtResource("16_bqstj")
+atlas = ExtResource("19_xafak")
 region = Rect2(336, 0, 336, 240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88abv"]
-atlas = ExtResource("16_bqstj")
+atlas = ExtResource("19_xafak")
 region = Rect2(672, 0, 336, 240)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_th8mh"]
