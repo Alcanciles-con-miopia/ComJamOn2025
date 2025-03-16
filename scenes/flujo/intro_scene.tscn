@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://kuee5s7qpvx2"]
 
 [ext_resource type="Script" uid="uid://b3dlqri07ib85" path="res://scripts/flujo/Intro.gd" id="1_bqrie"]
-[ext_resource type="VideoStream" uid="uid://bmverc8jsvoil" path="res://assets/Videos/Intro.ogv" id="3_oxccj"]
+[ext_resource type="VideoStream" path="res://assets/Videos/Intro-1.ogv" id="2_oqq3y"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="3_xdv7v"]
 
 [node name="Intro" type="Control"]
@@ -24,10 +24,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("3_oxccj")
+stream = ExtResource("2_oqq3y")
 autoplay = true
 expand = true
 
 [node name="ColorRect" parent="." instance=ExtResource("3_xdv7v")]
 layout_mode = 0
 anchors_preset = 0
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
