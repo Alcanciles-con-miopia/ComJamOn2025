@@ -20,6 +20,9 @@ func on_enable():
 	#await get_tree().create_timer(1).timeout
 	getJson() # Coger los datos del json.
 	get_node("ScenaNieves2/Creador de Celdas").initialize() # Llamar al creador de celdas para que se cree la grid inicial.
+	
+	# inicializa la pantalla de carga
+	get_node("ScenaNieves2/Pantalla de carga").empezar_carga()
 
 func on_disable():
 	for i in 5:
