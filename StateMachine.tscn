@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dy4tygucl1fuu" path="res://scenes/flujo/main_menu.tscn" id="3_mwl0m"]
 [ext_resource type="PackedScene" uid="uid://bu7xf1aayujdy" path="res://scenes/flujo/resolucion_scene.tscn" id="3_ofqfh"]
 [ext_resource type="PackedScene" uid="uid://kuee5s7qpvx2" path="res://scenes/flujo/intro_scene.tscn" id="4_jhmf0"]
-[ext_resource type="AudioStream" uid="uid://b7hjp7yc3kpsy" path="res://assets/music/AUDIO-2025-03-15-19-10-14-base0.ogg" id="10_nuot8"]
-[ext_resource type="AudioStream" uid="uid://dmeoav65gewh6" path="res://assets/music/AUDIO-2025-03-15-19-10-25-base1.ogg" id="11_ipfr0"]
-[ext_resource type="AudioStream" uid="uid://bvsa3lxifcv6k" path="res://assets/music/AUDIO-2025-03-15-19-12-35-base2.ogg" id="12_d7wts"]
-[ext_resource type="AudioStream" uid="uid://qvcc05tdl5wb" path="res://assets/music/AUDIO-2025-03-15-19-14-26-base3.ogg" id="13_7amxh"]
-[ext_resource type="AudioStream" uid="uid://dp0v18qj8fyb4" path="res://assets/music/AUDIO-2025-03-15-18-16-28.ogg" id="14_4ce4i"]
+[ext_resource type="AudioStream" uid="uid://dgdbb0htp4bkm" path="res://assets/music/Intro.mp3" id="10_nuot8"]
+[ext_resource type="AudioStream" uid="uid://dvolyj7lowgkl" path="res://assets/music/separated gameplay tracks/bass.mp3" id="11_ipfr0"]
+[ext_resource type="AudioStream" uid="uid://da242kglthfqv" path="res://assets/music/separated gameplay tracks/piano.mp3" id="12_d7wts"]
+[ext_resource type="AudioStream" uid="uid://ct8y7sifmy53m" path="res://assets/music/separated gameplay tracks/trumpet.mp3" id="13_7amxh"]
+[ext_resource type="AudioStream" uid="uid://dis25yj08m3ev" path="res://assets/music/fullgameplay.mp3" id="14_4ce4i"]
 [ext_resource type="PackedScene" uid="uid://dnysdn0d3o7b2" path="res://scenes/flujo/splash_scene.tscn" id="14_aso3l"]
 [ext_resource type="PackedScene" uid="uid://5w0xl8fledrk" path="res://scenes/flujo/fade_scene.tscn" id="17_rgtxn"]
 
@@ -51,29 +51,27 @@ visible = false
 
 [node name="Sound" type="Node" parent="."]
 
-[node name="BGM1" type="AudioStreamPlayer2D" parent="Sound"]
+[node name="BGM0" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource("10_nuot8")
-parameters/looping = true
+
+[node name="BGM1" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource("11_ipfr0")
 
 [node name="BGM2" type="AudioStreamPlayer2D" parent="Sound"]
-stream = ExtResource("11_ipfr0")
-volume_db = -80.0
-parameters/looping = true
-
-[node name="BGM3" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource("12_d7wts")
 volume_db = -80.0
-parameters/looping = true
+
+[node name="BGM3" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource("11_ipfr0")
+volume_db = -80.0
 
 [node name="BGM4" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource("13_7amxh")
 volume_db = -80.0
-parameters/looping = true
 
 [node name="BGM5" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource("14_4ce4i")
 volume_db = -80.0
-parameters/looping = true
 
 [node name="SFX1" type="AudioStreamPlayer2D" parent="Sound"]
 

@@ -3,6 +3,7 @@ extends Node
 @export var scenes: Array[Node] = [] 
 @onready var fade = $Fade
 
+@onready var bgm0: AudioStreamPlayer2D = $Sound/BGM0
 @onready var bgm1: AudioStreamPlayer2D = $Sound/BGM1
 @onready var bgm2: AudioStreamPlayer2D = $Sound/BGM2
 @onready var bgm3: AudioStreamPlayer2D = $Sound/BGM3
@@ -24,6 +25,7 @@ func _ready() -> void:
 	Global.bgm4 = bgm4
 	Global.bgm5 = bgm5
 	Global.bgm = [ bgm1, bgm2, bgm3, bgm4, bgm5 ]
+	Global.bgm0 = bgm0
 	#Global.window = DisplayServer.window_get_size().x
 	#Global.window = get_viewport().get_visible_rect().size.x
 	# Global.to_transition.connect(_on_totransition)

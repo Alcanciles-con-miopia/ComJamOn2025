@@ -1,67 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://kuee5s7qpvx2"]
+[gd_scene load_steps=5 format=3 uid="uid://kuee5s7qpvx2"]
 
 [ext_resource type="Script" uid="uid://b3dlqri07ib85" path="res://scripts/flujo/Intro.gd" id="1_bqrie"]
-[ext_resource type="Texture2D" uid="uid://be3ugp7qw5to8" path="res://assets/images/punto.png" id="2_oqq3y"]
+[ext_resource type="VideoStream" uid="uid://bmverc8jsvoil" path="res://assets/Videos/Intro.ogv" id="3_oxccj"]
+[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="3_xdv7v"]
 
-[sub_resource type="Animation" id="Animation_f2rc0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect2:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.34, 0.27)]
-}
-
-[sub_resource type="Animation" id="Animation_35huq"]
-resource_name = "fadeout"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect2:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.34, 0.27)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ob7jx"]
-_data = {
-&"RESET": SubResource("Animation_f2rc0"),
-&"fadeout": SubResource("Animation_35huq")
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wphq6"]
+shader = ExtResource("3_xdv7v")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -72,29 +20,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bqrie")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 3840.0
-offset_bottom = 2160.0
-scale = Vector2(0.335, 0.335)
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 3452.0
-offset_bottom = 2448.0
-scale = Vector2(0.34, 0.27)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ob7jx")
-}
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = -10.0
 autoplay = true
 
-[node name="Punto" type="Sprite2D" parent="."]
-position = Vector2(567, 311)
-texture = ExtResource("2_oqq3y")
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_oxccj")
+autoplay = true
+expand = true
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4096
+material = SubResource("ShaderMaterial_wphq6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
