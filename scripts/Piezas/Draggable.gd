@@ -1,6 +1,4 @@
 extends Button
-class_name Draggable
-
 var bloqueada: bool = false
 var celda = null
 

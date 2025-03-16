@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://burbk5nmn1kdj" path="res://assets/images/guias.png" id="1_2s6wm"]
 [ext_resource type="Script" uid="uid://b2ulmmobdk62" path="res://scripts/inventario/Inventario.gd" id="2_2v2om"]
+[ext_resource type="VideoStream" path="res://assets/Videos/Fondo Derecha (2).ogv" id="4_3f1gi"]
 [ext_resource type="PackedScene" uid="uid://beqvfn2j5vjsc" path="res://scenes/Avanzar/EvolveButton.tscn" id="4_8m4t8"]
 [ext_resource type="Script" uid="uid://bs3fvn8jic5bx" path="res://scenes/Avanzar/fondo_automata.gd" id="5_2v2om"]
 [ext_resource type="Texture2D" uid="uid://bcplscp34awim" path="res://assets/images/automataBEBE.png" id="5_oxxir"]
 [ext_resource type="Script" uid="uid://bqyu4s0syhkxy" path="res://scenes/creadorCeldas.gd" id="6_oxxir"]
 [ext_resource type="Texture2D" uid="uid://c1h6bjs25ae2n" path="res://assets/images/iman.png" id="7_3f1gi"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="7_8m4t8"]
-[ext_resource type="VideoStream" uid="uid://b63on8c1pyuvk" path="res://assets/Videos/fondo derecha.ogv" id="8_2s6wm"]
 [ext_resource type="Texture2D" uid="uid://cmxflnmpnrcj1" path="res://assets/images/celdaPanel.png" id="10_k374c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m4t8"]
@@ -31,9 +31,9 @@ texture = ExtResource("7_3f1gi")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_left = 386.0
-offset_right = 1151.0
+offset_right = 1156.0
 offset_bottom = 646.0
-stream = ExtResource("8_2s6wm")
+stream = ExtResource("4_3f1gi")
 autoplay = true
 expand = true
 loop = true
@@ -49,6 +49,12 @@ texture = ExtResource("1_2s6wm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDevolverAlInventario"]
 position = Vector2(768.5, 600.5)
 shape = SubResource("RectangleShape2D_8m4t8")
+
+[node name="Sprite2D" type="Sprite2D" parent="AreaDevolverAlInventario/CollisionShape2D"]
+modulate = Color(0, 0, 0, 0.517647)
+position = Vector2(0.999993, 5.99997)
+scale = Vector2(0.474691, 0.0623457)
+texture = ExtResource("10_k374c")
 
 [node name="Inventario" type="Node2D" parent="."]
 script = ExtResource("2_2v2om")
@@ -68,13 +74,6 @@ position = Vector2(487, 438)
 
 [node name="Arbol" parent="." instance=ExtResource("7_8m4t8")]
 position = Vector2(-364, -75)
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-offset_right = 290.0
-offset_bottom = 288.0
-texture = ExtResource("10_k374c")
-patch_margin_left = 28
-patch_margin_top = 35
 
 [connection signal="area_entered" from="AreaDevolverAlInventario" to="Inventario" method="devolver_Inventario_enter"]
 [connection signal="area_exited" from="AreaDevolverAlInventario" to="Inventario" method="_on_area_devolver_al_inventario_area_exited"]
