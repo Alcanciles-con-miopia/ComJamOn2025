@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnysdn0d3o7b2"]
+[gd_scene load_steps=4 format=3 uid="uid://dnysdn0d3o7b2"]
 
 [ext_resource type="Script" uid="uid://cp306wps2uf73" path="res://scripts/flujo/Splash.gd" id="1_bqrie"]
 [ext_resource type="Texture2D" uid="uid://dsk0j7mtwsuv8" path="res://assets/images/alcancilito.png" id="2_gbxxp"]
+[ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="3_brpdo"]
 
 [node name="Splash" type="Control"]
 layout_mode = 3
@@ -64,6 +65,7 @@ offset_right = 388.0
 offset_bottom = 239.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_brpdo")
 theme_override_font_sizes/font_size = 50
 text = "ALCANCILES CON MIOPÍA"
 horizontal_alignment = 1

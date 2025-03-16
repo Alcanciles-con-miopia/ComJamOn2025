@@ -247,7 +247,6 @@ func coge() -> void:
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(0.9,0.9), 0.1)
 	tween.tween_property(self, "scale", Vector2(1,1), 0.1)
-	#print(global_position)
 	
 	Global.Inventario[tipo] += 1 # Nos damos la pieza al inventario.
 	
@@ -331,7 +330,6 @@ func suelta() -> bool:
 		return false
 
 func bloquear_pieza() -> void:
-	#print("Bloquear pieza")
 	# si esta pieza no es la que esta para usar en el inventario la bloquea
 	if Global.piezaEnInventario != self:
 		piezaBloqueada = true

@@ -166,12 +166,12 @@ var piezaVal: int = 1 		# Puntuacion que aporta cada pieza a una rama
 
 # ramas: MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA
 # { nombre , puntuacion (inicialmente 0) }
-var ramaMedio = 	{ nombre = "Medio",	 	punt = 10 }
-var ramaLengua = 	{ nombre = "Lengua", 	punt = 10 }
-var ramaCreativo = 	{ nombre = "Creativo", 	punt = 10 }
-var ramaLogica = 	{ nombre = "Logica", 	punt = 10 }
-var ramaHistoria = 	{ nombre = "Historia", 	punt = 10 }
-var ramaFilo = 		{ nombre = "Filosofia",	punt = 10 }
+var ramaMedio = 	{ nombre = "Medio",	 	punt = 0 }
+var ramaLengua = 	{ nombre = "Lengua", 	punt = 0 }
+var ramaCreativo = 	{ nombre = "Creativo", 	punt = 0 }
+var ramaLogica = 	{ nombre = "Logica", 	punt = 0 }
+var ramaHistoria = 	{ nombre = "Historia", 	punt = 0 }
+var ramaFilo = 		{ nombre = "Filosofia",	punt = 0 }
 
 # puntuacion acumulada por rama
 var arbol = [ramaMedio.punt, ramaLengua.punt, ramaCreativo.punt, ramaLogica.punt, ramaHistoria.punt, ramaFilo.punt]	
