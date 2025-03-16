@@ -248,6 +248,9 @@ func coge() -> void:
 	tween.tween_property(self, "scale", Vector2(0.9,0.9), 0.1)
 	tween.tween_property(self, "scale", Vector2(1,1), 0.1)
 	#print(global_position)
+	
+	Global.Inventario[tipo] += 1 # Nos damos la pieza al inventario.
+	
 	isThisClicked = true
 	for c in get_children():
 		if c.name != "PanelContainer":
@@ -260,10 +263,11 @@ func coge() -> void:
 
 func suelta() -> bool:
 	if toEliminar:
-		Global.feedback_unbranch.emit(tipo, Global.puntos_por_rama[tipo])
+		if (se_ha_puesto_una_vez_xd):
+			Global.feedback_unbranch.emit(tipo, Global.puntos_por_rama[tipo])
 		##########################
 		# SONIDO GUARDAR
-		Global.sfx2.stream = load("res://assets/sounds/recortar/inventory2.wav")
+		Global.sfx2.stream = load("res://assets/sounds/recortar/body2.wav")
 		Global.sfx2.play()
 		##########################
 		
@@ -284,14 +288,14 @@ func suelta() -> bool:
 	for c in get_children():
 		if c.name != "PanelContainer" and c.check_celda(): # si la celda esta disponible
 			modulosEnPosicion += 1
-			Global.Inventario[tipo] += 1
+			#Global.Inventario[tipo] += 1
 			suma_pos += c.celda_donde_colocar()
 		
 	if modulosEnPosicion >= nMods:
 		Global.sfx.stream = load("res://assets/sounds/pieza2.mp3")
 		Global.sfx.play()
 		
-		# Quitamos una.
+		# Quitamos la pieza del inventario.
 		Global.Inventario[tipo] -= 1
 		
 		var nueva_pos = suma_pos / nMods  # media de posiciones de los modulos
@@ -316,11 +320,13 @@ func suelta() -> bool:
 		return true
 	elif puesta: # si esta puesta pero el jugador la ha sacado de las celdas
 		global_position = stopPosition # lo devuelve a la posicion de las celdas anteriores
+
 		for c in get_children():
 			if c.name != "PanelContainer":
 				c.ocupar_celda()
 		return true
 	else:
+		Global.Inventario[tipo] -= 1 # Nos damos la pieza al inventario.
 		global_position = stopPosition # lo devuelve a la posicion de las celdas anteriores
 		return false
 
