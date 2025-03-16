@@ -33,6 +33,9 @@ func _pressed() -> void:
 		var tween2 = create_tween()
 		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
 		
+		Global.sfx2.stream = load("res://assets/sounds/recortar/inventory2.wav")
+		Global.sfx2.play()
+		
 		# Actualizamos la cantidad
 		Global.Inventario[tipo] -= 1
 		

@@ -27,6 +27,8 @@ func _input(event: InputEvent) -> void:
 		rotation_degrees = actualRotation
 		##########################
 		# SONIDO ROTAR
+		Global.sfx2.stream = load("res://assets/sounds/recortar/girar.ogg")
+		Global.sfx2.play()
 		##########################
 	# Captura la posicion inicial del raton al hacer clic
 	if event is InputEventMouseButton:
@@ -261,6 +263,8 @@ func suelta() -> bool:
 		Global.feedback_unbranch.emit(tipo, Global.puntos_por_rama[tipo])
 		##########################
 		# SONIDO GUARDAR
+		Global.sfx2.stream = load("res://assets/sounds/recortar/inventory2.wav")
+		Global.sfx2.play()
 		##########################
 		
 		for c in get_children():
