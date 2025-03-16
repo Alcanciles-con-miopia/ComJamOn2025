@@ -15,6 +15,10 @@ func _ready() -> void:
 	
 	
 func create_point() -> void:
+	#########################
+	#  sonido animar
+	#########################
+	
 	add_point(full_line[next_point - 1]) # crea un duplicado del último punto en la línea dibujada
 	next_point = clamp(next_point, 0, full_line.size() - 1)
 	next_position = full_line[next_point]

@@ -25,6 +25,9 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.is_pressed() and not puesta and clikcDer:
 		actualRotation += 90
 		rotation_degrees = actualRotation
+		##########################
+		# SONIDO ROTAR
+		##########################
 	# Captura la posicion inicial del raton al hacer clic
 	if event is InputEventMouseButton:
 		offset = get_global_mouse_position() - global_position
@@ -256,6 +259,9 @@ func coge() -> void:
 func suelta() -> bool:
 	if toEliminar:
 		Global.feedback_unbranch.emit(tipo, Global.puntos_por_rama[tipo])
+		##########################
+		# SONIDO GUARDAR
+		##########################
 		
 		for c in get_children():
 			if c.name != "PanelContainer":

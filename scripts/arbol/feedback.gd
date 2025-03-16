@@ -25,6 +25,10 @@ func _ready() -> void:
 	#print(full_line)
 	
 func create_point() -> void:
+	#########################
+	#  sonido animar
+	#########################
+	
 	add_point(full_line[next_point - 1]) # crea un duplicado del último punto en la línea dibujada
 
 	next_point = clamp(next_point, 0, full_line.size() - 1)
@@ -32,6 +36,10 @@ func create_point() -> void:
 	next_point += 1
 
 func delete_point() -> void:
+	#########################
+	#  sonido animar
+	#########################
+	
 	print("me ejecuto")
 	if next_point >= 2:
 		next_point -= 1

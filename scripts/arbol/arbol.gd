@@ -64,6 +64,9 @@ func grow_branch(rama, puntos, feedback):
 	#print("he acabado de crecer inicialmente")
 
 func animate_tree():
+	#########################
+	#  sonido animar
+	#########################
 	current_branch = 0
 	for i in 6:
 		if es_resolucion:
