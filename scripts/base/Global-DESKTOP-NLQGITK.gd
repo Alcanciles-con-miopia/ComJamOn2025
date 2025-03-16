@@ -19,16 +19,6 @@ enum Scenes { SPLASH, MAIN_MENU, INTRO, GAME, RESOLUCION, CREDITS, NULL}
 
 var gms 
 var sfx
-var sfx2
-var sfx3
-var sfxs = [ sfx, sfx2, sfx3 ]
-var bgm0
-var bgm1
-var bgm2
-var bgm3
-var bgm4
-var bgm5
-var bgm = [bgm1, bgm2, bgm3, bgm4, bgm5]
 var current_scene = Scenes.SPLASH 
 var next_scene = Scenes.SPLASH
 var stage = 0
@@ -64,51 +54,47 @@ func change_scene(next: Global.Scenes, force = true):
 		Global.on_transition_begin.emit()
 #
 func pieceEnter(tipo: TipoPieza) -> void:
-	Global.arbol[tipo] += Global.puntos_por_rama[tipo]
 	match tipo:
 		TipoPieza.MEDIO:
 			ramaMedio.punt += 1
-			#print("Suma MEDIO")
+			print("Suma MEDIO")
 		TipoPieza.LENGUA:
 			ramaLengua.punt += 1
-			#print("Suma LENGUA")
+			print("Suma LENGUA")
 		TipoPieza.CREATIVO:
 			ramaCreativo.punt += 1
-			#print("Suma CREATIVO")
+			print("Suma CREATIVO")
 		TipoPieza.LOGICA:
 			ramaLogica.punt += 1
-			#print("Suma LOGICA")
+			print("Suma LOGICA")
 		TipoPieza.HISTORIA:
 			ramaHistoria.punt += 1
-			#print("Suma HISOTORIA")
+			print("Suma HISOTORIA")
 		TipoPieza.FILOSOFIA:
 			ramaFilo.punt += 1
-			#print("Suma FILO")
-	#print_debug(Global.arbol)
+			print("Suma FILO")
 
 #
 func pieceExit(tipo: TipoPieza) -> void:
-	Global.arbol[tipo] -= Global.puntos_por_rama[tipo]
 	match tipo:
 		TipoPieza.MEDIO:
 			ramaMedio.punt -= 1
-			#print("Resta MEDIO")
+			print("Resta MEDIO")
 		TipoPieza.LENGUA:
 			ramaLengua.punt -= 1
-			#print("Resta LENGUA")
+			print("Resta LENGUA")
 		TipoPieza.CREATIVO:
 			ramaCreativo.punt -= 1
-			#print("Resta CREATIVO")
+			print("Resta CREATIVO")
 		TipoPieza.LOGICA:
 			ramaLogica.punt -= 1
-			#print("Resta LOGICA")
+			print("Resta LOGICA")
 		TipoPieza.HISTORIA:
 			ramaHistoria.punt -= 1
-			#print("Resta HISOTORIA")
+			print("Resta HISOTORIA")
 		TipoPieza.FILOSOFIA:
 			ramaFilo.punt -= 1
-			#print("Resta FILO")
-	#print_debug(Global.arbol)
+			print("Resta FILO")
 
 # ---- GAME ----
 # --- Funcionalidad y logica
@@ -140,34 +126,23 @@ var textureCAZUL = load("res://assets/images/casillaAzul.jpg")
 var textureCAMARILLA = load("res://assets/images/casillaAmarilla.jpg")
 var casillaTex = [textureCVERDE, textureCNARANJA, textureCMORADA, textureCAZUL, textureCAMARILLA, textureCROJA]	
 
-# - Inventario:
-var PiezasDesbl: int = 3 # Tipos de pieza que se van desbloqueando cada nivel. (+2) y (+1).
-var maxPiezas: int = 4 # Maximo total de piezas.
-var Inventario = [1,1,1,0,0,0] # Inventario.
-var piezaEnInventario = null # Pieza que se muestra en el inventario cuando le das a un boton.
-# Mete una pieza al inventario (numericamente)
-func sumaInventarioPieza(tipo: TipoPieza)-> void:
-	# No puedes tener mas de x piezas.
-	if Inventario[tipo] < maxPiezas:
-		Inventario[tipo] += 1
-# Lo contrario que el anterior.
-func restaInventarioPieza(tipo: TipoPieza) -> void:
-	Inventario[tipo] -= 1
+var PiezasDesbl: int = 3
+var Inventario = [4,4,4,4,4,4]
 
 # - Hover
 var FeedbackText = ["Entorno", "Lenguas", "Artes", "Lógica", "Historia", "Filosofía"]
 var FeedbackColor = [
 	Color(0.427, 0.851, 0.49), 
-	Color(0.878, 0.522, 0.286), 
+	Color(0.41, 0.694, 0.851), 
 	Color(0.733, 0.408, 0.851), 
-	Color(0.325, 0.655, 0.871), 
-	Color(0.98, 0.847, 0.259),
-	Color(0.929, 0.376, 0.408)]
+	Color(0.82, 0.271, 0.271), 
+	Color(0.745, 0.769, 0.18),
+	Color(0.278, 0.271, 0.82)]
 
 # - Matriz de juego y celdas:
 var cellSize: float = 50 # Tamanyo de cada celda en x e y.
 var cellOfset: float = 0 # Offset entre las celdas.
-var cellInitPos: Vector2 = Vector2(620, 70) # Posicion inicial de la primera celda.
+var cellInitPos: Vector2 = Vector2(550, 100) # Posicion inicial de la primera celda.
 var matrixSize: Vector2 = Vector2(10, 10) # Entiendo que esto luego sera leido del json pero de momento aqui esta.
 enum cellState { EMPTY_STATE, POTENTIAL_OCCUPED_STATE, OCCUPIED_STATE, NOT_VALID_STATE } # Enum de los estados que puede tener una celda.
 # - Expansion del tablero. Sease [col, fil]
@@ -183,26 +158,18 @@ var piezaVal: int = 1 		# Puntuacion que aporta cada pieza a una rama
 
 # ramas: MEDIO, LENGUA, CREATIVO, LOGICA, HISTORIA, FILOSOFIA
 # { nombre , puntuacion (inicialmente 0) }
-var ramaMedio = 	{ nombre = "Medio",	 	punt = 0 }
-var ramaLengua = 	{ nombre = "Lengua", 	punt = 0 }
-var ramaCreativo = 	{ nombre = "Creativo", 	punt = 0 }
-var ramaLogica = 	{ nombre = "Logica", 	punt = 0 }
-var ramaHistoria = 	{ nombre = "Historia", 	punt = 0 }
-var ramaFilo = 		{ nombre = "Filosofia",	punt = 0 }
+var ramaMedio = 	{ nombre = "Medio",	 	punt = 5 }
+var ramaLengua = 	{ nombre = "Lengua", 	punt = 7 }
+var ramaCreativo = 	{ nombre = "Creativo", 	punt = 10 }
+var ramaLogica = 	{ nombre = "Logica", 	punt = 3 }
+var ramaHistoria = 	{ nombre = "Historia", 	punt = 2 }
+var ramaFilo = 		{ nombre = "Filosofia",	punt = 8 }
 
 # puntuacion acumulada por rama
 var arbol = [ramaMedio.punt, ramaLengua.punt, ramaCreativo.punt, ramaLogica.punt, ramaHistoria.punt, ramaFilo.punt]	
 # puntuacion max de una rama
 const ramaMax: int = 10
-var puntos_por_rama = [2,2,2,3,3,4] #hola soy cynthia
-#var piezas_este_turno = [] #deprecated, lo dejo por si acaso
-var arbol_act = [0,0,0,0,0,0]
-var puntos_maximos_por_rama = [0, 0, 0, 0, 0, 0] #esto va a ser rellenado en el ready del arbol
-#hola dejo de ser cynthia
 
 # - Signales de las piezas:
 signal on_piece_enter(tipo: TipoPieza) # Cuando la pieza se coloca.
 signal on_piece_exit(tipo: TipoPieza) # Cuando la pieza se quita.
-
-# - Random:
-var random = RandomNumberGenerator.new()
