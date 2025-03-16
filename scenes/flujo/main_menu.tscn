@@ -1,11 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy4tygucl1fuu"]
+[gd_scene load_steps=11 format=3 uid="uid://dy4tygucl1fuu"]
 
 [ext_resource type="Script" uid="uid://ovognw1joqnr" path="res://scripts/flujo/MainMenu.gd" id="1_rpswa"]
-[ext_resource type="Texture2D" uid="uid://b0d5e2lmnwdkk" path="res://assets/images/logo.png" id="2_1urw7"]
-[ext_resource type="VideoStream" uid="uid://cgjgbvjesre34" path="res://assets/Videos/Fondo Derecha (2).ogv" id="2_ewfsx"]
+[ext_resource type="Texture2D" uid="uid://coj5eexdyryu2" path="res://assets/images/logo.png" id="2_1urw7"]
+[ext_resource type="VideoStream" uid="uid://cym2wc5n8q2rp" path="res://assets/Videos/Fondo Derecha (2).ogv" id="2_ewfsx"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="3_fh5dn"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="4_6d6cj"]
-[ext_resource type="Texture2D" uid="uid://ddsg8x1f7s60f" path="res://assets/images/fondo derecha.jpg" id="6_ey3ua"]
+[ext_resource type="Texture2D" uid="uid://ct30yikj4ltlc" path="res://assets/cursor/cursor_spritesheet.png" id="6_ey3ua"]
+[ext_resource type="Script" uid="uid://le05a2x5yqvs" path="res://scenes/flujo/cursor.gd" id="7_f33ph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f33ph"]
+atlas = ExtResource("6_ey3ua")
+region = Rect2(0, 0, 122, 121)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd7ed"]
+atlas = ExtResource("6_ey3ua")
+region = Rect2(123, 0, 122, 121)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjggc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f33ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd7ed")
+}],
+"loop": false,
+"name": &"click",
+"speed": 10.0
+}]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -88,6 +111,15 @@ offset_right = 31.0
 offset_bottom = 13.0
 mouse_filter = 2
 
-[connection signal="button_down" from="Button2" to="." method="_on_button_button_down"]
+[node name="cursor" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_qjggc")
+animation = &"click"
+frame = 1
+frame_progress = 1.0
+offset = Vector2(40, 45)
+script = ExtResource("7_f33ph")
+
 [connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
