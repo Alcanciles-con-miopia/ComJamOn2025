@@ -17,6 +17,8 @@ func _ready() -> void:
 func create_point() -> void:
 	#########################
 	#  sonido animar
+	Global.sfx2.stream = load("res://assets/sounds/recortar/bowpull.wav")
+	Global.sfx2.play()
 	#########################
 	
 	add_point(full_line[next_point - 1]) # crea un duplicado del último punto en la línea dibujada
