@@ -249,6 +249,8 @@ sprite_frames = SubResource("SpriteFrames_xd7e7")
 animation = &"Rotar"
 script = ExtResource("18_d3dcn")
 
+[node name="evolucionar" type="AnimatedSprite2D" parent="Pantalla de carga"]
+
 [node name="CogerLabel" type="Label" parent="Pantalla de carga"]
 z_index = 4096
 offset_left = 236.0
@@ -268,6 +270,11 @@ offset_bottom = 357.0
 theme_override_fonts/font = ExtResource("19_fhrml")
 theme_override_font_sizes/font_size = 30
 text = "ROTAR PIEZA"
+
+[node name="EvolucionarLabel" type="Label" parent="Pantalla de carga"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EVOLUCIONAR"
 
 [node name="ColorRect2" parent="." instance=ExtResource("15_j6lm8")]
 
