@@ -15,16 +15,6 @@ bg_color = Color(0.054902, 0.054902, 0.054902, 1)
 title_color = Color(0.482353, 0.203922, 0.054902, 1)
 text_color = Color(0.811765, 0.576471, 0.368627, 1)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.054902, 0.054902, 0.054902, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 3452.0
