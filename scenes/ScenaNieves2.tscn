@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cr33c8imfaurg"]
+[gd_scene load_steps=46 format=3 uid="uid://cr33c8imfaurg"]
 
 [ext_resource type="Texture2D" uid="uid://burbk5nmn1kdj" path="res://assets/images/guias.png" id="1_2s6wm"]
 [ext_resource type="Texture2D" uid="uid://dlfmihffygfuw" path="res://assets/images/fondo izquierda.jpg" id="1_ptgak"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cse605ixysn7e" path="res://assets/controles/controles_rotar_sheet.png" id="17_kyi1n"]
 [ext_resource type="Script" uid="uid://bck8rbwnr5xow" path="res://scenes/rotar.gd" id="18_d3dcn"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="19_fhrml"]
+[ext_resource type="Script" uid="uid://bj4ygo7wia73x" path="res://scenes/evolucionar.gd" id="19_th8mh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8m4t8"]
 size = Vector2(765, 91)
@@ -101,6 +102,35 @@ animations = [{
 }],
 "loop": true,
 "name": &"Rotar",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd7e7"]
+atlas = ExtResource("16_bqstj")
+region = Rect2(0, 0, 336, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pbh1"]
+atlas = ExtResource("16_bqstj")
+region = Rect2(336, 0, 336, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88abv"]
+atlas = ExtResource("16_bqstj")
+region = Rect2(672, 0, 336, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_th8mh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd7e7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pbh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88abv")
+}],
+"loop": true,
+"name": &"Evolucionar",
 "speed": 1.0
 }]
 
@@ -236,7 +266,7 @@ value = 50.0
 [node name="coger" type="AnimatedSprite2D" parent="Pantalla de carga"]
 z_index = 4096
 texture_filter = 3
-position = Vector2(206, 200)
+position = Vector2(223, 196)
 sprite_frames = SubResource("SpriteFrames_fhrml")
 animation = &"Coger"
 script = ExtResource("16_twbgl")
@@ -244,41 +274,45 @@ script = ExtResource("16_twbgl")
 [node name="rotar" type="AnimatedSprite2D" parent="Pantalla de carga"]
 z_index = 4096
 texture_filter = 1
-position = Vector2(554, 200)
+position = Vector2(571, 196)
 sprite_frames = SubResource("SpriteFrames_xd7e7")
 animation = &"Rotar"
 script = ExtResource("18_d3dcn")
 
 [node name="evolucionar" type="AnimatedSprite2D" parent="Pantalla de carga"]
 z_index = 4096
-position = Vector2(-129, 0)
+position = Vector2(945, 196)
+sprite_frames = SubResource("SpriteFrames_th8mh")
+animation = &"Evolucionar"
+frame_progress = 0.565736
+script = ExtResource("19_th8mh")
 
 [node name="CogerLabel" type="Label" parent="Pantalla de carga"]
 z_index = 4096
-offset_left = 107.0
-offset_top = 320.0
-offset_right = 289.0
-offset_bottom = 357.0
+offset_left = 124.0
+offset_top = 316.0
+offset_right = 306.0
+offset_bottom = 353.0
 theme_override_fonts/font = ExtResource("19_fhrml")
 theme_override_font_sizes/font_size = 30
 text = "COGER PIEZA"
 
 [node name="RotarLabel" type="Label" parent="Pantalla de carga"]
 z_index = 4096
-offset_left = 465.0
-offset_top = 320.0
-offset_right = 647.0
-offset_bottom = 357.0
+offset_left = 482.0
+offset_top = 316.0
+offset_right = 664.0
+offset_bottom = 353.0
 theme_override_fonts/font = ExtResource("19_fhrml")
 theme_override_font_sizes/font_size = 30
 text = "ROTAR PIEZA"
 
 [node name="EvolucionarLabel" type="Label" parent="Pantalla de carga"]
 z_index = 4096
-offset_left = 831.0
-offset_top = 320.0
-offset_right = 1013.0
-offset_bottom = 357.0
+offset_left = 848.0
+offset_top = 316.0
+offset_right = 1030.0
+offset_bottom = 353.0
 theme_override_fonts/font = ExtResource("19_fhrml")
 theme_override_font_sizes/font_size = 30
 text = "EVOLUCIONAR"

@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="2_hertv"]
 [ext_resource type="Script" uid="uid://c2134tcpdsvos" path="res://scripts/arbol/Fade_Init.gd" id="2_qoaxl"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_sjyt0"]
-[ext_resource type="Texture2D" uid="uid://pnn8xt853ojp" path="res://assets/images/cabezaresolucion.png" id="5_ccoqp"]
+[ext_resource type="Texture2D" uid="uid://cof7m5w1qfe1n" path="res://assets/images/cabezaresolucion.png" id="5_ccoqp"]
 [ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="5_utenc"]
-[ext_resource type="Texture2D" uid="uid://lquy6b6otkq4" path="res://assets/images/Arbolcabeza/Arbol3.png" id="6_1djue"]
+[ext_resource type="Texture2D" uid="uid://baux2ikqi22iy" path="res://assets/images/Arbolcabeza/Arbol3.png" id="6_1djue"]
 [ext_resource type="PackedScene" uid="uid://bjdrwnkpyva5i" path="res://scenes/cursor.tscn" id="6_ixi4i"]
-[ext_resource type="Texture2D" uid="uid://ddsg8x1f7s60f" path="res://assets/images/fondo derecha.jpg" id="7_2wa72"]
+[ext_resource type="Texture2D" uid="uid://b0nhahxh2ca0" path="res://assets/images/fondo derecha.jpg" id="7_2wa72"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wa72"]
 
