@@ -44,7 +44,7 @@ func on_branch_grow(rama, puntos) -> void:
 	pass
 	
 func on_branch_feed(rama, puntos) -> void:
-	grow_branch(rama, puntos, true)
+	grow_branch(rama, puntos, true, false)
 	pass
 	
 func on_branch_receed(rama, puntos) -> void:
@@ -53,30 +53,37 @@ func on_branch_receed(rama, puntos) -> void:
 		await get_tree().create_timer(anim_dur).timeout
 	pass
 
-func grow_branch(rama, puntos, feedback):
+func grow_branch(rama, puntos, feedback, resolucion = true):
 	for i in puntos:
 		if feedback:
+			if (!resolucion):
+				#########################
+				#  sonido animar
+				Global.sfx3.stream = load("res://assets/sounds/recortar/pop4.ogg")
+				Global.sfx3.play()
+				#########################
 			feedback_ramas[rama].create_point()
 		else:
+			#if (!resolucion):
+			Global.sfx2.stream = load("res://assets/sounds/recortar/bowpull.wav")
+			Global.sfx2.play()
 			ramas[rama].create_point()
 		await get_tree().create_timer(anim_dur).timeout
 	Global.resultado_grown.emit(rama)
 	#print("he acabado de crecer inicialmente")
 
 func animate_tree():
-	#########################
-	#  sonido animar
-	#########################
 	current_branch = 0
 	for i in 6:
 		if es_resolucion:
-			grow_branch(current_branch, 100, true)
+			var puntos = clamp(Global.arbol[current_branch], 0, Global.puntos_maximos_por_rama[current_branch])
+			grow_branch(current_branch, Global.puntos_maximos_por_rama[current_branch], true)
 			await get_tree().create_timer(0.1).timeout
-			grow_branch(current_branch, Global.arbol[current_branch], false)
+			grow_branch(current_branch, puntos, false)
 			current_branch += 1;
 			current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.FILOSOFIA)
 		else:
-			grow_branch(current_branch, Global.arbol[current_branch] - Global.arbol_act[current_branch], false)
+			grow_branch(current_branch, Global.arbol[current_branch] - Global.arbol_act[current_branch], false, false)
 			Global.arbol_act[current_branch] += Global.arbol[current_branch] - Global.arbol_act[current_branch]
 			current_branch += 1;
 			current_branch = clamp(current_branch, Ramas.MEDIO, Ramas.FILOSOFIA)
