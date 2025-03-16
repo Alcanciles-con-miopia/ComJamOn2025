@@ -31,3 +31,8 @@ func on_enable():
 	for i in 6:
 		var percent = Global.arbol[i] * 100 / Global.puntos_maximos_por_rama[i]
 		porcentajes[i].text = str(percent, "%")
+		
+func on_disable():
+	for i in 5:
+		Global.bgm[i].stop()
+	pass
