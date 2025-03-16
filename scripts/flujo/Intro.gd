@@ -53,9 +53,12 @@ func _input(event):
 			#
 
 func on_enable():
+	Global.bgm0.stream = load("res://assets/music/Intro.mp3")
+	Global.bgm0.play()
 	pass
 
 func on_disable():
+	Global.bgm0.stop()
 	_reset()
 	pass
 

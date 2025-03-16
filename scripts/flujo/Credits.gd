@@ -182,3 +182,12 @@ func _unhandled_input(event):
 		speed_up = true
 	if event.is_action_released("ui_down") and !event.is_echo():
 		speed_up = false
+
+func on_enable():
+	Global.bgm0.stream = load("res://assets/music/Intro.mp3")
+	Global.bgm0.play()
+	pass
+
+func on_disable():
+	Global.bgm0.stop()
+	pass

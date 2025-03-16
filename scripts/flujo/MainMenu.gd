@@ -11,10 +11,12 @@ func _process(delta: float) -> void:
 	pass
 	
 func on_enable():
-	print("hola")
-	# label.text = tr("INTRODUCCION")
-	# Global.sfx.stream= load("res://sonido/monologoIntroduccion.mp3")
-	# Global.sfx.play()
+	#Global.bgm0.stream = load("res://assets/music/Intro.mp3")
+	#Global.bgm0.play()
+	pass
+
+func on_disable():
+	#Global.bgm0.stop()
 	pass
 
 

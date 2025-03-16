@@ -4,3 +4,26 @@ amarillo historia
 rojo filo
 azul lógico
 naranja lengua
+
+
+
+0: bajo
+1: piano
+2: batería
+3: trompeta
+
+
+musica:
+main menú
+intro (ok)
+créditos
+
+sfx que no tienen: 
+clicks
+
+
+MIO:
+redibujar líneas cuando este implementado el arte + balancear
+
+INVENTARIO:
+numerito piezas inventario
