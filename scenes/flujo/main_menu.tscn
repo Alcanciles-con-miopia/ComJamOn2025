@@ -1,12 +1,34 @@
-[gd_scene load_steps=11 format=3 uid="uid://dy4tygucl1fuu"]
+[gd_scene load_steps=22 format=3 uid="uid://dy4tygucl1fuu"]
 
 [ext_resource type="Script" uid="uid://ovognw1joqnr" path="res://scripts/flujo/MainMenu.gd" id="1_rpswa"]
-[ext_resource type="Texture2D" uid="uid://coj5eexdyryu2" path="res://assets/images/logo.png" id="2_1urw7"]
-[ext_resource type="VideoStream" uid="uid://cym2wc5n8q2rp" path="res://assets/Videos/Fondo Derecha (2).ogv" id="2_ewfsx"]
+[ext_resource type="Texture2D" uid="uid://b0d5e2lmnwdkk" path="res://assets/images/logo.png" id="2_1urw7"]
+[ext_resource type="VideoStream" uid="uid://cgjgbvjesre34" path="res://assets/Videos/Fondo Derecha (2).ogv" id="2_ewfsx"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="3_fh5dn"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="4_6d6cj"]
-[ext_resource type="Texture2D" uid="uid://ct30yikj4ltlc" path="res://assets/cursor/cursor_spritesheet.png" id="6_ey3ua"]
-[ext_resource type="Script" uid="uid://le05a2x5yqvs" path="res://scenes/flujo/cursor.gd" id="7_f33ph"]
+[ext_resource type="Texture2D" uid="uid://prbpkygaavro" path="res://assets/cursor/cursor_spritesheet.png" id="6_ey3ua"]
+[ext_resource type="Script" path="res://scenes/flujo/cursor.gd" id="7_f33ph"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f33ph"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pd7ed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjggc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tetnm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxmux"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yx6mr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxn2a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ntdlh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijfu0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m32l4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cq54c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f33ph"]
 atlas = ExtResource("6_ey3ua")
@@ -40,6 +62,7 @@ grow_vertical = 2
 script = ExtResource("1_rpswa")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0.355314, 0.355314, 0.355314, 1)
 layout_mode = 0
 offset_left = -3.0
@@ -100,6 +123,17 @@ theme_override_colors/font_hover_color = Color(0.380392, 0.168627, 0.0901961, 1)
 theme_override_colors/font_color = Color(0.8, 0.564706, 0.360784, 1)
 theme_override_fonts/font = ExtResource("3_fh5dn")
 theme_override_font_sizes/font_size = 86
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f33ph")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pd7ed")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qjggc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_tetnm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xxmux")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yx6mr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gxn2a")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ntdlh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ijfu0")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_m32l4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cq54c")
 text = "JUGAR"
 flat = true
 
@@ -120,6 +154,6 @@ frame_progress = 1.0
 offset = Vector2(40, 45)
 script = ExtResource("7_f33ph")
 
-[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
