@@ -27,6 +27,8 @@ func _ready() -> void:
 func create_point() -> void:
 	#########################
 	#  sonido animar
+	Global.sfx3.stream = load("res://assets/sounds/recortar/pop4.ogg")
+	Global.sfx3.play()
 	#########################
 	
 	add_point(full_line[next_point - 1]) # crea un duplicado del último punto en la línea dibujada
@@ -38,6 +40,8 @@ func create_point() -> void:
 func delete_point() -> void:
 	#########################
 	#  sonido animar
+	Global.sfx3.stream = load("res://assets/sounds/recortar/pop2.wav")
+	Global.sfx3.play()
 	#########################
 	
 	print("me ejecuto")

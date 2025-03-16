@@ -36,31 +36,21 @@ func _pressed() -> void:
 		Global.sfx2.stream = load("res://assets/sounds/recortar/inventory2.wav")
 		Global.sfx2.play()
 		
-		# Actualizamos la cantidad
-		Global.Inventario[tipo] -= 1
-		
 		# Instanciamos la pieza
 		var piezaObj = pieza.instantiate()
 		get_node("../../Piezas").add_child(piezaObj)
-		# instanciamos pieza
+		# Si ya hay una pieza la eliminamos.
 		if Global.piezaEnInventario != null:
-			Global.piezaEnInventario.queue_free()
-			if Global.piezaEnInventario.tipo != tipo:
-				# Actualizamos la cantidad
-				Global.Inventario[Global.piezaEnInventario.tipo] += 1
-		else:
-			# Actualizamos la cantidad
-			Global.Inventario[tipo] = Global.Inventario[tipo]-1
-		Global.piezaEnInventario = piezaObj
-		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
-
+			Global.piezaEnInventario.queue_free() #La elimina.
 		
+		Global.piezaEnInventario = piezaObj #La pieza del inventario es la nueva.
+		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo
 	else:
 		tween.tween_property(self, "scale", Vector2(0.03,0.03), 0.08)
 		var tween2 = create_tween()
 		tween2.tween_property(panel_container, "rotation_degrees", -2, 0.08)
-		print("no quedan piezas")
-	
+		print_debug("no quedan piezas")
+
 func _on_button_up():
 	var tween = create_tween()
 	if Global.Inventario[tipo] > 0:

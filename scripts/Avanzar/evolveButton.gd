@@ -13,8 +13,8 @@ func _pressed() -> void:
 	disabled = false
 
 func _manage_pressed() -> void:
-	#Global.sfx.stream = load("res://assets/sounds/CintaMontaje.ogg")
-	#Global.sfx.play()
+	Global.sfx.stream = load("res://assets/sounds/CintaMontaje.ogg")
+	Global.sfx.play()
 	
 	var tween = create_tween()
 	tween.tween_property(self, "position", Vector2(394.0, 0.0), 0.2)
