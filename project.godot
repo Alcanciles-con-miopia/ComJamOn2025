@@ -14,7 +14,8 @@ config/name="MACHI-MENTIBUS"
 run/main_scene="uid://t4p55hjx1m5i"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.141176, 0.00392157, 0, 1)
-config/icon="uid://cqjja3dm4v7nr"
+config/icon="uid://vtupx7njkwh6"
+config/windows_native_icon="res://assets/images/iconito.ico"
 
 [autoload]
 
