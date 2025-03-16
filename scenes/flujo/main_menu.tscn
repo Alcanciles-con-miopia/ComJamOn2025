@@ -124,6 +124,6 @@ mouse_filter = 2
 
 [node name="cursor" parent="." instance=ExtResource("7_f33ph")]
 
-[connection signal="button_down" from="Button2" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
