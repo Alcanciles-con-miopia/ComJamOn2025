@@ -23,6 +23,7 @@ func _manage_pressed() -> void:
 	if Global.CurrentEdad < 4:
 		Global.CurrentEdad += 1 
 		
+		# Lo quito para que solo se sumen 1 cada era.
 		if Global.CurrentEdad == 1:   # de nino a joven -> +2 ramas
 			Global.PiezasDesbl += 2
 		

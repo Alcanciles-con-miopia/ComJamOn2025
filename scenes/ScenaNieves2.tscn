@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bs3fvn8jic5bx" path="res://scenes/Avanzar/fondo_automata.gd" id="5_2v2om"]
 [ext_resource type="Texture2D" uid="uid://bcplscp34awim" path="res://assets/images/automataBEBE.png" id="5_oxxir"]
 [ext_resource type="Script" uid="uid://bqyu4s0syhkxy" path="res://scenes/creadorCeldas.gd" id="6_oxxir"]
-[ext_resource type="Texture2D" uid="uid://g226tgcskrlo" path="res://assets/images/iman.png" id="7_3f1gi"]
+[ext_resource type="Texture2D" uid="uid://beceeooetq4h5" path="res://assets/images/iman.png" id="7_3f1gi"]
 [ext_resource type="PackedScene" uid="uid://ctwne4c1f753a" path="res://scenes/arbol/Arbol.tscn" id="7_8m4t8"]
 [ext_resource type="VideoStream" uid="uid://b63on8c1pyuvk" path="res://assets/Videos/fondo derecha.ogv" id="8_2s6wm"]
 

@@ -10,8 +10,18 @@ class_name ItemInventario
 @export var tipo: Global.TipoPieza
 
 func _process(delta: float) -> void:
+	print_debug("Inventario: ",
+	" MEDIO: ", Global.Inventario[Global.TipoPieza.MEDIO],
+	" LENGUA: ", Global.Inventario[Global.TipoPieza.LENGUA],
+	" CREATIVO: ", Global.Inventario[Global.TipoPieza.CREATIVO],
+	" LOGICA: ", Global.Inventario[Global.TipoPieza.LOGICA],
+	" HISTORIA: ", Global.Inventario[Global.TipoPieza.HISTORIA],
+	" FILOSOFIA: ", Global.Inventario[Global.TipoPieza.FILOSOFIA])
+	# Para que se ponga transparente si no hay piezas.
 	if Global.Inventario[tipo] <= 0:
 		modulate = Color(1.0, 1.0, 1.0, 0.5)
+	else: # Para que deje de ser transparente.
+		modulate = Color(1.0, 1.0, 1.0, 1)
 
 func _ready() -> void:
 	var styleBox: StyleBoxFlat = panel_container.get_theme_stylebox("panel").duplicate()
@@ -44,10 +54,11 @@ func _pressed() -> void:
 			Global.piezaEnInventario.queue_free() # La elimina.
 			# Si hay una pieza de un tipo y la que queremos es de otro tipo le sumamos al inventario de la original.mp3 (temazo)
 			if Global.piezaEnInventario.tipo != tipo:
-				Global.Inventario[Global.piezaEnInventario.tipo] += 1
+				Global.sumaInventarioPieza(Global.piezaEnInventario.tipo)
+				Global.restaInventarioPieza(tipo)
 		# Si esta vacio simplemente quitamos.
 		else:
-			Global.Inventario[tipo] -= 1 
+			Global.restaInventarioPieza(tipo)
 
 		Global.piezaEnInventario = piezaObj # La pieza del inventario es la nueva.
 		piezaObj.instantiate_forma(tipo) #con el metodo nuevo podemos ahorrarnos el match creo

@@ -28,10 +28,10 @@ func instantiate_item(x_pos, i) -> void:
 	pieza.scale = Vector2(0.03,0.03)
 	add_child(pieza)
 
+# Mete piezas tras pasar el nivel.
 func add_piezas() -> void:
-	for i in range(Global.PiezasDesbl-1):
-		Global.Inventario[i] += 1
-
+	for i in range(Global.PiezasDesbl):
+		Global.sumaInventarioPieza(i) # Suma una pieza al inventario.
 
 func devolver_Inventario_enter(area: Area2D) -> void:
 	if area.get_parent().get_parent().get_script() == preload("res://scripts/Piezas/Pieza.gd"):
