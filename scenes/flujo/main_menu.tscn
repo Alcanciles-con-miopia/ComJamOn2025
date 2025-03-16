@@ -1,11 +1,11 @@
 [gd_scene load_steps=19 format=3 uid="uid://dy4tygucl1fuu"]
 
 [ext_resource type="Script" uid="uid://ovognw1joqnr" path="res://scripts/flujo/MainMenu.gd" id="1_rpswa"]
-[ext_resource type="Texture2D" uid="uid://coj5eexdyryu2" path="res://assets/images/logo.png" id="2_1urw7"]
-[ext_resource type="VideoStream" uid="uid://cym2wc5n8q2rp" path="res://assets/Videos/Fondo Derecha (2).ogv" id="2_ewfsx"]
+[ext_resource type="Texture2D" uid="uid://cuw3japja5by6" path="res://assets/images/logo.png" id="2_1urw7"]
+[ext_resource type="VideoStream" uid="uid://1cw7em33lx4e" path="res://assets/Videos/Fondo Derecha (2).ogv" id="2_ewfsx"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="3_fh5dn"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="4_6d6cj"]
-[ext_resource type="Texture2D" uid="uid://b0nhahxh2ca0" path="res://assets/images/fondo derecha.jpg" id="6_ey3ua"]
+[ext_resource type="Texture2D" uid="uid://par0e8gri2d2" path="res://assets/images/fondo derecha.jpg" id="6_ey3ua"]
 [ext_resource type="PackedScene" uid="uid://bjdrwnkpyva5i" path="res://scenes/cursor.tscn" id="7_f33ph"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f33ph"]
@@ -124,6 +124,6 @@ mouse_filter = 2
 
 [node name="cursor" parent="." instance=ExtResource("7_f33ph")]
 
-[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

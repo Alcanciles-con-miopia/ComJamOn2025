@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ogc2n2uvrebg" path="res://scripts/Avanzar/evolveButton.gd" id="1_bcjxt"]
 [ext_resource type="Texture2D" uid="uid://c56gaoo6kq8pe" path="res://assets/images/cadena.png" id="1_lm3am"]
-[ext_resource type="Texture2D" uid="uid://dqs56rrc1btsy" path="res://assets/images/sombra.png" id="3_7vw0l"]
+[ext_resource type="Texture2D" uid="uid://cos43pww2wd21" path="res://assets/images/sombra.png" id="3_7vw0l"]
 
 [node name="EvolveButton" type="Button"]
 z_index = 4
