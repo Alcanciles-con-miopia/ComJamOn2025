@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-config/name="ComJamOn2025"
+config/name="MACHI-MENTIBUS"
 run/main_scene="uid://t4p55hjx1m5i"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.141176, 0.00392157, 0, 1)
-config/icon="res://icon.svg"
+config/icon="uid://cqjja3dm4v7nr"
 
 [autoload]
 

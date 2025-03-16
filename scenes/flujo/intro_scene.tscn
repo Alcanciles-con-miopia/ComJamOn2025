@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://kuee5s7qpvx2"]
+[gd_scene load_steps=5 format=3 uid="uid://kuee5s7qpvx2"]
 
 [ext_resource type="Script" uid="uid://b3dlqri07ib85" path="res://scripts/flujo/Intro.gd" id="1_bqrie"]
 [ext_resource type="VideoStream" path="res://assets/Videos/Intro-1.ogv" id="2_oqq3y"]
-[ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="3_xdv7v"]
+[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="3_xdv7v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oxccj"]
+shader = ExtResource("3_xdv7v")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -14,6 +21,7 @@ grow_vertical = 2
 script = ExtResource("1_bqrie")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+material = SubResource("ShaderMaterial_oxccj")
 volume_db = -10.0
 autoplay = true
 
@@ -27,9 +35,5 @@ grow_vertical = 2
 stream = ExtResource("2_oqq3y")
 autoplay = true
 expand = true
-
-[node name="ColorRect" parent="." instance=ExtResource("3_xdv7v")]
-layout_mode = 0
-anchors_preset = 0
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

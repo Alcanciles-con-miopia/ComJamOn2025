@@ -14,9 +14,9 @@ naranja lengua
 
 
 musica:
+amigo
 main menú (falta)
-intro (ok)
-créditos (falta)
+resolucion
 
 sfx que no tienen: 
 clicks
@@ -30,4 +30,4 @@ Implementar
 
 
 INVENTARIO:
-numerito piezas inventario (paigro)
+numerito piezas inventario (paigro + nieves)
