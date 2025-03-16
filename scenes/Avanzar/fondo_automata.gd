@@ -19,7 +19,7 @@ func change_fondo() -> void:
 		tween.tween_property(fondo_puzle_2, "position", Vector2(217.0, 52), 0.5)
 		tween.tween_property(fondo_puzle_2, "position", Vector2(217.0, 82), 0.2)
 		tween2.tween_property(self, "position", Vector2(205, 375), 0.5)
-		tween2.tween_property(self, "scale",Vector2(0.6, 0.6), 0.2)
+		tween2.tween_property(self, "scale",Vector2(0.7, 0.7), 0.2)
 		
 		tween.tween_property(fondo_puzle_2, "position", Vector2(217.0, 52), 0.5)
 		tween2.tween_property(self, "position", Vector2(205.0, 355), 0.5)
@@ -48,4 +48,4 @@ func cambiar_fondo() -> void:
 	
 	tween.tween_property(fondo_puzle_2, "position", Vector2(217.0, 52), 0.5)
 	tween.tween_property(fondo_puzle_2, "position", Vector2(493.0, 52), 0.5)
-	tween2.tween_property(self, "scale",Vector2(0.6, 0.6), 0.25)
+	tween2.tween_property(self, "scale",Vector2(0.7, 0.7), 0.25)
