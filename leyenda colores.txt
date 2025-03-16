@@ -14,16 +14,20 @@ naranja lengua
 
 
 musica:
-main menú
+main menú (falta)
 intro (ok)
-créditos
+créditos (falta)
 
 sfx que no tienen: 
 clicks
 
 
 MIO:
-redibujar líneas cuando este implementado el arte + balancear
+redibujar líneas cuando este implementado el arte + balancear dependiente de:
+ARTE:
+Implementar
+9-Slice
+
 
 INVENTARIO:
-numerito piezas inventario
+numerito piezas inventario (paigro)

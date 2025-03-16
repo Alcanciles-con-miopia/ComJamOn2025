@@ -22,6 +22,7 @@ var sfx
 var sfx2
 var sfx3
 var sfxs = [ sfx, sfx2, sfx3 ]
+var bgm0
 var bgm1
 var bgm2
 var bgm3
