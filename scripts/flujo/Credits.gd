@@ -50,13 +50,11 @@ var credits = [
 		"Andrés García Navarro",
 		"Nieves Alonso Gilsanz"
 	], [
-		"NARRATIVA",
-		"Carmen Gómez Becerra"
-	], [
 		"MÚSICA",
 		"Ariadna Ruiz Castillo"
 	], [
 		"DISEÑO DE SONIDO",
+		"Nieves Alonso Gilsanz",
 		"Cynthia Tristán Álvarez"
 	], [
 		"AGRADECIMIENTOS ESPECIALES",
