@@ -5,8 +5,8 @@ func _ready() -> void:
 	print(Global.CurrentEdad)
 
 func _pressed() -> void:
-	$"../Arbol".animate_tree()
-	
+	#$"../Arbol"
+	$"../FondoPuzle/Arbol".animate_tree()
 	_manage_pressed()
 	disabled = true
 	await get_tree().create_timer(1.5).timeout
