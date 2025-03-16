@@ -13,19 +13,20 @@ class_name ItemInventario
 func _process(delta: float) -> void:
 	print_debug(numero.global_position)
 	
-	
-	print_debug("Inventario: ",
-	" MEDIO: ", Global.Inventario[Global.TipoPieza.MEDIO],
-	" LENGUA: ", Global.Inventario[Global.TipoPieza.LENGUA],
-	" CREATIVO: ", Global.Inventario[Global.TipoPieza.CREATIVO],
-	" LOGICA: ", Global.Inventario[Global.TipoPieza.LOGICA],
-	" HISTORIA: ", Global.Inventario[Global.TipoPieza.HISTORIA],
-	" FILOSOFIA: ", Global.Inventario[Global.TipoPieza.FILOSOFIA])
+	# Bonito print eh, como DaniZ.
+	#print_debug("Inventario: ",
+	#" MEDIO: ", Global.Inventario[Global.TipoPieza.MEDIO],
+	#" LENGUA: ", Global.Inventario[Global.TipoPieza.LENGUA],
+	#" CREATIVO: ", Global.Inventario[Global.TipoPieza.CREATIVO],
+	#" LOGICA: ", Global.Inventario[Global.TipoPieza.LOGICA],
+	#" HISTORIA: ", Global.Inventario[Global.TipoPieza.HISTORIA],
+	#" FILOSOFIA: ", Global.Inventario[Global.TipoPieza.FILOSOFIA])
 	# Para que se ponga transparente si no hay piezas.
 	if Global.Inventario[tipo] <= 0:
 		modulate = Color(1.0, 1.0, 1.0, 0.5)
 	else: # Para que deje de ser transparente.
 		modulate = Color(1.0, 1.0, 1.0, 1)
+	# Para que aparezcan los numeros de las piezas que quedan con su maximo.
 	if numero!= null:
 		numero.text = str(Global.Inventario[tipo]) + "/" + str(Global.maxPiezas)
 
