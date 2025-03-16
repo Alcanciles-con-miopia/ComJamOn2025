@@ -1,10 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://kuee5s7qpvx2"]
+[gd_scene load_steps=6 format=3 uid="uid://kuee5s7qpvx2"]
 
 [ext_resource type="Script" uid="uid://b3dlqri07ib85" path="res://scripts/flujo/Intro.gd" id="1_bqrie"]
-[ext_resource type="VideoStream" path="res://assets/Videos/Intro-1.ogv" id="2_oqq3y"]
-[ext_resource type="Shader" path="res://scenes/flujo/game_scene.gdshader" id="3_xdv7v"]
+[ext_resource type="VideoStream" uid="uid://p8jmpxnpgbah" path="res://assets/Videos/Intro-1.ogv" id="2_oqq3y"]
+[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="3_xdv7v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oxccj"]
+shader = ExtResource("3_xdv7v")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdv7v"]
 shader = ExtResource("3_xdv7v")
 shader_parameter/fog_density = 0.5
 shader_parameter/fog_speed = 0.3
@@ -35,5 +42,15 @@ grow_vertical = 2
 stream = ExtResource("2_oqq3y")
 autoplay = true
 expand = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4000
+material = SubResource("ShaderMaterial_xdv7v")
+layout_mode = 0
+offset_left = -33.0
+offset_top = -30.0
+offset_right = 1302.0
+offset_bottom = 682.0
+mouse_filter = 2
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

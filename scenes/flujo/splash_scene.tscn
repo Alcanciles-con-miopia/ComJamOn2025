@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnysdn0d3o7b2"]
+[gd_scene load_steps=6 format=3 uid="uid://dnysdn0d3o7b2"]
 
 [ext_resource type="Script" uid="uid://cp306wps2uf73" path="res://scripts/flujo/Splash.gd" id="1_bqrie"]
 [ext_resource type="Texture2D" uid="uid://dsk0j7mtwsuv8" path="res://assets/images/alcancilito.png" id="2_gbxxp"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="3_brpdo"]
+[ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="4_7i2l4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1ety"]
+shader = ExtResource("4_7i2l4")
+shader_parameter/fog_density = 0.5
+shader_parameter/fog_speed = 0.3
+shader_parameter/noise_scale = 4.0
+shader_parameter/fog_opacity = 0.5
 
 [node name="Splash" type="Control"]
 layout_mode = 3
@@ -70,3 +78,13 @@ theme_override_font_sizes/font_size = 50
 text = "ALCANCILES CON MIOPÍA"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 4000
+material = SubResource("ShaderMaterial_p1ety")
+layout_mode = 0
+offset_left = -593.0
+offset_top = -332.0
+offset_right = 589.0
+offset_bottom = 325.0
+mouse_filter = 2
