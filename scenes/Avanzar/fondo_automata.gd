@@ -6,7 +6,7 @@ class_name FondoAutomata
 @onready var fondo_puzle_2: Sprite2D = $"../FondoPuzle2"
 
 func _ready() -> void:
-	self.global_position = Vector2(493.0, 52)
+	fondo_puzle_2.global_position = Vector2(493.0, 52)
 	Global.evolve.connect(change_fondo)
 	texture = Global.edadTex[Global.CurrentEdad]
 
