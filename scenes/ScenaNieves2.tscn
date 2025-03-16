@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cr33c8imfaurg"]
+[gd_scene load_steps=47 format=3 uid="uid://cr33c8imfaurg"]
 
 [ext_resource type="Texture2D" uid="uid://burbk5nmn1kdj" path="res://assets/images/guias.png" id="1_2s6wm"]
 [ext_resource type="Texture2D" uid="uid://dlfmihffygfuw" path="res://assets/images/fondo izquierda.jpg" id="1_ptgak"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://10186dx7yrk5" path="res://scripts/pantalla_de_carga.gd" id="13_8cvup"]
 [ext_resource type="Texture2D" uid="uid://bptjm7tswtvc6" path="res://assets/images/Engranaje.png" id="14_nxyjx"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="15_j6lm8"]
+[ext_resource type="Texture2D" uid="uid://dml7fsjtojx0c" path="res://assets/controles/controles_coger.png" id="15_xafak"]
 [ext_resource type="Texture2D" uid="uid://dbpcnvw7446we" path="res://assets/controles/controles_coger_sheet.png" id="16_bqstj"]
 [ext_resource type="Script" uid="uid://cd4vc550llkn3" path="res://scenes/coger.gd" id="16_twbgl"]
 [ext_resource type="Texture2D" uid="uid://cse605ixysn7e" path="res://assets/controles/controles_rotar_sheet.png" id="17_kyi1n"]
@@ -47,29 +48,29 @@ size = Vector2(765, 91)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88abv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kyi1n"]
-atlas = ExtResource("16_bqstj")
-region = Rect2(0, 0, 336, 240)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cajgi"]
+atlas = ExtResource("15_xafak")
+region = Rect2(0, 0, 371, 241)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_twbgl"]
-atlas = ExtResource("16_bqstj")
-region = Rect2(336, 0, 336, 240)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgkvw"]
+atlas = ExtResource("15_xafak")
+region = Rect2(371, 0, 371, 241)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d3dcn"]
-atlas = ExtResource("16_bqstj")
-region = Rect2(672, 0, 336, 240)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmkbk"]
+atlas = ExtResource("15_xafak")
+region = Rect2(742, 0, 371, 241)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhrml"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kyi1n")
+"texture": SubResource("AtlasTexture_cajgi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_twbgl")
+"texture": SubResource("AtlasTexture_lgkvw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d3dcn")
+"texture": SubResource("AtlasTexture_xmkbk")
 }],
 "loop": true,
 "name": &"Coger",
