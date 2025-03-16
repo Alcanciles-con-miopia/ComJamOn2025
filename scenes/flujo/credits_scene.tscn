@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://doma3ldba1l8e"]
+[gd_scene load_steps=8 format=3 uid="uid://doma3ldba1l8e"]
 
 [ext_resource type="Script" uid="uid://c8k4nrtrs6b8j" path="res://scripts/flujo/Credits.gd" id="1_4f4al"]
 [ext_resource type="FontFile" uid="uid://candsp1j1wbju" path="res://assets/fonts/SyneMono-Regular.ttf" id="2_hv1m4"]
 [ext_resource type="PackedScene" uid="uid://cha3ikohwmopv" path="res://scenes/ShaderRuido.tscn" id="3_x3w6v"]
 [ext_resource type="Texture2D" uid="uid://dyagc8t4ewohm" path="res://assets/images/icon_nobg.png" id="4_qj4wf"]
 [ext_resource type="Shader" uid="uid://sdyliegr0k75" path="res://scenes/flujo/game_scene.gdshader" id="5_j2uam"]
+[ext_resource type="PackedScene" uid="uid://bjdrwnkpyva5i" path="res://scenes/cursor.tscn" id="6_pvki8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pvki8"]
 shader = ExtResource("5_j2uam")
@@ -101,3 +102,5 @@ offset_top = -38.0
 offset_right = 1183.0
 offset_bottom = 687.0
 mouse_filter = 2
+
+[node name="cursor" parent="." instance=ExtResource("6_pvki8")]
