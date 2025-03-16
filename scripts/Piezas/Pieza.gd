@@ -262,11 +262,11 @@ func suelta() -> bool:
 	if toEliminar:
 		if (se_ha_puesto_una_vez_xd):
 			Global.feedback_unbranch.emit(tipo, Global.puntos_por_rama[tipo])
-			##########################
-			# SONIDO GUARDAR
-			Global.sfx2.stream = load("res://assets/sounds/recortar/body2.wav")
-			Global.sfx2.play()
-			##########################
+		##########################
+		# SONIDO GUARDAR
+		Global.sfx2.stream = load("res://assets/sounds/recortar/body2.wav")
+		Global.sfx2.play()
+		##########################
 		
 		for c in get_children():
 			if c.name != "PanelContainer":
